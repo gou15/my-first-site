@@ -1,0 +1,11 @@
+git config --global user.name <github username>
+git config --global user.email <github email>
+git init
+git add . (or "git add (filename)")
+mkdir (make directory)
+cd (change directory)
+pwd (display directory)
+git status
+git commit -m "commit message"
+ls -la (show folder files)
+git log
