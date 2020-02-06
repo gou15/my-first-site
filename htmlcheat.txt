@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Website Title</title>
+        </head>
+        <body>
+            <p>All the content will go here</p>
+        </body>
+    </html>
+
