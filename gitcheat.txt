@@ -9,3 +9,9 @@ git status
 git commit -m "commit message"
 ls -la (show folder files)
 git log
+rm "filename"
+git restore "filename"
+git remote add origin https://github.com/gou15/"RESPOSITORY"
+git remote -v (this shows where you are pushing/fetching from/too)
+cloning/fetching and unrelated history errors: https://github.community/t5/How-to-use-Git-and-GitHub/How-to-deal-with-quot-refusing-to-merge-unrelated-histories-quot/td-p/12619
+git fetch origin master
