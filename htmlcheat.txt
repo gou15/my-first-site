@@ -4,7 +4,6 @@
             <title>Website Title</title>
         </head>
         <body>
-            <p>All the content will go here</p>
         </body>
     </html>
 
@@ -27,7 +26,6 @@
     <dt>Term</dt>
     <dd>Definition of Term</dd>
 </dl>
-
 You can put lists inside your lists.
 
 <a href="LINK" target="_OPTION">Words for your link</a>
@@ -43,4 +41,3 @@ relative URLs direct from the pathway your index is located
     Use relative URLs whenever possible
 Can use link to email <a href="mailto:mjezegou@meridian.mfg.com">Contact Me</a>
 An anchor is a link to a certain spot on the same page, like the "Go to top" function
-    
