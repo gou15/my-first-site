@@ -3,5 +3,6 @@ window.onload = function() {
   
     button.addEventListener('click', function() {
       alert("Let's Rock!!");
+      alert("Still Rockin'");
     });
   }
