@@ -8,3 +8,39 @@
         </body>
     </html>
 
+<h1> thru <h6>
+<p>  <div>   <span>
+<br />  <hr />   <strong>
+<!-- comment -->
+
+<ul> (unordered list, bullets)
+    <li>List item</li>
+    <li>List item 2</li>
+</ul>
+
+<ol> (ordered list, numbered)
+  <li>Order Item</li>
+  <li>Order Item 2</li>
+</ol>
+
+<dl> (description/definition list, like a glossary)
+    <dt>Term</dt>
+    <dd>Definition of Term</dd>
+</dl>
+
+You can put lists inside your lists.
+
+<a href="LINK" target="_OPTION">Words for your link</a>
+    LINK can be external URL or local folder references
+    OPTION can be self (open in same tab), blank (open in new tab), parent (load into previously loaded tab), or top (the parent parent parent)
+absolute URLs direct abolutely i.e. www.google.com
+relative URLs direct from the pathway your index is located
+    to go to the root of your folder relatively...
+        <a href="/">Home</a>
+        from root, if other files exist they can be linked using only the file name (i.e. <a href="about.html">About</a>)
+        from root, if other folders containing files exist they can be linked with folder/filename (i.e. <a href="about/about.html">About</a>)
+        from subfolder, to back up a folder use ../ (i.e. folder 3 is in folder 2 is in folder 1, want to reference FAQ in folder 1 from folder 3 = <a href="../../FAQ.html">FAQ</a>)
+    Use relative URLs whenever possible
+Can use link to email <a href="mailto:mjezegou@meridian.mfg.com">Contact Me</a>
+An anchor is a link to a certain spot on the same page, like the "Go to top" function
+    
