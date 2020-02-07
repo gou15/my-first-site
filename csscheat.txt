@@ -2,3 +2,8 @@
 tag tag tag { properties assigned to tag }
 to apply styling to all tags use "*"
     generic styling - tag styling - hierarchical styling
+
+this style type "text/css" would need to be in the <head> of every HTML doc...
+easier to create a style.css file and call it out in the <head> of every HTML doc...
+this is called "site styling", call it up using
+    <link href ="style.css" type ="text/css" rel="stylesheet" /> where rel is the relationship
