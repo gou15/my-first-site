@@ -1,2 +1,4 @@
 <style type = "text/css"> <!-- this allows text css code inside HTML head doc -->
 tag tag tag { properties assigned to tag }
+to apply styling to all tags use "*"
+    generic styling - tag styling - hierarchical styling
