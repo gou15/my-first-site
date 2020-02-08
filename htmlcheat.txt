@@ -87,4 +87,30 @@ rowspan and colspan in individual <td> elements modify the # of rows or columns 
 
 FORMS
 <form action="XXX" (what to do with data) method="XXX" (how to send data (post = as body data, get = as header (i.e. URL) data)) enctype="application/x-www-form-urlencoded" (don't change this)>My Form</form>
-<input type="input-type" name="var name" value="value of text input" placeholder="grayed out box text" minlength="x" maxlength="x" required /> (input type could be text, radio, checked, password, submit (this is a button))
+<input type="input-type" name="var name" value="value of text input" placeholder="grayed out box text" minlength="x" maxlength="x" required /> (input type could be text, radio, checkbox, password, submit (this is a button))
+<label for="inputid">Field Title:</label>
+Use <fieldset> to group items together, and use <legend> to title this group
+
+Bring this text FORM all together
+<form action="login.html" method="post" enctype="application/x-www-form-urlencoded">
+    <fieldset>
+        <legend>RealID Info</legend>
+        <label for="nameid">Name:</label>
+        <input type="text" name="name" id="nameid" />
+        <label for="surnameid">Surname:</label>
+        <input type="text" name="surname" id="surnameid" />
+    </fieldset>
+</form>
+
+Radio form:
+<form>
+    Do you have a cell phone?
+    <input type="radio" name="cellphone" value="true" />Yes
+    <input type="radio" name="cellphone" value="false />Nope
+</form>
+
+Use checked="checked" inside the input tag for radio and checkbox types to set default selections
+Checkbox forms each line has same name with different values
+There are hidden forms too which submit data the user can't see or modify, good for content ID or security tokens
+You can use your own "submit" button using <input type="image" src="img src" />
+
