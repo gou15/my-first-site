@@ -2,6 +2,7 @@
     <html>
         <head>
             <title>Website Title</title>
+            <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         </head>
         <body>
         </body>
@@ -83,3 +84,7 @@ Tables:
     </tfoot>
 </table>
 rowspan and colspan in individual <td> elements modify the # of rows or columns that cell space consumes
+
+FORMS
+<form action="XXX" (what to do with data) method="XXX" (how to send data (post = as body data, get = as header (i.e. URL) data)) enctype="application/x-www-form-urlencoded" (don't change this)>My Form</form>
+<input type="input-type" name="var name" value="value of text input" placeholder="grayed out box text" minlength="x" maxlength="x" required /> (input type could be text, radio, checked, password, submit (this is a button))
