@@ -113,4 +113,23 @@ Use checked="checked" inside the input tag for radio and checkbox types to set d
 Checkbox forms each line has same name with different values
 There are hidden forms too which submit data the user can't see or modify, good for content ID or security tokens
 You can use your own "submit" button using <input type="image" src="img src" />
+<textarea name ="about" placeholder="Tell me about you...">blank text tell us about yourself</textarea>
+    use cols and rows in textarea tag to define rows and columns
+Create a dropdown menu:
+<form>
+    <select name="options">
+        <option value="">Please choose an option</option>
+        <option value="opt1">Option 1</option>
+        <option value="opt2">Option 2</option>
+        <option value="opt3" selected>Option 3</option>
+    </select>
+</form>
+adding "multiple="multiple"" into select tag allows multiple selctions. adding "size="X"" defines how many selections a user can make
+<select name="option" multiple="multiple" size="5">
 
+Use <button value="xxx" name="yyy">Descriptor</button> inside of form tags to create a button
+Alternatively, open a button element and use <img src="src" alt="alt" />Descriptor to use your own image as a button
+If using <input type="button" value="Displays on button" />
+
+<input type="file"> allow users to upload files, can use name= and multiple= inside input attribute
+    NEED TO CHANGE enctype TO multipart/form-data FOR FILE UPLOADS

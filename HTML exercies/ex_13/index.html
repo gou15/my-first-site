@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Create User</title>
+        </head>
+        <body>
+            <h1>Create User</h1>
+            <hr />
+            <form>
+                <label>Name:</label>
+                <input type="text" name="name" placeholder="name"><br />
+                <label>Your favorite superhero movie?</label>
+                    <select name="superhero">
+                    <option value="deadpool">Deadpool</option>
+                    <option value="batvssup">Batman vs Superman</option>
+                    <option value="civwar">Capt Amer: Civil War</option>
+                    <option value="wowo" selected>Wonder Woman</option>
+                    </select><br /><br />
+                <br />
+                <textarea placeholder="Write your bio here" cols="40" rows="10"></textarea><br /><br />
+                <label for="file">Upload Entry</label><br/><input id="file" type="file" name="file" enctype="multipart/form-data" /><br />
+                <input type="button" name="clear" value="Clear Data"><br />
+                <input type="button" name="addnew" value="Add New User"><br />
+            </form>
+        </body>
+    </html>
