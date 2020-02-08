@@ -56,3 +56,14 @@ Link images using <img src = "LINK" /> where LINK format = format for creating a
 </figure>
 You can make images into links as such:
     <a href = "LINK"><img src = "SRC"></a>
+Tables:
+<table>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td></td>
+  </tr>
+</table>
