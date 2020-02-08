@@ -44,6 +44,15 @@ An anchor is a link to a certain spot on the same page, like the "Go to top" fun
     <a name = "top"></a> (at top)
     <a href ="#top">Go To Top</a> (at bottom)
     <a href = "index.html#top">Go Home</a> (back to index then top)
-    
+
 id's are unique where class are not
 <div class="xxx"> or <div id="xxx">
+
+Link images using <img src = "LINK" /> where LINK format = format for creating a href (both absolute and relative)
+<img src = "LINK" height = "PXLS" width = "PXLS (or auto)" alt = "desc if pic breaks" title = "hoverover popup text" />
+<figure>
+    <img src = "link" alt = "broke" title = "hover text" /> 
+    <figcaption>Caption text</figcaption>
+</figure>
+You can make images into links as such:
+    <a href = "LINK"><img src = "SRC"></a>
