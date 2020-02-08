@@ -2,6 +2,7 @@
     <html>
         <head>
             <title>Website Title</title>
+            <meta charset="UTF-8" />
             <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         </head>
         <body>
@@ -158,5 +159,33 @@ regex (regular expression) defines what can and can't be in a field (i.e. only n
 iframe element nests other web content inside your page
 <iframe src="youtube.com/barb" height="PX" width="PX" seamless frameborder="0"></iframe>
 
+<video src="src.mp4" poster="preview.jpg" width="PX" height="PX">
+    controls in video tag allows user to use the controls (pause play whatever)
+    autoplay in video tag will force video to play
+    loop in video tag will loop the video when complete
+    preload="X" where X can be none (not preloaded), auto (preload), or metadata (info about vid is downloaded)
+    replace "video" with "audio" and you've got the same thing for sound files
+
+<source> allows you to draw from different sources to display same video for various browsers:
+  <video poster="myvideo.jpg" controls>
+    <source src="myvideoo.mp4" type="video/mp4" />
+    <source src="myvideo.webm" type="video/webm" />
+    <source src="myvideo.ogv" type="video/ogg" />
+    <source src="myvideo.3gp" type="video/3gp" />
+    <p>Vide description</p>
+  </video>
+  <audio autoplay controls>
+    <source src="myaudio.mp3" />
+    <source src="myaudio.ogg" />
+    <p>Audio description.</p>
+  </audio>
+
+metadata goes in the head, and there's lots of it...
+    <meta name="description" content="My Site description" />
+    <meta name="author" content="John Doe" />
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+HTML entities is stuff the HTML otherwise doesn't understand unless there's a & and ; around it (i.e. &nbsp;)
+    https://www.freeformatter.com/html-entities.html
 
 
