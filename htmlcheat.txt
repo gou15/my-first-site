@@ -58,7 +58,7 @@ You can make images into links as such:
     <a href = "LINK"><img src = "SRC"></a>
 
 Tables:
-<table>
+<table border="PX" bgcolor="CLR" width="PX" cellpadding="PX" cellspacing="PX">
     <thead>
     <tr>
         <th>1</th>
@@ -82,3 +82,4 @@ Tables:
         </tr>
     </tfoot>
 </table>
+rowspan and colspan in individual <td> elements modify the # of rows or columns that cell space consumes
