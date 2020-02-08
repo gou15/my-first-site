@@ -41,5 +41,9 @@ relative URLs direct from the pathway your index is located
     Use relative URLs whenever possible
 Can use link to email <a href="mailto:mjezegou@meridian.mfg.com">Contact Me</a>
 An anchor is a link to a certain spot on the same page, like the "Go to top" function
+    <a name = "top"></a> (at top)
+    <a href ="#top">Go To Top</a> (at bottom)
+    <a href = "index.html#top">Go Home</a> (back to index then top)
+    
 id's are unique where class are not
 <div class="xxx"> or <div id="xxx">
