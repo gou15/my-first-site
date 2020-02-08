@@ -138,6 +138,25 @@ If using <input type="button" value="Displays on button" />
     <input type="date" name="bday" id="date" value="1985-03-05 />
 </form>     this allows a date selection dropdown
 
-input types can include email, url, search
+input types can include email, url, search, tel
+add "required" to any input element to force user to fill out this input
+    <input type="text" name="user" id="username" required />
+regex (regular expression) defines what can and can't be in a field (i.e. only numbers)
+    regex value is in put in the input element using the pattern="XXX" attribute
+    does not look straightforward, google this
+
+<header> introductory content
+<nav> section of page to navigate links, like a sidebar
+<aside> portion of document where content is only indirectly related
+<section> standalone section
+<footer> the bottom of the page stuff
+<article> self-contained contribution to the site (like a forum post)
+<address> a physical address
+<time> time on a 24-hour clock or a specific date
+    above tags are for the robots to index your page well
+
+iframe element nests other web content inside your page
+<iframe src="youtube.com/barb" height="PX" width="PX" seamless frameborder="0"></iframe>
+
 
 
