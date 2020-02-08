@@ -133,3 +133,11 @@ If using <input type="button" value="Displays on button" />
 
 <input type="file"> allow users to upload files, can use name= and multiple= inside input attribute
     NEED TO CHANGE enctype TO multipart/form-data FOR FILE UPLOADS
+
+<form>
+    <input type="date" name="bday" id="date" value="1985-03-05 />
+</form>     this allows a date selection dropdown
+
+input types can include email, url, search
+
+
