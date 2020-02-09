@@ -8,7 +8,6 @@ tag tag tag { properties assigned to tag }
     id and class can be assigned to any HTML tag    
 commas between tag types allows assignment of same styling to multiple tags
 
-really, CSS is just a set of rules for assigning style to an HTML document
 #hexadecimal code is standard when assigning styles regardless of other ways to assign
 
 tag, tag2, .class, #id, tag3#id2 {
