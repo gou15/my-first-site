@@ -1,12 +1,87 @@
 <style type = "text/css"> <!-- this allows text css code inside HTML head doc -->
+<link rel="stylesheet" href="style.css"> <!-- links a style sheet, goes in <head> --> rel = relationship
 tag tag tag { properties assigned to tag }
-to apply styling to all tags use "*"
     generic styling - tag styling - hierarchical styling - class - id
+* to assign styling to all tags (use to set "default" styling)
+# when assigning styling to id name i.e. "#main {xxx}"
+. when assigning styling to a class i.e. ".main {xxx}"
+    id and class can be assigned to any HTML tag    
+commas between tag types allows assignment of same styling to multiple tags
 
-this style type "text/css" would need to be in the <head> of every HTML doc...
-easier to create a style.css file and call it out in the <head> of every HTML doc...
-this is called "site styling", call it up using
-    <link href ="style.css" type ="text/css" rel="stylesheet" /> where rel is the relationship
-use # when assigning styling to id name i.e. "#main {xxx}"
-use . when assigning styling to a class
-can assign styling to multiple tags using commas between the tags
+really, CSS is just a set of rules for assigning style to an HTML document
+#hexadecimal code is standard when assigning styles regardless of other ways to assign
+
+tag, tag2, .class, #id, tag3#id2 {
+    color: #a1b2c3; font-family: font1, "font 2", font-3; font-size: 16px; font-weight: bold; font-style: oblique;
+}
+
+can put CSS styling in individual tags (which will overwrite the instruction of the styling from the head)
+    i.e. <span style="color: red;">Red text even if stylesheet called for black</span>
+
+can get more specific by assigning elements and tags/ids to same ruleset
+    p.main {
+        rules
+    }
+    assigns rules to all <p> tags with class="main", leaves other <p> and other main classes alone
+
+pseudo selectors are not real tags but can be used to assign styling based on their unique rules
+    a:link {rules for links}
+    a:active {rules for links to page you're already on}
+    a:hover {rules for links during mouseover}
+    a:visited {rules for links you've already been to}
+    tag1 tag2 {rules for ALL tag2 inside of tag1} (NO COMMAS! descendant selector) (i.e. all <a> inside <div> regardless of whether <a> is also inside <p>, <span>, etc...)
+    tag1>tag2 {rules for all tag2 DIRECTLY DESCENDED from tag1} (child selector) (i.e. all <a> inside <div> UNLESS <a> is in another tag inside the <div>)
+    tag::first-line {rules for first line of tag selected}
+    tag::first-letter {rules for first letter of tag selected}
+    tag::after {content: "x"; rules for tags following content defined in rules}
+    tag::before {content: "x"; rules for tags prior to content defined in rules}
+    tag1 + tag2 {rules for all tag2 immediately following tag1 in same parent element, will only style the 1 tag immediately following} (adjacent sibling combinator)
+    tag1 ~ tag2 {rules for all tag2 following tag1 in same parent element, not necessarily adjacent, will style all tags following} (general sibling combinator)
+
+font-family: serif; "times new roman", times, arial;
+    tells the browser what font to display the content in, defining multiple fonts gives browser options to find font that works for it
+
+@font-face { font-family: "Name of custom font"; src: url("https://www.customfontwebsite.com/customfontfile.font");}
+    pulls a custom font from the internet
+
+Google fonts work by putting a link in the header of the HTML
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet" />
+THEN calling it off in the font-family in the .css file
+tag {font-family: "IBM Plex Mono", monospace;}
+
+tag {font-size: PX or PT or XXem;} where PX is pixels, PT is points, and XXem is relative size (i.e. 2em = twice as big)
+    standard sizing is pixels for most generic tag and em for all following styling
+tag {font-weight: normal or bold or bolder;} or use #100-900 where 400 is normal and 700 is bold
+tag {font-style: style;} lets you set styles like italic or oblique
+tag {text-transform: transformation;} lets you change the text to uppercase, lowercase, whatever...
+tag {text-align: alignment;} allows you to align text left, right, justify, etc...
+tag {text-decoration: decoration;} allows text decorations like none, underline, overline, line-through, and blink
+    can set text-decoration-color inside text decoration tag 
+    can set text-decoration-style inside text decoration tag including solid, double, dotted, dashed, and wavy
+    OR you can just set color and style inside the decoration tag, here's an example
+    p {text-decoration: underline red dashed;}
+tag {text-indent: ##px;} sets indent length in pixels (i.e. 20px;)
+tag {text-shadow: x-offsetpx y-offsetpx blur-radpx color;} adds a colored shadow to the text defined by your offsets
+tag {letter-spacing: XXpx;} sets kerning (i.e. 3px)
+tag {word-spacing: XXpx;} sets spacing between tags and words (i.e. 4px)
+tag {line-height: #;} set with font-size, specifies line height, will have to play with this to understand it
+tag {vertical-align: alignment;} specifies vertical alignment of an inline or table-cell element (does not work on block elements)
+    alignments for vertical-align include baseline, sub, super, text-top, text-bottom, middle, top, and bottom
+
+BOX MODEL! HTML elements are boxes, CSS applies styling to those boxes
+margin = space between boxes
+border = outer limit of box
+padding = distance between content and border
+content = whatsinthebox
+can set width of all of these distances in pixels specifying as top right bottom and left (trbl) and margin border or padding (mbp)
+    i.e. tp = top padding, bb = bottom border, this works clockwise starting from t
+tag {border: #px style color;} sets a border around content
+can get downright specific with borders:
+    div {border-top: 1px solid red; border-bottom: 2px dashed green; border-left: 3px wavy purple; border-right: 4px dotted yellow;}
+tag {border-radius: #px, #px, #px, #px;} sets radius by pixel value, starting at top left going clockwise
+
+for border thickness or rad (rad in brackets), if you only enter:
+    one pixel value it is applied to all 4 sides/corners
+    two pixel values, first is applied to top(left) and bottom(right)
+    three pixel values, first is applied to top(left), second is applied to (top)right and (bottom)left, third is applied to bottom(right)
+    four pixel values, first is applied to top(left) then clockwise
