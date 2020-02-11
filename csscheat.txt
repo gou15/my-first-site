@@ -79,8 +79,21 @@ can get downright specific with borders:
     div {border-top: 1px solid red; border-bottom: 2px dashed green; border-left: 3px wavy purple; border-right: 4px dotted yellow;}
 tag {border-radius: #px, #px, #px, #px;} sets radius by pixel value, starting at top left going clockwise
 
-for border thickness or rad (rad in brackets), if you only enter:
-    one pixel value it is applied to all 4 sides/corners
+for border/padding thickness or border rad (rad in brackets), if you only enter:
+    one pixel value it is applied to all 4 sides (corners)
     two pixel values, first is applied to top(left) and bottom(right)
     three pixel values, first is applied to top(left), second is applied to (top)right and (bottom)left, third is applied to bottom(right)
     four pixel values, first is applied to top(left) then clockwise
+
+padding: and margin: formatting are same as border formatting
+can set element width and height using width: and height:
+can set min and max widths/heights using min-width: or max-height or whatever
+margin values can be set to auto if the width value is set (i.e. width:500px margin:auto)
+    this will center align a block element horizontaly
+    inline elements require text-align:center to be centered
+
+
+
+
+
+
