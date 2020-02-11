@@ -1,6 +1,6 @@
 <style type = "text/css"> <!-- this allows text css code inside HTML head doc -->
 <link rel="stylesheet" href="style.css"> <!-- links a style sheet, goes in <head> --> rel = relationship
-tag tag tag { properties assigned to tag }
+tag, tag, tag { properties assigned to tag }
     generic styling - tag styling - hierarchical styling - class - id
 * to assign styling to all tags (use to set "default" styling)
 # when assigning styling to id name i.e. "#main {xxx}"
