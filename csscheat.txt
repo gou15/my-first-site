@@ -27,8 +27,8 @@ can get more specific by assigning elements and tags/ids to same ruleset
 pseudo selectors are not real tags but can be used to assign styling based on their unique rules
     a:link {rules for links}
     a:active {rules for links to page you're already on}
-    a:hover {rules for links during mouseover}
     a:visited {rules for links you've already been to}
+    tag:hover {rules for what happens when mouseover the tag}
     tag1 tag2 {rules for ALL tag2 inside of tag1} (NO COMMAS! descendant selector) (i.e. all <a> inside <div> regardless of whether <a> is also inside <p>, <span>, etc...)
     tag1>tag2 {rules for all tag2 DIRECTLY DESCENDED from tag1} (child selector) (i.e. all <a> inside <div> UNLESS <a> is in another tag inside the <div>)
     tag::first-line {rules for first line of tag selected}
@@ -95,9 +95,9 @@ margin values can be set to auto if the width value is set (i.e. width:500px mar
 
 background-color: to set background, transparent is default
 overflow: property (where property can be auto, hidden or scroll)
-    this defines what to do with content that is too large for an element block
-    can define x and y overflow using overflow-x and overflow-yellow
-box-shadow: Xpx Xpx Xpx Xpx color;
+    this defines what to do with content that is too large for an element block, most common is auto
+    can define x and y overflow using overflow-x and overflow-y
+box-shadow: Xpx Xpx Xpx -Xpx color; (horizontal shadow length, vert shadow length, blur rad, spread rad (where spread rad defines how much area will be added or taken away from the overall size of the shadow relative to the element size)
     sets a shadow around an element's frame
     add "inset" (no quotes) in box-shadow definitions to make that shadow go in instead of out
 
@@ -105,20 +105,77 @@ display: sets how element blocks behave if deviating from HTML default, values i
 visibility: hidden OR visible; hides or shows the element
 difference between display:none and visibility:hidden is that display removes the element entirely, visibility hides the element content but leaves the element box
 
-background-image: url(pathway/to/image.png), url(path/to/image2.png);
+background-image: url(pathway/to/image.png), url(path/to/image2.png); multiple images just change from top to bottom
 background-repeat: defines how the background will be repeated (repeat-x, repeat-y, repeat, no-repeat)
 background-position: sets initial position for each background image (default top left corner)
     XXpx XXpx (left center OR right) (top center OR bottom) 1st value for x-axis, 2nd for y-axis where XXpx is size
 background-attachment: (fixed, scroll, OR local) defines how background behaves when user scrolls
 background: lets you do all of the above in ONE simple line, format as follows:
     background: red url(to/image.png) no-repeat fixed center center
-linear-gradient(XXdeg, color, green) is a background definition which creates an image consisting of a progressive transition between 2 or more colors
+linear-gradient(XXdeg, color, color) is a background definition which creates an image consisting of a progressive transition between 2 or more colors
 
 cursor: (pointer, auto, crosshair, default, move, text, wait, or help) defines which cursor to display when mouseover an element
 (unordered) list-style-type: (none, disc, circle, square)
 (ordered) list-style-type: (decimal, decimal-leading-zero, lower-alpha, upper-alpha, lower-roman, upper-roman)
     style types define appearance of list item elements
-list-style-position: (outside OR inside) specifies position of the ::marker relative to a list item
+list-style-position: (outside OR inside) specifies position of the list item marker relative to a list item
+list-style-image: url(to/image.png) will use an image as the list item marker
+list-style: lets you set type, position, and image in one line
+    list-style: square inside url(to/image.png);
+
+TABLES
+border-spacing: XXpx XXpx; specifies distances between borders of adjacent table cells (horiz vert spacing)
+border-collapse: collapse OR separate; whether cells share the same border or not
+
+FORMS
+all previous styling can be applied to forms (display, border, background-color, font-size, border-color, margin, color, padding, font-size, font-weight, border-radius, cursor...)
+input[type="TYPE"] {rules for input TYPE}
+
+LAYOUT
+the way your website is divided (you want sidebar, top bar, nav bar, columns...?)
+this is all about grids and columns and how you want things displayed on other devices
+there are no styling elements to learn here - it's literally just theory
+it ties into the position styles (below) and into bootstrap
+
+position: (static, relative, absolute, fixed, OR sticky) defines how an element is positioned in the document
+position static is default
+position relative can be set with offsets using top, right, bottom, and/or left, sets position relative to the container containing the tag
+    position: relative;
+    top: XXpx;
+    left: XXpx;
+position absolute removes the element from normal document flow and no space is left for it
+    final position is determined by the values of top right bottom and left
+    final position is based on the absolute element's parent element
+    kind of like creating a relative position between parent and child element
+z-index: # (where # is an integer greater than or equal to 1) defines what elements are shown on top of others if they overlap (lowest numbers overlapped by higher number)
+position fixed removes element from normal document flow, positioned relative to viewport and doesn't move when scrolled
+    final position determined by top right bottom and left
+position sticky stays in normal flow of document then acts like fixed when scrolled "by"
+    offset is set as top right bottom left
+    does not work inside elements with overflow:hidden OR auto;
+    if multiple sticky elements the first will overwritten by the next when the next is scrolled "by"
+
+float: (none, left, OR right) allows elements to wrap around each other (like wrapping text around an image)
+    left and right sets the side you want your element to display on
+    can use this to float 2 images beside each other, set their width to 50%, and now you have 2 solid columns (can also set element height)
+clear: (none, left, right, OR both) sets whether this element can be next to floating elements that precede it or if they must be moved down (cleared) to below them
+    both means it will be entirely cleared of floating elements
+
+@media allows changing of styling to only selected devices depending on their type or characteristics
+@media parameters {
+    element{
+        rules for the element
+            }
+                }       
+parameters for @media as follows:
+    "print" (no quotes) only applies styling to print devices
+    only screen and (max-width: 768px) for extra small devices (phones)
+    only screen and (min-width: 768px) and (max-width: 992px) for small devices (tablets)
+    change min/max to 992 and 1200 for medium devices
+    change min to 1200 px for large devices
+    orientation: portrait OR landscape will change styling depending on which direction a device is being oriented
+in <head> if you want mobile devices to work you need:
+    <meta name="viewport" content="width-device-width, initial-scale=1.0" />
 
 
 
