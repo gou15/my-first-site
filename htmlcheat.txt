@@ -41,7 +41,7 @@ relative URLs direct from the pathway your index is located
         from root, if other folders containing files exist they can be linked with folder/filename (i.e. <a href="about/about.html">About</a>)
         from subfolder, to back up a folder use ../ (i.e. folder 3 is in folder 2 is in folder 1, want to reference FAQ in folder 1 from folder 3 = <a href="../../FAQ.html">FAQ</a>)
     Use relative URLs whenever possible
-Can use link to email <a href="mailto:mjezegou@meridian.mfg.com">Contact Me</a>
+Can use link to email <a href="mailto:email@address.com">Contact Me</a>
 An anchor is a link to a certain spot on the same page, like the "Go to top" function
     <a name = "top"></a> (at top)
     <a href ="#top">Go To Top</a> (at bottom)
