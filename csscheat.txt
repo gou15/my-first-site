@@ -29,6 +29,7 @@ pseudo selectors are not real tags but can be used to assign styling based on th
     a:active {rules for links to page you're already on}
     a:visited {rules for links you've already been to}
     tag:hover {rules for what happens when mouseover the tag}
+    tag:last-child {rules for what happens to last child element within parent element}
     tag1 tag2 {rules for ALL tag2 inside of tag1} (NO COMMAS! descendant selector) (i.e. all <a> inside <div> regardless of whether <a> is also inside <p>, <span>, etc...)
     tag1>tag2 {rules for all tag2 DIRECTLY DESCENDED from tag1} (child selector) (i.e. all <a> inside <div> UNLESS <a> is in another tag inside the <div>)
     tag::first-line {rules for first line of tag selected}
@@ -37,6 +38,7 @@ pseudo selectors are not real tags but can be used to assign styling based on th
     tag::before {content: "x"; rules for tags prior to content defined in rules}
     tag1 + tag2 {rules for all tag2 immediately following tag1 in same parent element, will only style the 1 tag immediately following} (adjacent sibling combinator)
     tag1 ~ tag2 {rules for all tag2 following tag1 in same parent element, not necessarily adjacent, will style all tags following} (general sibling combinator)
+    go deeper... tag3, tag4, tag99... that's all ok up here
 
 font-family: serif; "times new roman", times, arial;
     tells the browser what font to display the content in, defining multiple fonts gives browser options to find font that works for it
@@ -157,7 +159,9 @@ position sticky stays in normal flow of document then acts like fixed when scrol
 
 float: (none, left, OR right) allows elements to wrap around each other (like wrapping text around an image)
     left and right sets the side you want your element to display on
-    can use this to float 2 images beside each other, set their width to 50%, and now you have 2 solid columns (can also set element height)
+    can use this to float 2 (or more) images beside each other, set their width to 50%, and now you have 2 solid columns (can also set element height)
+    setting the element height makes things look nice until viewed on devices with dif screen sizes, can cause overflow
+    can use flexbox to rectify this (google it)
 clear: (none, left, right, OR both) sets whether this element can be next to floating elements that precede it or if they must be moved down (cleared) to below them
     both means it will be entirely cleared of floating elements
 
