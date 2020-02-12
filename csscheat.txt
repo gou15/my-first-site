@@ -9,6 +9,7 @@ tag, tag, tag { properties assigned to tag }
 commas between tag types allows assignment of same styling to multiple tags
 
 #hexadecimal code is standard when assigning styles regardless of other ways to assign
+rgba coding allows you to set red green blue and alpha (tranparency from 0 to 1) values to colors
 
 tag, tag2, .class, #id, tag3#id2 {
     color: #a1b2c3; font-family: font1, "font 2", font-3; font-size: 16px; font-weight: bold; font-style: oblique;
@@ -92,7 +93,32 @@ margin values can be set to auto if the width value is set (i.e. width:500px mar
     this will center align a block element horizontaly
     inline elements require text-align:center to be centered
 
+background-color: to set background, transparent is default
+overflow: property (where property can be auto, hidden or scroll)
+    this defines what to do with content that is too large for an element block
+    can define x and y overflow using overflow-x and overflow-yellow
+box-shadow: Xpx Xpx Xpx Xpx color;
+    sets a shadow around an element's frame
+    add "inset" (no quotes) in box-shadow definitions to make that shadow go in instead of out
 
+display: sets how element blocks behave if deviating from HTML default, values include inline, block, inline-block, none (hides data from user), table, flex, and grid
+visibility: hidden OR visible; hides or shows the element
+difference between display:none and visibility:hidden is that display removes the element entirely, visibility hides the element content but leaves the element box
+
+background-image: url(pathway/to/image.png), url(path/to/image2.png);
+background-repeat: defines how the background will be repeated (repeat-x, repeat-y, repeat, no-repeat)
+background-position: sets initial position for each background image (default top left corner)
+    XXpx XXpx (left center OR right) (top center OR bottom) 1st value for x-axis, 2nd for y-axis where XXpx is size
+background-attachment: (fixed, scroll, OR local) defines how background behaves when user scrolls
+background: lets you do all of the above in ONE simple line, format as follows:
+    background: red url(to/image.png) no-repeat fixed center center
+linear-gradient(XXdeg, color, green) is a background definition which creates an image consisting of a progressive transition between 2 or more colors
+
+cursor: (pointer, auto, crosshair, default, move, text, wait, or help) defines which cursor to display when mouseover an element
+(unordered) list-style-type: (none, disc, circle, square)
+(ordered) list-style-type: (decimal, decimal-leading-zero, lower-alpha, upper-alpha, lower-roman, upper-roman)
+    style types define appearance of list item elements
+list-style-position: (outside OR inside) specifies position of the ::marker relative to a list item
 
 
 
