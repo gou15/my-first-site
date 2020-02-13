@@ -37,9 +37,7 @@ using a combination of breakpoints and straight column widths you can set how th
 
 IMAGES https://getbootstrap.com/docs/4.3/content/images/
 responsive images are applied so image scales with parent element
-    .img-fluid
-    max-width: 100%;
-    height: auto;
+    .img-fluid sets max width to 100% and height to auto so image scales automatically
 
 .img-thumbnail gives an image a rounded 1px border
     other border-radius utilities exist
