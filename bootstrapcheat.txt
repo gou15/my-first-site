@@ -1,1 +1,36 @@
-nothing here yet...
+GRID SYSTEM
+grid system using containers, rows, and columns built with flexbox
+bootstrap automatically makes classes mean something
+.container is set in pixel width
+.container-fluid gives width 100% across all viewports
+.row are wrappers for columns
+columns are children of their rows
+
+    <div class="container">
+        <div class="row">
+            <div class="colXXX"> (where XXX are column specs)
+                <COLUMN 1 CONTENT>
+            </div>
+            <div class="colXXX">
+                <COLUMN 2 CONTENT>
+
+grid columns without a specified width will lay out as equal width columns
+    ie four .col-sm will be automatically set to width: 25%;
+column classes indicate # of columns you want to use out of max 12/row
+    .col-4 = 3 equal-width columns
+horizontal padding is built in between columns to create "gutters" (i.e. "no content" zones), 15px each column by default
+can remove the padding from the columns by adding .no-gutters to the row class
+bootstrap is built with mobile in mind, so there are @media breakpoints set by default, and column sizes are based around those breakpoints
+col-xs (0px min) sm (576px min) md (768px min) lg (992px min) or xl (1200px and up) (5 breakpoints)
+
+can mix and match (i.e. set a breakpoint and a column width), like .col-sm-6 (1 column 6 cells wide for small devices and up)
+throwing the style= inside your div lets you write additional rules to bootstrap's built in class rules
+
+a closed div with w-25, w-50, w-75, or w-100 will copy the parent column width as a percentage (substitute w for h and now it's height)
+totally ok to set different column sizes in same row
+use .col-BRKPT-auto to set variable column size based on viewport
+
+using a combination of breakpoints and straight column widths you can set how things will appear on dif devices all in one class assn't
+    .col-6 col-md-4 for example is a 6 width column, but reduces to 4 width if on a medium device (min 768px across)
+
+there's no end to the "utility" classes
