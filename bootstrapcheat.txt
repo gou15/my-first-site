@@ -1,4 +1,5 @@
 GRID SYSTEM https://getbootstrap.com/docs/4.3/layout/grid/
+
 grid system using containers, rows, and columns built with flexbox
 bootstrap automatically makes classes mean something
 .container is set in pixel width
@@ -36,6 +37,7 @@ using a combination of breakpoints and straight column widths you can set how th
     .col-6 is always a 6 width column regardless of viewport
 
 IMAGES https://getbootstrap.com/docs/4.3/content/images/
+
 responsive images are applied so image scales with parent element
     .img-fluid sets max width to 100% and height to auto so image scales automatically
 
@@ -47,6 +49,89 @@ can assign float classes and text alignment classes to align images as well
     .mx-auto centers images
     above classes are set inside the <img> element
     assigning parent div to "text-center" will also force image elements to be centered
+
+BUTTONS https://getbootstrap.com/docs/4.3/components/buttons/
+
+button tags are built to be used with <button> but can be used with <a> or <input>
+    if using button tags in <a> elements, assign role="button" in <a> element
+.btn btn-XXX (XXX can be primary, secondary (blue or gray), success (green), danger (red), warning (yellow), info (teal), light (lightgray), dark (black), link (transparent))
+    colors and assignments are arbitrary and do not help screen reading technology, so visible text should also identify the button
+    using .btn btn-outline-XXX will remove background from button and just use border and text color per definitions above
+
+<button type="button" class="btn btn-outline-danger">Danger</button>
+.btn-lg or sm changes button sizes
+.btn-block makes a button the full width of the parent black
+make buttons APPEAR active using .active and adding "aria-pressed="true"" into the button element
+make buttons APPEAR disabled by adding "disabled" definition to button element
+    <a> elements don't support "disabled", so use .disabled
+data-toggle="button" inside button element toggles a button's active state
+    requires aria-pressed="false" in button tag
+        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">Single toggle</button>
+
+button styles can be applied to other elements like checkbox and radio forms
+    <div data-toggle="buttons" class="btn-group-toggle">
+    prechecked buttons? add .manual to the input's label
+
+FORMAT FOR CHECKBOXES
+<div class="btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary active">
+        <input type="checkbox" checked autocomplete="off"> Checked
+    </label>
+</div>
+
+FORMAT FOR RADIO BUTTONS
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary active">
+        <input type="radio" name="options" id="option1" autocomplete="off" checked> Active
+    </label>
+    <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option2" autocomplete="off"> Radio
+    </label>
+    <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option3" autocomplete="off"> Radio
+    </label>
+</div>
+
+FORMS! https://getbootstrap.com/docs/4.3/components/forms/
+
+appropriate type needs to be set for each input so the styling doesn't break
+text form control <input>, <select> (dropdown), <select multiple>, and <textarea> are stylized using .form-control
+    div class set to .form-group, individual divs for all inputs
+    for file inputs, change .form-control to .form-control-file
+
+<div class="form-group">
+    <input class="form-control" type="TEXT">
+
+set heights by adding .form-control.SZ to input element (i.e. class="form-control form-control-lg")
+readonly attribute added to input element will gray out text box (same as disabled but retains standard cursor)
+    use .form-control-plaintext in input element to remove the textbox from readonly elements (kind of hides the fact that this is an input line)
+
+inline forms can be set as follows:
+form .form-inline   div .form-group mb-2 label .sr-only
+
+range inputs can be set as follows:
+<input type="range" class="form-control-range:>
+
+use .form-check for radio and checkbox div elements
+    .form-check-input in input elements
+    .form-check-label in label elements
+    disabled attribute is supported
+    <input> and <label> elements are equal line elements (no effect on functionality, just cleanliness)
+add .form-check-inline in div element to move checkboxes/radios horizontally rather than vertically
+    i.e. <div class="form-check form-check-inline">
+blank radio/checkboxes require .position-static in <input> element so they stay pretty
+
+inserting rows and columns inside of forms allows for styling flexibility
+just add .row divs and .col subdivs as children to the form elements
+using .form-row instead of just "row" is a style variant that makes things tighter
+
+horizontal forms (label left of input rather than on top of input)
+.row gets added to all child div elements of row element
+.col in child divs of above child divs
+    <labels> will need .col-form-label so they understand what's up
+    add -SZ classes to label and legend elements if you change size of input elements so they look nice
+    
+
 
 
 
