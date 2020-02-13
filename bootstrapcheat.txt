@@ -1,4 +1,4 @@
-GRID SYSTEM
+GRID SYSTEM https://getbootstrap.com/docs/4.3/layout/grid/
 grid system using containers, rows, and columns built with flexbox
 bootstrap automatically makes classes mean something
 .container is set in pixel width
@@ -32,5 +32,28 @@ use .col-BRKPT-auto to set variable column size based on viewport
 
 using a combination of breakpoints and straight column widths you can set how things will appear on dif devices all in one class assn't
     .col-6 col-md-4 for example is a 6 width column, but reduces to 4 width if on a medium device (min 768px across)
+    .col-md-4 will also cause columns to stack at the md breakpoint (i.e. they'll go horizontal rather than side by side, basically sets a minimum screen size to see columns side by side)
+    .col-6 is always a 6 width column regardless of viewport
 
-there's no end to the "utility" classes
+IMAGES https://getbootstrap.com/docs/4.3/content/images/
+responsive images are applied so image scales with parent element
+    .img-fluid
+    max-width: 100%;
+    height: auto;
+
+.img-thumbnail gives an image a rounded 1px border
+    other border-radius utilities exist
+
+can assign float classes and text alignment classes to align images as well
+    .rounded float-left as an example will round the borders and cause the image to squeeze right and float
+    .mx-auto centers images
+    above classes are set inside the <img> element
+    assigning parent div to "text-center" will also force image elements to be centered
+
+
+
+
+
+
+
+
