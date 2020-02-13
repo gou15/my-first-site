@@ -30,6 +30,7 @@ pseudo selectors are not real tags but can be used to assign styling based on th
     a:visited {rules for links you've already been to}
     tag:hover {rules for what happens when mouseover the tag}
     tag:last-child {rules for what happens to last child element within parent element}
+    tag:focus {form rules for what happens when caret is in selected field}
     tag1 tag2 {rules for ALL tag2 inside of tag1} (NO COMMAS! descendant selector) (i.e. all <a> inside <div> regardless of whether <a> is also inside <p>, <span>, etc...)
     tag1>tag2 {rules for all tag2 DIRECTLY DESCENDED from tag1} (child selector) (i.e. all <a> inside <div> UNLESS <a> is in another tag inside the <div>)
     tag::first-line {rules for first line of tag selected}
