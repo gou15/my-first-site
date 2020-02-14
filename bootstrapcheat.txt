@@ -119,18 +119,67 @@ use .form-check for radio and checkbox div elements
     <input> and <label> elements are equal line elements (no effect on functionality, just cleanliness)
 add .form-check-inline in div element to move checkboxes/radios horizontally rather than vertically
     i.e. <div class="form-check form-check-inline">
-blank radio/checkboxes require .position-static in <input> element so they stay pretty
+blank/unlabeled radio/checkboxes require .position-static in <input> element so they stay pretty
 
 inserting rows and columns inside of forms allows for styling flexibility
 just add .row divs and .col subdivs as children to the form elements
 using .form-row instead of just "row" is a style variant that makes things tighter
 
 horizontal forms (label left of input rather than on top of input)
-.row gets added to all child div elements of row element
-.col in child divs of above child divs
-    <labels> will need .col-form-label so they understand what's up
-    add -SZ classes to label and legend elements if you change size of input elements so they look nice
-    
+    .row gets added to all child div elements of row element
+    .col in child divs of above child divs
+        <labels> will need .col-form-label so they understand what's up
+        add -SZ classes to label and legend elements if you change size of input elements so they look nice
+
+    there's more for forms... but now
+
+NAVBARS! https://getbootstrap.com/docs/4.3/components/navbar/
+
+.navbar with .navbar-expand-SZ for responsive, collapsing navbar
+navbars are fluid by default, and disappear when printing (unless .d-print with navbar class)
+all sorts of utility classes here, color schemes, optional containers, spacing, flex
+use <nav> element for navbars (if using <div> add role="navigation attribute)
+.navbar-brand for company/product/project name
+.navbar-nav for full-height, lightweight navigation (dropdowns allowed)
+.navbar-toggler for use with collapse
+.form-inline for any form controls/actions
+.navbar-text for adding vertically centered text strings
+.collapse.navbar-collapse for grouping and hiding navbar contents by a parent breakpoint
+bring it all together:
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
 
 
 
