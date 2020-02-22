@@ -65,7 +65,14 @@ can use these operators in constant/variable definitions as well
 follows order of operations (BEDMAS) rules
 division by 0 results in Infinity so the world doesn't asplode
 using the % sign will return the remainder of a quotient
-increment and decrement operators
+increment and decrement operators modify the var by + or - 1
+    varDefinition++ or ++varDefinition (or --)
+    (similar to using varDefinition = varDefinition + 1;)
+    to change increment/decrement value, use your operator and an equal sign, followed by the inc/dec value
+    varDefinition += 10; varDefinition *= 2;
+    these are all called assignment operators
+
+
 
 
 
