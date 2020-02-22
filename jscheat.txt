@@ -1,0 +1,72 @@
+type node in terminal to start node.js
+ctrl c to exit node in terminal
+.js files are javascript files
+create js file and execute that file using "node file.js" in terminal (directory must match file location)
+to declare a variable... (variables must start with a small letter, other words capitalized, smells good)
+    var variableName;
+this type of variable format (small letter then big letters) is called "camel case"
+variables are assigned definitions using = "definition";
+    variableName = "variableDefinition";
+    where variableDefinition is a number, do not use quotes
+multiple variables can be declared on same line using commas between variable names
+    var variableName, variableName2;
+variables can also be declared and assigned on same line
+    var variableName = "variableDefinition";
+    can only declare/assign single variables per line
+console.log(variableName); returns variable value in console
+console.log("String of Characters ", variableName); returns "String of Characters variableDefinition" in console
+use "let" to define variables, smells nicer, can be used in place of "var"
+    let variableName = "variableDefinition";
+
+a variable that never changes is a constant, defined with const
+an error will be returned if the value of a constant is instructed to be changed
+
+var/let/const base types are as follows:
+    string (textual data), number (numbers), boolean (true or false), undefined (a variable without a value), and null (intentionally valueless)
+    operations are going to be related to data type we choose
+
+STRING data has single or double quotes around it i.e. let varName = "String of text";)
+console.log(variableName, variableName2); returns multiple variable values in console
+console.log(variableName + variableName2); returns multiple variable values in console without spaces
+    using the plus sign is called concatenation
+to insert variables in the middle of string data use template literals
+    ${variableName} to insert variables into string data and use back ticks (`) to frame the string data instead of quotes (")
+        var variableName = "variableDefinition";
+        var template =`Welcome ${variableName} to my site`;
+        console.log(template);
+    this gives you the same result as string concat, but it's easier
+using single quotes allows you to put double quotes in your string data and vice versa
+
+NUMBER data does not use quotes (adding quotes makes it a string and then cannot be manipulated mathematically)
+
+BOOLEAN data only accepts true or false as a value
+    let booleanVar = true;
+    returns the values "true" and "false" when output to the console
+
+UNDEFINED data is, well, not definined, and it can be assigned to variables without quotes as follows:
+    let undefinedVar = undefined;
+    returns the value "undefined" when output to the console
+
+NULL data is also not definied, but is done so intentionally
+    let nullVar = null;
+    returns the value "null" when output to the console
+
+the typeof operator returns a string indicating the type of variable
+    console.log(typeof varName);
+        this will return the type of data that variable varName is stored as (string, boolean, etc...)
+
+ARITHMETIC!
+can use + - * / on literals/variables/constants and return numerical values
+can use these operators in constant/variable definitions as well
+    const ageOne = 34;
+    const ageTwo = 16;
+    const result = ageOne + ageTwo;
+    console.log(result + 2);
+follows order of operations (BEDMAS) rules
+division by 0 results in Infinity so the world doesn't asplode
+using the % sign will return the remainder of a quotient
+increment and decrement operators
+
+
+
+
