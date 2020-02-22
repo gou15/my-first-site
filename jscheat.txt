@@ -71,6 +71,38 @@ increment and decrement operators modify the var by + or - 1
     to change increment/decrement value, use your operator and an equal sign, followed by the inc/dec value
     varDefinition += 10; varDefinition *= 2;
     these are all called assignment operators
+equality operators compare variable values
+    == returns if they are equal or not (true or false)
+    != returns if they are inqequal or not (true or false)
+    > and < returns true or false based on variable values
+    >= and <= returns same thing
+    the above all work on number variables and string variables containing numbers
+    to get "strict" equality, add another = at the end (=== or !==), only returns true if variables are same data type
+logical operators start getting into your IF AND THEN NOT OR and ELSE statements
+    && = AND (returns Boolean result based on parameters)
+    || = OR (evaluates expressions in order since only 1 needs to be true)
+    ! = NOT (inverses Boolean result)
+
+string special characters (use \ to get things to happen in string data)
+    \n = new line, \t = tab, \r = carriage return
+    can be used to "escape" characters that would otherwise be recognized as code (quotes, brackets, slashes)
+string object properties can be used to return information about a string object
+    length returns # of characters in object
+        (varDefinition.length); gives number of characters in varDefinition
+        ("TEXT TEXT TEXT".length); also works
+    length can also be stored as a variable
+
+OBJECT METHODS give us different functionality for different data types
+STRING METHODS can be called when we have a string variable
+use a dot before the method name to call the method and add (); to execute the method
+can feed values to the method (called parameters) by putting them in the brackets
+    stringVar.method();
+    stringVar.method(methodParameter, methodParameter2);
+    this will return a new string with the text of the inputs
+concat method will put strings together
+    stringVar.concat(stringVar2); will return stringVar(value)stringVar2(value)
+    stringVar.concat("TEXT", "TEXT2") will return stringVar(value)TEXT TEXT2
+toUpperCase and toLowerCase transforms string data to uppercase and lowercase letters
 
 
 
