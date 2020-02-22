@@ -1,0 +1,10 @@
+let age = 16;
+let phone = 123456789;
+let streetName = "Fake Street";
+let streetNumber = 123;
+var templateOne = `I'm ${age} years old`;
+var templateTwo = `My phone number is ${phone}`;
+var templateThree = `I live on ${streetNumber} ${streetName}`;
+console.log(templateOne);
+console.log(templateTwo);
+console.log(templateThree);

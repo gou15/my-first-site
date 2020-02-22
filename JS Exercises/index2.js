@@ -1,0 +1,10 @@
+var firstName;
+    firstName = "Michael";
+var lastName;
+    lastName = "Jezegou";
+var age;
+    age = 34;
+var address;
+    address = "123 Fake Street";
+var dateOfBirth;
+    dateOfBirth = "03/05/1985";

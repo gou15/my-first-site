@@ -1,0 +1,12 @@
+let number = 9;
+console.log(number + " times 0 equals " + 0 * number);
+console.log(number + " times 1 equals " + 1 * number);
+console.log(number + " times 2 equals " + 2 * number);
+console.log(number + " times 3 equals " + 3 * number);
+console.log(number + " times 4 equals " + 4 * number);
+console.log(number + " times 5 equals " + 5 * number);
+console.log(number + " times 6 equals " + 6 * number);
+console.log(number + " times 7 equals " + 7 * number);
+console.log(number + " times 8 equals " + 8 * number);
+console.log(number + " times 9 equals " + 9 * number);
+console.log(number + " times 10 equals " + 10 * number);
