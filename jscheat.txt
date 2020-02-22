@@ -103,8 +103,16 @@ concat method will put strings together
     stringVar.concat(stringVar2); will return stringVar(value)stringVar2(value)
     stringVar.concat("TEXT", "TEXT2") will return stringVar(value)TEXT TEXT2
 toUpperCase and toLowerCase transforms string data to uppercase and lowercase letters
-
-
+charAt returns character at specific index
+    stringVar.charAt(2); returns the THIRD character from the left (first character is in position 0)
+    can be used in combinations with string property length to return last character value
+        stringVar.charAt(stringVar.length - 1);
+slice extracts a section of the string data and returns it as a string
+    stringVar.slice(4, 15) will return characters in index 5 thru 14
+    omitting the 2nd digit will return all characters after index 4
+    can slice from right to left by setting a negative value
+        stringVar.slace(0, -25) slices index 0 from left and then 25 index values from right, returns value between those 2 slices
+        
 
 
 
