@@ -154,5 +154,60 @@ ELSE IF statements checks another specific condition
     else if (number === 5) {console.log("Your number is 5");}
     else {console.log("Will ONLY see this message when condition for above if statement is false.");}
     console.log("Will ALWAYS see this statment.");
+SWITCH statements make ELSE IF statements neater
+    switch(variable){
+        case "value1":
+            action when variable = value1;
+        break;
+        case "value2":
+            action when variable = value2;
+        break;
+        etc... etc...
+        default:
+            action when variable = no other expected values
+        }
+        case allows you to define what happens in the case that the chosen variable matches the value
+        break ensures the script does not continue to run after a case is true
+        default is basically your ELSE statement
+
+    EXAMPLE
+        const name = "Miriam";
+        let message = null;
+        switch (name) {
+        case "Miriam":
+            message = "The name is Miriam";
+        break;
+        case "Felipa":
+            message = "The name is Felipa";
+        break;
+        case "Xime":
+            message = "The name is Xime";
+        break;
+        case "Belu":
+            message = "The name is Belu";
+        break;
+        default:
+            message = "The name is not Miriam, Felipa, Xime or Belu";
+        }
+    console.log(message);
+
+TRUE and FALSE (Boolean)
+all values are true unless they are defined as false (false, null, undefined, 0, NaN, ", or an empty string ())
+null values are evaluated as an object so will return as "true", need to add extra validation to account for null values
+    var stringVar = "";
+    if (stringVar && stringVar != null) {
+        console.log(`Welcome ${stringVar});}
+    else {
+        console.log("Please input your name");}
+
+WHILE statements create a loop as long as conditions are true
+    let number = 0;
+    while (number < 11){
+        console.log(number);
+        number++;
+        }   this string of code will force the terminal to count up from 0 to 10
+
+
+
 
 
