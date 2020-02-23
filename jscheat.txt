@@ -225,7 +225,15 @@ FOR statements create a loop with 3 expressions
         }
             a number variable is initialized, it's condition is evaluated as true or false, then the final expression is executed (if condition = true)
 a FOR statement is a cleaner WHILE statement
+BREAK terminates a loop or switch statement
+    for (let index = 0; index < 1000; index++) {
+  if (index < 10) {
+    console.log(index);
+  } else {
+    break;
+  }
+}   this string of code is only going to display 0 thru 9 since it breaks once the index reaches 10
 
-
+FUNCTIONS! ... next time
 
 
