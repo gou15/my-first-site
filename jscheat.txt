@@ -206,7 +206,25 @@ WHILE statements create a loop as long as conditions are true
         console.log(number);
         number++;
         }   this string of code will force the terminal to count up from 0 to 10
+DO WHILE statements are different in that the code will be executed at least once before checking the condition
+    let number = 2
+    DO {
+        console.log(number);
+        number++;
+    } WHILE (number <= 1); this code will display number 2 and then stop since the code is executed first and then the condition is checked
 
+FOR statements create a loop with 3 expressions
+    for (itialization; condition; finalExpression){
+        console.log(initialization);
+    }
+    initialization is a variable declaration
+    condition is to be evaluated before each loop
+    finalExpression to be evaluated at the end of each loop
+        for (let number = 0; number <= 10; number++) {
+            console.log(number);
+        }
+            a number variable is initialized, it's condition is evaluated as true or false, then the final expression is executed (if condition = true)
+a FOR statement is a cleaner WHILE statement
 
 
 
