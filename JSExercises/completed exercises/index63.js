@@ -1,4 +1,4 @@
-let year = 2009.5;
+let year = 2009;
 let champion = null;
 switch (year){
     case 2006:
