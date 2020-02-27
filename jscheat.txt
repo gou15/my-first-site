@@ -234,6 +234,70 @@ BREAK terminates a loop or switch statement
   }
 }   this string of code is only going to display 0 thru 9 since it breaks once the index reaches 10
 
-FUNCTIONS! ... next time
+FUNCTIONS! functions are a value and used to group actions
+must be defined before execution
+    function functionName() {
+        actions you want from said function;
+    }
+    functionName(); (this will perform the actions assigned to functionName)
+
+    function greeting(){
+        console.log("Hello)
+    }
+    greeting();     (calling the greeting function like this will return "Hello" in the console)
+
+functions can be assigned to variables
+if you assign a function to a variable the function can be nameless, since it is assigned to a variable
+functions with no name are "anonymous"
+    let greeting = function(){
+        console.log("Hello");
+    }
+    greeting();
+
+a function doesn't necessarily have to display a value
+to explicitly return a value from the function we use "return"
+    function getGreetingMessage(){
+        return "Hello";
+    }
+    getGreetingMessage();   (this shows nothing in the console, even though "Hello" is "returned")
+we can use the returned value for anything (can display it in console, assign it to a variable, etc...)
+    var greeting = getGreetingMessage();
+    console.log(greeting);
+functions can return different data types (strings, numbers, boolean, null, undefined...)
+returned values can be used as conditionals
+functions can accept none, one, or multiple parameters
+functions are more flexible with parameters
+can also use the same function for different parameter values
+    function greeting(username) {
+        console.log("Hi " + username + "!!!");
+    }
+    greeting("Marta");
+    greeting("Xime");
+    greeting("Raul");
+        here we defined the greeting function, allowed to accept a username parameter, then called the function with different username parameters
+            you are "passing" parameters into the function you called
+can refactor this using anonymous functions
+    var getGreetingMessage = function(username){
+        return "Hi " + username + "!!!";
+    };
+    console.log(getGreetingMessage(Michael));
+        defined a getGreetingMessage variable with a function as it's value, function accepts username, call variable with parameter to pass into function
+
+a function will take multiple parameters and pass them in the same order they are listed
+    function greeting (name, age, gender){
+        console.log (`Use ${name} is ${age} and identifies as a ${gender}.`)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
