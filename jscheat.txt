@@ -242,7 +242,7 @@ must be defined before execution
     functionName(); (this will perform the actions assigned to functionName)
 
     function greeting(){
-        console.log("Hello)
+        console.log("Hello")
     }
     greeting();     (calling the greeting function like this will return "Hello" in the console)
 
@@ -265,7 +265,9 @@ we can use the returned value for anything (can display it in console, assign it
     console.log(greeting);
 functions can return different data types (strings, numbers, boolean, null, undefined...)
 returned values can be used as conditionals
+
 functions can accept none, one, or multiple parameters
+when you define your function you dictate what your parameter is called, and when you call your function you dictate the value of the parameters to send to the function
 functions are more flexible with parameters
 can also use the same function for different parameter values
     function greeting(username) {
@@ -285,19 +287,367 @@ can refactor this using anonymous functions
 
 a function will take multiple parameters and pass them in the same order they are listed
     function greeting (name, age, gender){
-        console.log (`Use ${name} is ${age} and identifies as a ${gender}.`)
+        console.log (`User ${name} is ${age} and identifies as a ${gender}.`)
     }
 
+ARRAYS - an array literal is a list of >= 0 expressions
+each value represents an array element
+values are closed in another bloody bracket type, the square guys, []
+array literals are initialized with specified values as elements, and its length is set to the number of arguments specified
+now we can store multiple values into a variable
+	["name1", "name2", "name3", "name4"];
+	this is an array literal of name values, stored as strings, and containing 4 items
+		let people = ["name1", "name2", "name3", "name4"];
+		now the array is stored as the variable "people"
+an empty array can be assigned to a variable as well, use []
+an array can continue mixed data types, it's ok to store numbers string booleans null, functions, and undefined data in the same array
+items can be retrieved from an array using the index value (first item in array is index value 0, last item is qty of index elements -1)
+	let people = ["name1", "name2", "name3", "name4"];
+	console.log(people[1]); (returns value "name2:)
 
+	let people = ["name1", "name2", "name3", "name4"];
+	const name = people[3]; (stores name4 as constant "name")
 
+	let people = ["name1", "name2", "name3", "name4", function(){
+		console.log("hi");
+	}];
+	const name = people[3]; (stores name4 as constant "name")
+	const yo = people[4]; (stores function as constant "yo")
+	yo();	(this calls the anonymous function and returns "hi" in the console)
 
+you can also write new values into the array using the index value
+	let people = ["name1", "name2", "name3", "name4"];
+	people[0] = "name5";	(this will overwrite name1 and replace it with name5)
 
+empty array items are possible:
+	let people = ["name1", "name2", "name3", "name4"];
+	people[5] = "name5";
+	console.log(people);	(will return "name1, name2, name3, name4, , name5" since index position 4 is empty in this 6 item array)
 
+ARRAY METHODS
+length - how many items are in the array
+	let people = ["name1", "name2", "name3", "name4"];
+	console.log(people.length); (returns "4" as a number as it counts indices)
+	let lastPerson = people[people.length - 1]; (stores last value in the people array as the variable lastPerson (name4))
 
+push - adds elements to the end of an array (you can call the push multiple times to continue adding elements to the array)
+	let people = ["name1", "name2", "name3", "name4"];
+	let peopleCount = people.push("name5", "name6");
+	console.log(people);	(returns new array containing name 5 and name 6 in indices 4 and 5)
+	console.log(peopleCount);	(returns value "6" as a number as it stores the new number of elements inside the array)
 
+unshift - does the same as push but adds elements to the beginning of an array
+	let people = ["name1", "name2", "name3", "name4"];
+	let peopleCount = people.unshift("name5", "name6");
+	console.log(people);	(returns new array containing name 5 and name 6 in indices 0 and 1, remainder of elements stay in order but occupy indices 2 thru 5)
+	console.log(peopleCount);	(returns value "6" as a number as it stores the new number of elements inside the array)
 
+shift - removes the first element from the array, and returns the removed element (length of array changes)
+	let people = ["name1", "name2", "name3", "name4"];
+	let peopleOne = people.shift();
+	console.log(people);	(returns "name2, name3, name4" in console)
+	console.log(people.length);	(returns "3" stored as a number, new length of array)
+	console.log(peopleOne);	(returns "name1" in console)
 
+pop - same as shift but removes last element from the array
+	let people = ["name1", "name2", "name3", "name4"];
+	let peopleOne = people.pop();
+	console.log(people);	(returns "name1, name2, name3" in console)
+	console.log(people.length);	(returns "3" stored as a number, new length of array)
+	console.log(peopleOne);	(returns "name4" in console)
 
+sort - not necessarily stable, sorts the elements of an array and returns it, default sort order is according to string Unicode code points
+	let numbers = [1, 4, 2, 5, 3, 8, 9];
+	let orderedNumbers = numbers.sort();
+	console.log(orderedNumbers);	(returns "1, 2, 3, 4, 5, 8, 9" as numbers, sorted numerically)
 
+reverse - flips the orders of the elements in the array
+	let people = ["name1", "name2", "name3", "name4"];
+	let peopleReverse = people.reverse();
+	console.log(people);	(returns "name1, name2, name3, name4" in console)
+	console.log(peopleReverse);	(returns "name4, name3, name2, name1" in console)
 
+join - joins all elements of an array into a string, accepts a string value to join by
+	let people = ["name1", "name2", "name3", "name4"];
+	let peopleSeven = people.join(" 7 ");
+	let peopleDash = people.join(" - ");
+	console.log(peopleSeven);	(returns "name1 7 name2 7 name3 7 name4" in console)
+	console.log(peopleDash);	(returns "name1 - name2 - name3 - name4" in console)
 
+concat - merges multiple arrays (does not change existing ones, just returns a new one)
+	let people = ["name1", "name2", "name3", "name4"];
+	let numbers = [1, 4, 2, 5, 3, 8, 9];
+	let peopleAndNumbers = people.concat(numbers);
+	console.log(peopleAndNumbers);	(returns "name1, name2, name3, name4, 1, 4, 2, 5, 3, 8, 9" as string data)
+
+indexOf - returns the first index at which the given element is found, returns value of -1 if value is not in array
+	let people = ["name1", "name2", "name3", "name4"];
+	if (people.indexOf("name2") > -1){
+		console.log("name2 is in the array");
+	}
+	else {
+	console.log("name2 is not in the array");
+	}
+		in this example the value of people.indexOf("name2") == 1
+
+toString - returns a string representing the array and its elements
+	let people = ["name1", "name2", "name3", "name4"];
+	console.log(people.toString());	(returns "'name1', 'name2', 'name3', 'name4'" in console)
+		kind of like calling people.join(", ");
+
+forEach - executes a provided function once for each array element
+	let people = ["name1", "name2", "name3", "name4"];
+	people.forEach(function(person, index){
+		console.log("index", index);
+		console.log(person);
+	});	(returns "index 0 name1 index 1 name2 index 2 name3 index 3 name4" in console)
+
+map - creates a new array with the results of calling a provided function on every element
+	let people = ["name1", "name2", "name3", "name4"];
+	let peopleUpper = people.map(function(person){
+		return person.toUpperCase();
+	});
+	console.log(peopleUpper); (returns NEWLY CREATED peopleUpper array in all caps)
+	console.log(people); (returns original array, no modification)
+
+filter - creates a new array with all elements that meet condition of the function
+	let people = ["name1", "name2", "name3", "name4"];
+	let goodPeople = people.filter(function(good){
+		return good === "name3";
+	});
+	console.log(goodPeople); (returns only "name3" as it is the only value in the NEWLY CREATED goodPeople array)
+	console.log(people); (returns full people array)
+
+reduce - applies a function against an accumulator and each element in the array to reduce it to a single value
+	accepts two parameters - accumulator and currentValue
+		let numbers = [1, 2, 3, 4, 10, 5];
+		let result = numbers.reduce(function(accumulator, currentValue){
+			return accumulator + currentValue;
+		});
+		console.log(result);	(returns only the number 25
+
+OBJECTS! - an object literal is a list of >= 0 pairs of property names and associated value of said object
+an object is defined using {}, can define more complex values more easily
+names and values are associated using a :
+can change values of an object in the same way you would do a variable, just use the objectName.propertyName
+	const person = {
+		name: "Michael",
+		age: 34,
+		sex: "yes"
+	};
+	console.log(person); (will return all names and values)
+	console.log(person.sex); (will return "yes")
+	console.log(person.phone); (will return an undefined value)
+	person.sex = "no";
+	person.phone = 3061234567
+	console.log(person.sex); (will now return "no")
+	console.log(person.phone); (will now return "3061234567" as a number as we have written the property "phone" into the object" person")
+object properties are variables too so we can assign or retrieve their value
+functions can be stored inside of object properties as well, add (); to the end of the property you are calling to retrieve the function value inside that property
+	const person = {
+		name: "Michael",
+		age: 34,
+		greet: function(name){
+			console.log(`Hi ${name}, sup?');
+		}
+	};
+	person.greet("Milayna");	(returns Hi Milayna, sup? in console);
+in the above example we defined a function which accepted a parameter name as the value of property "greet" inside object "person"
+then, we called the greet value and defined the name parameter to return the appropriate message
+
+if we want to access information from within an object when we define a property value as a function, use "this"
+	const person = {
+		name: "Michael",
+		age: 34,
+		greet: function(name){
+			console.log(`Hi ${this.name}, sup?');
+		}
+	};
+	person.greet();	(returns Hi Michael, sup? in console);
+
+can also update object property values inside an object method
+	const person = {
+		name: "Michael",
+		age: 34,
+		greet: function(name){
+			console.log(`Hi ${this.name}, sup?');
+		},
+		birthday: function(){
+			this.age++;
+		}
+	};
+	console.log(person.age); (returns 34)
+	person.birthday();
+	console.log(person.age); (now returns 35 as the value of property birthday was executed)
+if you want to return object properties as string values, use []
+	console.log(person["age"]); (will return 35 as a string from above example)
+
+Object.keys() returns all properties of an (object) but not their values as an array
+	console.log(Object.keys(person));	(returns name, age, greet, birthday (but not any of the values associated with those properties))
+
+bring it in:
+	const person = {
+		name: "Michael",
+		age: 34
+	};
+	person.phone = 3061234567;
+	person.street = "123 Fake Street";
+
+	const properties = Object.keys(person);
+	
+	properties.forEach(function(property){
+		console.log(person[property]);
+	});
+		(this returns "Michael 34 3061234567 123 Fake Street" as a string in the console)
+in the above example we define an object PERSON with properties NAME and AGE, values Michael and 34
+then we write properties PHONE and STREET into the object PERSON with values 3061234567 and 123 Fake Street
+we define the constant PROPERTIES as an array containing all the properties of the object PERSON as its values
+we run the forEach method on the PROPERTIES array, executing the defined function on each value in the array
+the function assigns the PROPERTY variable to each value in the array and the console returns the PROPERTY variable as a string
+the PROPERTY variable is reassigned to each property value as the .forEach method applies the function to each property of the object
+hence the console returns variable PROPERTY for each value of each object property
+Duh
+
+a callback function is a function passed into another function as an argument, then invoked inside the outer function to complete some kind of action
+since JavaScript is asynchronous and we don't know how the code is going to execute, this kind of "sets order" to the execution of our code
+a callback is a function passed as a parameter to another function
+the function that receives the function as a parameter will call the other function
+	let number = 0;
+	function add(n, callback) {
+	n++;
+	callback(n);
+	}
+	add(number, function(result) {
+		console.log(result); (returns 1)
+	});
+	console.log(number); (returns 0)
+
+we've kind of already been doing this:
+	let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+	numbers.forEach(function(number) {
+	console.log(number);
+	});
+
+	let evenNumbers = numbers.filter(function(number) {
+	return number % 2 === 0;
+	});
+
+	let result = numbers.reduce(function(result, number) {
+	return result + number;
+	});
+
+	let mappedNumbers = numbers.map(function(number) {
+	return number + 10;
+	});
+
+filter, reduce, and map functions are all receiving functions as parameters, and those functions are getting called internally
+jQuery used $() to pass as a callback function - jQuery uses it to get all the code that needs to execute once the document is loaded
+we'll see this a lot when coding with JS
+
+because JS is asynchronous you can declare variables and define functions almost anywhere
+	console.log(name);  (returns Michael, although name is not been declared yet)
+	name = "Michael";
+this is a practice called "hoisting"
+Javascript runs through the code twice (first to check variable and function definitions and move them to higher parts of the code, then to execute the remaining code), so it doesn't really matter where we put things
+	greet(); (returns a message without the function being defined yet)
+	function greet(){
+		console.log("Message without being defined");
+	}
+it's better to declare and define things followed by using them, but the point is that hoisting is possible
+
+scope is the context of execution in which values and expressions can be referenced
+variables and functions can be defined globally or locally within functions
+it is not a great practice to have functions access the global environment - functions shouldn't be be dependent on the context to work
+it's better to pass variables to functions as parameters
+	let name = "Michael";
+	function showName(){
+		name = "Milayna";
+		console.log(name);
+	}
+	console.log(name); (returns Michael)
+	showname(); (returns Milayna)
+	console.log(name); (now returns Milayna as name was redefined globally when the function ran)
+better practice...
+	function showName(){
+		let name = "Michael";
+		console.log(name);
+	}
+	showName(); (returns Michael)
+	console.log(name); (returns undefined as it is reaching for a global variable which has not been declared)
+scope works from inner to outer bounds
+	let and const have block element scope (can be called inside of functions without being defined globally)
+	var does not have block element scope (even when called in a function it will define the variable globally)
+
+functions can have other functions inside of them
+	function welcome() {
+		function greeting() {
+			console.log("Hi Coco!!!");
+		}
+		greeting();
+	}
+
+	welcome(); (returns "Hi Coco!!!" - function welcome calls child function greeting)
+	greeting(); (returns undefined since this is trying to call a block function globally)
+another example (child function can reach parent parameters in this one)
+	function welcome(name) {
+		let message = "welcome ";
+
+	function greet(value) {
+		return message + " " + value;
+  		}
+  	return greet(name);
+	}
+	console.log(welcome("Coco")); (returns "welcome Coco")
+
+an argument is an array-like object corresponding to the arguments passed to a function
+its value conatins all the parameter values passed to a function, has a length property
+	function greet() {
+		console.log(arguments); (returns "{ '0': 'Jarry', '1': 'Coco', '2': 'Nico' }")
+		console.log(arguments.length); (retrusn 3)
+		console.log(arguments[0]); (returns 'Jarry')
+	}
+greet("Jarry", "Coco", "Nico");
+
+recursion is what happens with a function calls itself, used to solve problems containing sub-problems, really important to add a way to break to avoid recursion forever...
+	function showNumber(number) {
+		if (number <= 10) {
+			console.log(number);
+			number++;
+			showNumber(number);
+  		}			
+	}
+	showNumber(0);
+showNumber is our recursive function with will stop calling itself once our number > 10
+
+a function can return a function, since a function is a value, and functions return values
+	function greet() {
+		let otherFunction = function() {
+			console.log("Banana!");
+		};
+	return otherFunction;
+	}
+
+	let myFunction = greet();
+	console.log(typeof myFunction); (returns 'function')
+	myFunction(); (returns "Banana!")
+when we call the greet function we get otherFunction back
+we call the greet function when myFunction() is executed, which returns the otherFunction, resulting in returning "Banana!" in the console
+	function add(number) {
+		let addBothNumbers = function(otherNumber) {
+			return number + otherNumber;
+		};
+		return addBothNumbers;
+	}
+	const adding = add(10);
+	const result = adding(20);
+	console.log(result);
+
+in the above example we call the add function passing 10 as a parameter
+	the add function returns the addBothNumbers function which accepts a parameter
+	we assign the returned function in the adding constant
+	we pass a parameter that we called in the adding function (20)
+	addBothNumbers gets executed using the adding function
+	addBothNumbers adds the value we got from the otherNumber parameter (20) and the number that was passed as a parameter to the parent function (10)
+	addBothNumbers still has access to the number value as it is in scope
+	both numbers are added inside the addBothNumbers function, returned to the adding function, assigned to the result constant, and displayed in the console
