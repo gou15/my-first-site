@@ -360,6 +360,15 @@ sort - not necessarily stable, sorts the elements of an array and returns it, de
 	let numbers = [1, 4, 2, 5, 3, 8, 9];
 	let orderedNumbers = numbers.sort();
 	console.log(orderedNumbers);	(returns "1, 2, 3, 4, 5, 8, 9" as numbers, sorted numerically)
+	function compare(a, b){
+		if (a>b){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+
 
 reverse - flips the orders of the elements in the array
 	let people = ["name1", "name2", "name3", "name4"];

@@ -18,7 +18,7 @@ function getHexaColor(color){
         return "#fec1cc";
     }
     else{
-        return "Super Error"
+        return "Super Error";
     }
 }
 console.log(getHexaColor("white"));
