@@ -1,0 +1,160 @@
+Peel some stuff from smwcentral.net
+Should be able to iframe some stuff or direct link to screenshot slideshows
+
+Super Mario Font https://www.dafont.com/super-mario-256.font
+More Mario Fonts https://www.fontspace.com/category/mario
+Mario Font image generator https://fontmeme.com/super-mario-font/
+Maybe a NavBar header? https://www.font-generator.com/fonts/SuperMarioBros/
+Can record screen with VLC Player
+YouTube to gif creator https://gifrun.com/youtube
+Way better YouTube to gif creator https://gifs.com/
+
+Splash page
+	One or two line tag about website "You want to start Kaizo Super Mario World? Get in here." Something like that. That's bad though.
+	Welcome
+	Continue as guest
+	Continue as member
+		Login page
+	Register as member
+		Registration page
+
+Home
+	Changelog/updates
+	Adult language, expletives, and crude humor contained in video links. If this offends you then you probably don't have the patience for Kaizo Mario. May I suggest mylittle pony?
+	What to expect here
+	What not to expect
+	Directions to Nav Bar
+	Random fact of the day
+	Random video of the day
+
+On the Nav Bar...
+	FAQ and Definitions
+		Kaizo
+		ROM
+		Hack (One level, 10 levels, 200+ levels)
+		Lunar Magic - Download - https://www.smwcentral.net/?p=section&a=details&id=22115   How to - https://www.smwcentral.net/?p=faq&page=1219834-getting-started  Also Barb's 3 hour tutorial with annotations
+		Legality - patches and emulators are 100% legal, ROMS are 100% legal if you own the game, no links to ROMs on this site, you must patch your own ROM - you cannot download a ROM hack here, but you can download everything you need to patch your own ROM
+		Weird game names
+		Why not just Mario Maker?
+		ASM
+		TAS
+		RNG
+		Vanilla
+		Chocolate
+		Troll
+		Oh my god it's so hard!
+		Kaizo Light - Kaizo Mario World or easier (Akogare)
+		Kaizo Hard - Harder than Kaizo Mario World but achievable by human with emulator tools (slowdown, save states, not possible on original SNES hardware, not fun, do not recommend, but check out Magnum Opus by GoSeigen (450 hours for him to beat it) https://www.youtube.com/watch?v=0xLeiwxMWOU
+		Kaizo Pit - TAS only (fun to watch, don't even try), Item Abuse
+		Clean
+		Header
+		Not Kaizo Hacks
+		Not Mario Hacks - https://www.romhacking.net/
+		Definitive Source smwcentral
+		Other Kaizo Mario - yes! SM64, SMB3... but not here
+	Streamers/Personalities
+		Panga
+		Dram
+		Barb
+		Poo
+		LaserBelch
+		Ryukahr
+		Juzcook
+		Dode
+		NobleTofu
+		Carl Sagan
+		GlitchCat7
+		chrisg (check some credits of various games, look at Jump team), Hank_Sinatra, IcyFruit, ughRochester, 3catswatchingtopgun, DaWildGrim, mitchflowerpower, white_moth, electronicLogic, Calco2, Arisendead, westslasher2, linkdeadx2, Valdio, Freakin'_Ha, osumariokartman
+	How to Play	https://www.smwcentral.net/?p=viewthread&t=88029&page=1&pid=1399053#p1399053
+		Legally acquire a ROM
+		Download X program
+		Header your ROM 	https://bin.smwcentral.net/u/6562/HeAdder.exe
+		Clean your ROM		https://www.smwcentral.net/?p=section&a=details&id=12178
+		Download X patch
+		Use program to patch	https://www.smwcentral.net/?p=section&a=details&id=11474
+		Acquire an emulator (SNES 9x recommended, ZSNES highly not recommended)  http://www.snes9x.com/downloads.php
+		Those are the tools... you are ready
+		OK I want to start playing... (link)
+	History/What is Kaizo
+		Hacking around for a while
+		Difficult hacks around before kaizo hacks
+		Kaizo Mario World 1 https://en.wikipedia.org/wiki/Kaizo_Mario_World
+		Built for a friend
+		Takemoto
+		Not fair
+		Difference between hard and fair
+		Mario Maker
+		Rise of Twitch and streaming platforms (YouTube, Facebook, Mixer)
+		P Break... and now Kaizo is mainstream (6059-0000-005E-4FB5)
+			https://en.wikipedia.org/wiki/PangaeaPanga
+			https://kotaku.com/the-creator-of-the-hardest-super-mario-world-level-ever-1732411516
+			https://kotaku.com/mario-maker-players-are-in-an-arms-race-to-make-the-har-1739431432
+			https://www.youtube.com/watch?v=_sxY8pELhqM
+		U Break
+			https://kaizomariomaker.fandom.com/wiki/Pit_of_Panga:_U-Break
+	Game Mechanics
+		Don't be overwhelmed - a lot of kaizo players don't know the specifics of these things. It has a lot more to do with feel and timing than knowing the numbers.
+		Regrab
+		Spin Jump
+		Screen Scroll
+		Spawn/Respawn
+		Flight (P speed, fall speed, dive speed)
+		Shell/POW/spring/P jumps, including midairs
+		Turnback
+		P speed
+		Some enemy mechanics (walk off edge or not, Chucks, fishies...)
+		(rewatch Juz play Kindergarten for better mechanics)
+	OK I want to Start Playing
+		Visit How to Play (link) and follow those instructions first
+		Launch the emulator
+		Open the patched ROM
+		Super NT, SNES Classic (death counter doesn't work), SD2SNES
+		Go ahead and play - probably get yourself a controller (XBox 360 controller works natively with Windows)
+		Kaizo Kindergarten, Baby Kaizo World, Quickie World 1 and 2, Legends of Mario, Gracie World, Korosu Mario World 1 and 2, Akogare Mario World, Dram World 1 and 2, Grand Poo World 1 2 and 3, Panga World, Invictus, Claustrophobia, Ryu World 1 and 2, Sagan World, Fly Me To The Stars, Thumbshredder, GlitchCat World, Kaizo World 1 2 3, Hark World, Sheffy World 1 and 2
+	More advanced Resources
+	SMW Central	https://www.smwcentral.net/
+	Lunar Magic	https://www.smwcentral.net/?p=faq&page=1219834-getting-started  Also Barb's 3 hour tutorial with annotations
+	Mario Maker
+
+
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Kaizo || Super Mario World</title>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+            <meta name="author" content="Mike Jezegou"/>
+            <meta name="description" content="Kaizo Super Mario World is your introduction to Kaizo rom hacks, Kaizo YouTubers and Twitch streamers, and will help you get started playing your own Kaizo Super Mario World rom hacks."/>
+            <meta property = "og:image" content = ""/>
+            <meta property = "og:description" content = "Kaizo Super Mario World is your introduction to Kaizo rom hacks, Kaizo YouTubers and Twitch streamers, and will help you get started playing your own Kaizo Super Mario World rom hacks."/>
+            <meta property = "og:title" content = "Kaizo Super Mario World"/>
+            <meta name ="twitter:title" content = "Kaizo Super Mario World"/>
+            <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
+            <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+            />
+        </head>
+        <body>
+            <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
+            >
+            </script>
+            <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"
+            >
+            </script>
+            <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"
+            >  
+            </script>
+        </body>
+    </html>
