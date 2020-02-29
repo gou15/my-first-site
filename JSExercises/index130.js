@@ -1,6 +1,7 @@
-const mutants = ["Professor X", "Cyclops", "Iceman", "Angel", "Beast", "Phoenix"];
-const orderedMutants = mutants.sort();
-const reverseMutants = orderedMutants.reverse();
+let mutants = ["Professor X", "Cyclops", "Iceman", "Angel", "Beast", "Phoenix"];
+const closeMutants = [...mutants];
+const orderedMutants = closeMutants.sort();
+const reverseMutants = closeMutants.reverse();
 const joinedMutants = orderedMutants.join("*");
 console.log("Orig: " + mutants);
 console.log("Sorted: " + orderedMutants);
