@@ -1,0 +1,31 @@
+a:link {rules for links}
+a:active {rules for links to page you're already on}
+a:visited {rules for links you've already been to}
+tag:hover {rules for what happens when mouseover the tag}
+tag:last-child {rules for what happens to last child element within parent element}
+tag:focus {form rules for what happens when caret is in selected field}
+tag1 tag2 {rules for ALL tag2 inside of tag1} (NO COMMAS! descendant selector) (i.e. all <a> inside <div> regardless of whether <a> is also inside <p>, <span>, etc...)
+tag1>tag2 {rules for all tag2 DIRECTLY DESCENDED from tag1} (child selector) (i.e. all <a> inside <div> UNLESS <a> is in another tag inside the <div>)
+tag::first-line {rules for first line of tag selected}
+tag::first-letter {rules for first letter of tag selected}
+tag::after {content: "x"; rules for tags following content defined in rules}
+tag::before {content: "x"; rules for tags prior to content defined in rules}
+tag1 + tag2 {rules for all tag2 immediately following tag1 in same parent element, will only style the 1 tag immediately following} (adjacent sibling combinator)
+tag1 ~ tag2 {rules for all tag2 following tag1 in same parent element, not necessarily adjacent, will style all tags following} (general sibling combinator)
+font-family: serif; "times new roman", times, arial; (tells the browser what font to display the content in, defining multiple fonts gives browser options to find font that works for it)
+@font-face { font-family: "Name of custom font"; src: url("https://www.customfontwebsite.com/customfontfile.font");} pulls a custom font from the internet
+tag {font-size: PX or PT or XXem;} where PX is pixels, PT is points, and XXem is relative size (i.e. 2em = twice as big)
+tag {font-weight: normal or bold or bolder;} or use #100-900 where 400 is normal and 700 is bold
+tag {font-style: style;} lets you set styles like italic or oblique
+tag {text-transform: transformation;} lets you change the text to uppercase, lowercase, whatever...
+tag {text-align: alignment;} allows you to align text left, right, justify, etc...
+tag {text-decoration: decoration;} allows text decorations like none, underline, overline, line-through, and blink
+tag {text-indent: ##px;} sets indent length in pixels (i.e. 20px;)
+tag {text-shadow: x-offsetpx y-offsetpx blur-radpx color;} adds a colored shadow to the text defined by your offsets
+tag {letter-spacing: XXpx;} sets kerning (i.e. 3px)
+background-image: url(pathway/to/image.png), url(path/to/image2.png); multiple images just change from top to bottom
+background-repeat: defines how the background will be repeated (repeat-x, repeat-y, repeat, no-repeat)
+background-position: sets initial position for each background image (default top left corner)
+background-attachment: (fixed, scroll, OR local) defines how background behaves when user scrolls
+background: lets you do all of the above in ONE simple line, format as follows:
+    background: red url(to/image.png) no-repeat fixed center center

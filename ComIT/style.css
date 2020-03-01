@@ -1,0 +1,67 @@
+@font-face {
+font-family: SuperMario256;
+src: url(fonts/SuperMario256.ttf)
+}
+@font-face {
+    font-family: SuperMarioBros;
+    src: url(fonts/SuperMarioBros.ttf)
+    }
+body{
+    background: url(img/background.png) no-repeat fixed center center;
+    background-size: 100%;
+}
+dt{
+    font-family: SuperMario256;
+    font-size: 1.15em;
+}
+h1{
+    font-family: SuperMario256;
+    font-size: 2.8em;
+    text-align: center;
+}
+h2{
+    font-family: SuperMario256;
+    font-size: 2em;
+}
+h3{
+    font-family: SuperMario256;
+    font-size: 1.75em;
+}
+h4{
+    font-family: SuperMario256;
+    font-size: 1.5em;
+}
+h5{
+    font-family: SuperMario256;
+    font-size: 1.15em;
+}
+h6{
+    font-family: SuperMario256;
+    font-size: 1em;
+}
+dd {
+    text-indent: 15px;
+}
+a:link {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+footer{
+    font-family: SuperMarioBros;
+    letter-spacing: 3px;
+    font-size: 0.8em;
+    text-align: center;
+    background-color:black;
+    color: rgb(192, 192, 221);
+}
+div.myborder{
+    border: 1px gray solid;
+}
+div.bodynonav{
+    padding: 0px 25px 0px 25px;
+}
