@@ -7,8 +7,8 @@ src: url(fonts/SuperMario256.ttf)
     src: url(fonts/SuperMarioBros.ttf)
     }
 body{
-    background: url(img/background.png) fixed no-repeat center;
-    background-size: contain;
+    background: url(img/background.png) fixed center no-repeat;
+    background-size: cover;
     padding-bottom: 132px;
 }
 dt{
