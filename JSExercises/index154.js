@@ -27,7 +27,7 @@ while (player.lives > 99){
 }
 
 player.name = "Dude";
-player.loseLife();
+player.loseLife(1);
 player.loseEnergy(10);
 player.loseEnergy(5);
 player.loseEnergy(15);
@@ -35,7 +35,7 @@ player.loseEnergy(20);
 player.recoverEnergy(10);
 player.loseEnergy(30);
 player.loseEnergy(40);
-player.loseLife();
-player.recoverLife();
-player.recoverLife();
+player.loseLife(1);
+player.recoverLife(1);
+player.recoverLife(1);
 console.log(`The player ${player.name} has ${player.energy} energy and ${player.lives} lives`)

@@ -1,8 +1,8 @@
 let system = "PS4";
 let game0 = {
     name: "Crash Bandicoot",
-    price: "1060",
-    sold: "20",
+    price: 1060,
+    sold: 20,
     console: "PS4",
     showDetail: function(){
         console.log("name - " + this.name);
@@ -13,8 +13,8 @@ let game0 = {
 }
 let game1 = {
     name: "Lego Marvel Super Heroes",
-    price: "700",
-    sold: "25",
+    price: 700,
+    sold: 25,
     console: "XBOX",
     showDetail: function(){
         console.log("name - " + this.name);
@@ -25,8 +25,8 @@ let game1 = {
 }
 let game2 = {
     name: "GTA5",
-    price: "1449",
-    sold: "30",
+    price: 1449,
+    sold: 30,
     console: "PS4",
     showDetail: function(){
         console.log("name - " + this.name);
@@ -37,8 +37,8 @@ let game2 = {
 }
 let game3 = {
     name: "Mortal Kombat 11",
-    price: "1190",
-    sold: "34",
+    price: 1190,
+    sold: 34,
     console: "PS4",
     showDetail: function(){
         console.log("name - " + this.name);
@@ -49,7 +49,7 @@ let game3 = {
 }
 let game4 = {
     name: "GTA5",
-    price: "1250",
+    price: 1250,
     sold: "60",
     console: "XBOX",
     showDetail: function(){
@@ -61,7 +61,7 @@ let game4 = {
 }
 let game5 = {
     name: "Fifa 17",
-    price: "890",
+    price: 890,
     sold: "15",
     console: "PS4",
     showDetail: function(){
@@ -73,7 +73,7 @@ let game5 = {
 }
 let game6 = {
     name: "Uncharted 4",
-    price: "950",
+    price: 950,
     sold: "30",
     console: "PS4",
     showDetail: function(){
@@ -85,7 +85,7 @@ let game6 = {
 }
 let game7 = {
     name: "Mortal Combat",
-    price: "940",
+    price: 940,
     sold: "30",
     console: "XBOX",
     showDetail: function(){
@@ -97,7 +97,7 @@ let game7 = {
 }
 let game8 = {
     name: "N4S",
-    price: "790",
+    price: 790,
     sold: "10",
     console: "PS4",
     showDetail: function(){
@@ -109,7 +109,7 @@ let game8 = {
 }
 let game9 = {
     name: "Lego Batman",
-    price: "1000",
+    price: 1000,
     sold: "18",
     console: "PS4",
     showDetail: function(){
@@ -121,8 +121,8 @@ let game9 = {
 }
 let game10 = {
     name: "Fifa 17",
-    price: "1290",
-    sold: "12",
+    price: 1290,
+    sold: 12,
     console: "PS4",
     showDetail: function(){
         console.log("name - " + this.name);
@@ -133,8 +133,8 @@ let game10 = {
 }
 let game11 = {
     name: "Res Evil 7",
-    price: "1390",
-    sold: "10",
+    price: 1390,
+    sold: 10,
     console: "PS4",
     showDetail: function(){
         console.log("name - " + this.name);
@@ -145,8 +145,8 @@ let game11 = {
 }
 let game12 = {
     name: "DragonBall",
-    price: "1390",
-    sold: "25",
+    price: 1390,
+    sold: 25,
     console: "XBOX",
     showDetail: function(){
         console.log("name - " + this.name);

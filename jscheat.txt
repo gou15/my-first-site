@@ -410,6 +410,7 @@ forEach - executes a provided function once for each array element
 		console.log("index", index);
 		console.log(person);
 	});	(returns "index 0 name1 index 1 name2 index 2 name3 index 3 name4" in console)
+	ALTERNATIVELY... people.forEach(people => console.log(people))
 
 map - creates a new array with the results of calling a provided function on every element
 	let people = ["name1", "name2", "name3", "name4"];
@@ -434,6 +435,9 @@ reduce - applies a function against an accumulator and each element in the array
 			return accumulator + currentValue;
 		});
 		console.log(result);	(returns only the number 25
+
+		Array(XXX).fill().map((_, index) => index);
+			where XXX is any number, this will fill an array with numbers from 1 to XXX
 
 OBJECTS! - an object literal is a list of >= 0 pairs of property names and associated value of said object
 an object is defined using {}, can define more complex values more easily
