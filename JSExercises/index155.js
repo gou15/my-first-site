@@ -25,7 +25,7 @@ let game3 = {
 let game4 = {
     name: "GTA5",
     price: 1250,
-    sold: "60",
+    sold: 60,
     console: "XBOX",
 }
 let game5 = {
