@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <script>
+            let name = window.prompt("Enter your username");
+            let pword = window.prompt("Enter your password");
+            window.alert(`Welcome ${name}`);
+            const message = function(){
+                let logged = window.confirm("Do you still want to be logged in? OK for yes Cancel for no")
+                if (logged == true){
+                    window.alert("Your session has been restored");
+                } else {
+                    window.alert(`${name} your session has expired`);
+                }
+            };
+            setTimeout(message, 10000);
+        </script>
+        <title>
+            Running http-server
+        </title>
+    </head>
+    <body>
+        <h1>
+            Congrats!!
+        </h1>
+        <p>
+            We're using http-server locally
+        </p>
+    </body>
+
+</html>

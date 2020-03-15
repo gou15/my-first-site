@@ -1,0 +1,654 @@
+http-server in termainal launches webserver
+navigate to http://localhost:8080 to see document as deployed
+can add JS directly into HTML using <script>JS CODE</script> element
+can add JS from .js files using <script src = "script.js"></script>
+typically loaded into head or right at end of body
+when the browser finds a script tag it will request the JS code, download it, then execute it
+this stops the browser from continuing to render the document, hence it usually makes sense to drop the JS at the end of the body element
+using async lets the browser keep working (this means another JS code could be downloaded and executed before the first)
+    <script src = "script.js" async></script>
+using defer lets the browser keep working but will still execute the JS in order
+    <script src = "script.js" defer></script>
+    defer scripts are executed once the entire document is loaded
+
+WINDOW OBJECTS
+browsers have a "window" object that represents a window, can use 3 methods to interact with the user
+    window.alert(); OR just alert(); gives a popup with an OK button
+    window.prompt(); OR just prompt(); gives a popup asking for a user string input
+    window.confirm(); OR just confirm(); gives a popup with an OK and Cancel button (true and false)
+    all three accept a message parameter in the brackets to show to the user
+    prompt accepts a second parameter which is the default input value
+    values entered in the prompt are returned as string values 100% of the time
+    for confirm, OK returns true, everything else returns false
+
+LOCATION
+a URL is made up of a whole bunch of different parts...
+http://www.mywebsite.com/mario/wallet.php?sku=123%lang=en&sect=leather#mariostore
+
+the whole thing is the href
+http: is the protocol
+www.mywebsite.com is the hostname
+the hostname with the port is the host
+mywebsite is the domain name
+mario is the directory
+from mario to end is the pathname
+wallet.php is the filename
+?sku=123%lang=en&sect=leather are the query parameters
+wallet.php?sku=123%lang=en&sect=leather is the URI
+#mariostore is the hash
+
+the location interface can pull different properties of the URL:
+    let host = location.hostname sets var host to www.mywebsite.com as a string
+    location.href = "full-url" (where full-url is actuall a full URL will redirect user to that URL)
+
+TIMERS
+setTimeout() sets a timer which executes a function or piece of code ONE TIME once timer expires
+accepts 2 parameters, the first being the code that will be executed, the second being the delay in milliseconds
+    const greet = function(){
+        console.log("Hi!!");
+    };
+    setTimeout(greet, 5000); // this code will execute the greet function after 5 seconds
+    if the function you are calling also accepts parameters those parameters are entered sequentially after the code and millisecond parameters
+
+clearTimeout() stops a setTimeout timer and prevents code from being executed, effectively turning the timer off
+    let idTimeOut = setTimeout(function(){
+        console.log("Hi!!");
+    }, 5000);
+    clearTimeout(idTimeOut); // this code sets a 5 second time to execute anonymous function and then pauses the timer
+
+setInterval() sets an interval which executes a function or piece of code with a fixed delay between executions
+    const greet = function() {
+    console.log("hi");
+    };
+    const id = setInterval(greet, 1000); //this code executes the greet function every 1 second
+    this will also accept parameters for the functions it calls if the function accepts parameters in the same way that setTimeout does
+    and it'll keep going until we stop it... so... naturally...
+
+clearInterval() is used to stop interval execution
+    const greet = function() {
+    console.log("hi");
+    };
+    const id = setInterval(greet, 1000);
+    clearInterval(id); // this code sets a 1 second interval to execute the greet function and then clears the interval
+
+WORKING WITH ELEMENTS
+<p class="nice">Hello</p>
+    <p class="nice"> is the opening tag
+    class="nice" is the attribute and its value
+    Hello is the enclosed text content
+    </p> is the closing tag
+the opening tag defines the beginning of a new element
+attributes allow us to describe elements and add functionality to them (attribute = "attribute value")
+    attributes include id, class, href, src... many more
+the element content is between opening and closing tags
+the closing tag tells the browser where the element ends
+with JS we can create, insert, update, and delete elements - we can also update attributes and their values using the DOM
+
+DOM!
+DOM stands for document object model and is a programming interface for HTML and XML documents
+it represents the page so that programs can change the document structure, style, content...
+it represents the page as nodes and objects so programming languages can connect to the page
+DOM has the following types:
+    document - represents the main document
+    element - represents a document element like an HTML element
+    attribute - represents a node/element attribute
+    nodeList - is a node array and we can access the items using indexes
+
+ONLOAD!
+onload is a window object property - it's an event handler for the load event of a Window
+ensures that an event is fired only after the resource has loaded, lets us ensure that documents and elements are loaded before we reference them in our JS
+    window.onload = function(){
+        console.log("Document Loaded!");
+    };  //  this code will only execute once the document has loaded
+
+SELECTORS!
+provides methods that make it easy to retrieve element nodes from the DOM by matching against a set of selectors
+can return one or many elements depending on the method we use
+
+getElementById accepts a string parameter with the id name value
+    <div id="main">Hi I'm an HTML element</div>
+        const mainElement = document.getElementById("main");
+        console.log(mainElement); // we can see the DOM representation of this element
+        since the object we searched for with getElementById exists in the HTML it is retrieved and assigned to the mainElement var
+
+querySelector and querySelectorAll allow us to select elements using CSS selector
+both accept strings as parameters, those parameters corresponding to a CSS selector
+querySelector returns the FIRST element in the document that matches ths specified selector or group of selectors (if nothing is found then null is returned)
+querySelectorAll returns a static NodeList representing a list of the document's elements which match the group of selectors
+querySelector
+    <div>Hi I'm div number 1</div>
+    <div>Hi I'm div number 2</div>
+    <span>Hi I'm span number 1</span>
+    <span>Hi I'm span number 2</span>
+        const div = document.querySelector("div");
+        const span = document.querySelector("span");
+        console.log(div); // returns "<div>Hi I'm div number 1</div>"
+        console.log(span); // returns "<span>Hi I'm span number 1</span>"
+    
+    <div class="red">Hi I'm div number 1</div>
+    <div>Hi I'm div number 2</div>
+    <span>Hi I'm span number 1</span>
+    <span class="red">Hi I'm span number 2</span>
+        const div = document.querySelector("div.red");
+        const span = document.querySelector("span.red");
+        console.log(div); // returns "<div class="red">Hi I'm div number 1</div>"
+        console.log(span); // returns "<span class="red">Hi I'm span number 2</span>"
+
+querySelectorAll
+    <div>Hi I'm div number 1</div>
+    <div>Hi I'm div number 2</div>
+    <span>Hi I'm span number 1</span>
+    <span>Hi I'm span number 2</span>
+        const divs = document.querySelectorAll("div");
+        const spans = document.querySelectorAll("span");
+        console.log(divs); // NodeList(2) [div, div]
+        console.log(spans); // NodeList(2) [span, span]
+
+    <div class="red">Hi I'm div number 1</div>
+    <div>Hi I'm div number 2</div>
+    <span>Hi I'm span number 1</span>
+    <span class="red">Hi I'm span number 2</span>
+        const redElements = document.querySelectorAll(".red");
+        console.log(redElements); // NodeList(2) [div.red, span.red]
+
+ELEMENT ATTRIBUTES!
+element.attributes returns a LIVE collection of all attribute nodes registered to a specific node
+attributes is a key/value pair of strings that represent any info regarding that attribute
+use name to get the attribute name
+use value to get the attribute value
+    <p id="main" class="red">Text in red</p>
+        const element = document.querySelector("p");
+        console.log(element.attributes); // NamedNodeMap {0: id, 1: class, id: id, class: class, length: 2}
+        console.log(element.attributes[0].name); // id
+        console.log(element.attributes[0].value); // main
+        console.log(element.attributes[1].name); // class
+        console.log(element.attributes[1].value); // red
+
+this is easier using getAttribute
+this method accepts a string parameter with the element attribute name
+    <p id="main" class="red">Text in red</p>
+        const element = document.querySelector("p");
+        const id = element.getAttribute("id");
+        const classValue = element.getAttribute("class");
+        console.log(id); // main
+        console.log(classValue); // red
+can also use the attribute name as element property to access the attribute value
+    <p id="main" class="red">Text in red</p>
+        const element = document.querySelector("p");
+        const id = element.id; // id is an element property as the html element has the attribute
+        console.log(id); // main
+"class" in JavaScript is a reserved word, so we have the element property className instead of class
+HTML attribute = class, JS property = className
+    <p id="main" class="red">Text in red</p>
+        const element = document.querySelector("p");
+        const className = element.className;
+        console.log(className); // red
+        console.log(element.getAttribute("class")); // red
+
+CLASS LIST!
+classList is a read only property which returns a love DOMTokenList collection of the class attributes of the element
+using classList is a convenient alternative to accessing an element's list of classes as a space-delimiting string via element.className
+    <p id="main" class="red bold">Bold text in red</p>
+        const element = document.querySelector("p");
+        console.log(element.classList); // DOMTokenList(2) ["red", "bold", value: "red bold"]
+        console.log(element.classList[0]); // red
+        console.log(element.classList[1]); // bold
+classList has lots of methods to interact with those classes:
+    add (adds specified class values)
+    remove (removes specified class values)
+    item (returns class value by index in collection)
+    toggle (if class exists, remove it. if it doesn't, then add it)
+    contains (checks if class value exists)
+    replace (replaces existing class with new class)
+        <p id="main" class="red bold">Bold text in red</p>
+            const element = document.querySelector("p");
+            element.classList.add("hide"); // we add the hide class to the p element
+            element.classList.toggle("hide"); // as the element has the hide class it will remove it, otherwise it will add it
+            element.classList.remove("bold"); // we remove the bold class
+            element.classList.item(0); // using 0 based index we can get any class using the class index position
+            element.classList.contains("red"); // in this case it will return true as the element has the red class
+            element.classList.replace("red", "green"); // we change red for green class
+
+HASATTRIBUTES?!
+can test if an element has an attribute using the hasAttribute method
+accepts a string parameter with an attribute name, returns Boolean
+    <p id="main" class="red">Text in red</p>
+        const element = document.querySelector("p");
+        console.log(element.hasAttribute("class")); // true
+        if no parameters are passed to hasAttributes it'll return true if the element has any attributes at all
+
+SETATTRIBUTE!
+using setAttribute we can set the value of an attribute inside a specified element
+if attribute already exists it is updated, otherwise it is added
+accepts 2 parameters - 1st is attribute name and 2nd is attribute value
+    <h2>Element without attributes</h2>
+        const title = document.querySelector("h2");
+        console.log(title.hasAttributes()); // false
+        title.setAttribute("id", "main");
+        console.log(title.hasAttributes()); // true
+        console.log(title.getAttribute("id")); // main
+        h2 has no attributes, we test that, then we set it's id to main, now it tests true, and returns main value for id attribute
+
+REMOVEATTRIBUTE!
+removes an attribute from specified element
+adding title.removeAttribute("id"); to the above example gets rid of id entirely from the h2 element and will test false
+
+ELEMENTS RELATIONSHIP
+parentElement read-only property returns the DOM node's parent element
+<div>
+    <p>Child element</p>
+</div>
+    const paragraph = document.querySelector("p");
+    const parent = paragraph.parentElement;
+    console.log(parent); // <div></div>
+switching parentElement for children will return all children of the delement
+    const div = document.querySelector("div");
+    const children = div.children;
+    console.log(children); //<p></p>
+elements can also have siblings which are at the same level
+    <p>Paragraph element 1</p>
+    <p>Paragraph element 2</p>
+    <p>Paragraph element 3</p>
+        const paragraphs = document.querySelectorAll("p");
+        const middleElement = paragraphs[1];
+        console.log(middleElement.previousElementSibling); // <p>Paragraph element 1</p>
+        console.log(middleElement.nextElementSibling); // <p>Paragraph element 3</p>
+
+CHANGING ELEMENT CONTENT!
+innerText is a property that represents the rendered text content of a node and its descendents
+    <p>This is a great text to get using JavaScript</p>
+        const paragraph = document.querySelector("p");
+        console.log(paragraph.innerText); // This is a great text to get using JavaScript
+        paragraph.innerText = "JavaScript in browsers is amazing";
+        console.log(paragraph.innerText); // JavaScript in browsers is amazing
+        we get the text from the paragraph, then we change it, then we get it again
+innerText and textContent are pretty much identical...
+
+innerHTML gets or sets HTML or XML markup contained within the element
+accepts a DOMstring containing HTML serialization of element's descendents
+    <p>This is just a paragraph text</p>
+        const paragraph = document.querySelector("p");
+        console.log(paragraph.innerHTML); // This is just a paragraph text
+        paragraph.innerHTML = "<span>Ohhhhhhhhhhhhhhhh what are we doing??</span>";
+        console.log(paragraph.innerHTML); // <span>Ohhhhhhhhhhhhhhhh what are we doing??</span>
+    the browsers will parse this and create the proper elements so it's an easy way of creating new elements
+
+USING CSS PROPERTIES!
+the style property is used to get as well as set the inline style of an element
+the style property has the highest priority in the CSS cascade as an inline style declaration set via the style attribute
+CSS properties name will be in camelCase instead of standard CSS convention (i.e. background-color in CSS but backgroundColor in JS)
+    <p>This element doesn't have any styles</p>
+        let element = document.querySelector("p");
+        element.style; // we get an empty object ({}) back
+        element.style.color = "red"; // As style is an object we can set properties, in this case we set the color to red
+        element.style.fontWeight = "bold"; // using font-weight we can set the font to bold, as it's JavaScript the property name is fontWeight
+
+CRUD
+create read update delete
+var paragraph = document.createElement("p");
+    we call the createElement method and pass p as the parameter
+    then we assign the element reference to the paragraph variable - the element is in memory and has no content
+    can use the paragraph variable to manipulate new paragraph like adding content, adding properties, or inserting into other elements
+
+appendChild adds a node to the end of the list of children of a specified parent node, inserts new element as last children
+    const paragraph = document.createElement("p");
+    const div = document.createElement("div");
+    paragraph.innerText = "Adding some text as content";
+    div.appendChild(paragraph);
+    document.body.appendChild(div);
+        2 variables are defined and each assigned an element, than <p> content is changed and is appended to div element, then div is appended to body, so our DOM looks like this:
+            <div>
+                <p>Adding some text as content</p>
+            </div>
+getting more complicated, lets add attributes and styles:
+    const paragraph = document.createElement("p");
+    const div = document.createElement("div");
+    paragraph.innerText = "Adding some text as content";
+    paragraph.setAttribute("id", "my-paragraph");
+    paragraph.style.fontWeight = "bold";
+    paragraph.style.color = "green";
+    div.border = "1px solid gray";
+    div.appendChild(paragraph);
+    document.body.appendChild(div);
+    define 2 variables with div and p HTML elements
+    add content to p element, give it an ID, set the text weight to bold, and the color to green
+    give the div a border, put the paragraph in the div, then put the div in the body
+
+removeChild method removes a child node from the DOM and returns the removed node
+    <div>
+        <p>First paragraph</p>
+        <p>Second paragraph</p>
+        <p>Third paragraph</p>
+    </div>
+            var div = document.querySelector("div");
+            var firstParagraph = div.children.item(0);
+            div.removeChild(firstParagraph);
+            //select the div element, then get first child, then remove it
+            if you wanted to delete all children at once you can just use div.innerHTML = ""; after assigning the div var
+
+EVENTS!
+DOM events are sent to notify code of stuff that has taken place
+events are represented by objects which is based on the event interface and may have custom fields/functions used to get other info about the thing that happened
+events can be basic user interactions to automated notifications of things happening in the rendered model
+browsers trigger events whenever something happens with the document or with the browser itself
+we can know when a document is loaded, a button is clicked, a key is pressed etc...
+events have the following structure: type, target, event handler, event object
+2 most common ways to handle events are to assign a function to the element event property (i.e. element.onclick) OR by using addEventListener
+    <button>Click Me!!!</button>
+        const button = document.querySelector("button");
+        button.onclick = function() {
+            // Code that will be executed once button gets clicked
+            console.log("Oh, I been clicked");
+        };
+    OR
+        const button = document.querySelector("button");
+        const handleClickEvent = function() {
+        console.log("Oh, I been clicked");
+        };
+        button.onclick = handleClickEvent;
+we can add event handlers using addEventListener
+this accepts 2 parameters, event type (a string with the event name) and the event handler (which is a function that works as a callback)
+    <button>Click Me!!!</button>
+        const button = document.querySelector("button");
+        button.addEventListener("click", function() {
+            console.log("Oh, I been clicked");
+        });
+
+can use "this" to reference the element that emitted the event:
+    function clickHandler() {
+    console.log(this); // this is the button that we clicked
+        this.style.backgroundColor = "green";
+    }
+    function dblclickHandler() {
+        this.style.backgroundColor = "red";
+    }
+    const button = document.querySelector("button");
+    button.addEventListener("click", clickHandler);
+    button.addEventListener("dblclick", dblclickHandler);
+
+removeEventListener will do what it says and remove listeners
+accepts the same two paramaters as addEventListener
+so, adding button.removeEventListener("click", clickHandler); to the example above will get rid of the actions on click but not on double click
+event listeners should come off before removing DOM elements entirely as this can cause memory problems and goofy results
+
+event.target is a reference to the target to which th eevent was originally dispatched
+event.type is the name of the event (not case-sensitive)
+event.preventDefault() prevents the default element behaviour from happening
+    <a href="contact.html">Go to contact page</a>
+        let link = document.querySelector("a");
+        link.addEventListener("click", function(event) {
+        event.preventDefault(); // by calling preventDefault the event is not going to trigger the default behaivour
+        console.log("look someone clicked me");
+        });
+JS can handle mouse events like click, dblclick, mouseover, mouseout, mousemove, and more
+event object has properties that help us know the mouse position like clientX and clientY
+    let body = document.querySelector("body");
+    body.addEventListener("click", function(event) {
+        console.log(event.clientX);
+        console.log(event.clientY);
+    });
+JS can do keyboard events too like keypress, keydown y keyup, more
+
+event object that we get as a parameter has a charCode property with a numeric value that represents the pressed key
+string have a static method called fromCharCode that will accept a number value as a parameter and return the key value
+so combining charCode and string.fromCharCode we can figure out what button the user pressed
+    const body = document.querySelector("body");
+    body.addEventListener("keypress", function(event) {
+        const keyCode = event.charCode;
+        const key = String.fromCharCode(keyCode);
+        console.log(key);
+    });
+browser API allows us to use a lot of event handlers to create interactive UI's:
+onchange, onclick, ondblclick, onmousedown, onmouseup
+onmouseover, onmouseout, onkeydown, onkeyup, onkeypress
+onload, onresize, onscroll, oninput, onfocus, onblur
+More more more more more...
+
+FORMS!
+HTML forms help us retrieve user data, and JS can handle the inputs and form events and values
+can also check the values that the user inputs
+the document object has a forms property that returns all the form elements
+the form element has an elements property that returns the selected elements collection
+    const form = document.querySelector("form");
+    const formElements = form.elements;
+    console.log(formElements);
+        // As it's a collection we can get the first element using 0 as index
+    const firstElement = form.elements[0];
+form object has the following properties: action, target, encoding, and method
+these are also HTML form attributes and using JS we can get or set these values
+    <form
+        action="save_user.html"
+        method="get"
+        enctype="application/x-www-form-urlencoded"
+        name="login"
+    ></form>
+            const form = document.querySelector("form");
+            console.log(form.action); // save_user.html
+            console.log(form.method); // get
+            console.log(form.encoding); // application/x-www-form-urlencoded
+            console.log(form.name); // login
+form elements have a value property that returns the element value, we can use this on many form elements (inputs of text, password, hidden, checkbox, radio, textarea...)
+    <form
+        action="save_user.html"
+        method="get"
+        enctype="application/x-www-form-urlencoded"
+        name="login"
+    >
+        <input type="text" id="username" name="username" />
+        <input type="password" id="pass" name="pass" />
+        <input type="submit" name="submit" value="Send" />
+    </form>
+            const form = document.querySelector("form");
+            const username = form.elements[0].value;
+            username.value; // we get an empty string as it doesn't have a value
+            username.value = "Pepe"; // We can also set an input value
+forms emit a submit event and we can handle the submit event using event handlers
+when the form is submitted it will send the input values to the action document
+we can prevent the default form behaviour using the preventDefault method
+    <form
+        action="save_user.html"
+        method="get"
+        enctype="application/x-www-form-urlencoded"
+        name="login"
+    >
+        <input type="text" id="username" name="username" />
+        <input type="password" id="pass" name="pass" />
+        <input type="submit" name="submit" value="Send" />
+    </form>
+            const form = document.querySelector("form");
+            form.onsubmit = function() {
+                // This code will get executed when the form is submited returning false we don't execute the form submition
+                return false;
+            };
+            const form = document.querySelector("form");
+            form.onsubmit = function(event) {
+                event.preventDefault();
+            };
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+            });
+select elements have a selectedIndex property that returns a number value for the selected option index
+this element has an options property that returns the options elements collection
+we can get the selected option if we combine the selectedIndex property and the options collection
+option elements also have a value property
+    <form
+        action="save_user.html"
+        method="get"
+        enctype="application/x-www-form-urlencoded"
+        name="login"
+    >
+        <select name="countries" id="countries">
+            <option value="ar">Argentina</option>
+            <option value="br">Brazil</option>
+            <option value="ca">Canada</option>
+            <option value="cl">Chile</option>   
+        </select>
+    </form>
+                const select = document.querySelector("select");
+                const index = select.selectedIndex;
+                console.log(index); // returns the option index
+                console.log(select.options); // returns the option collection
+                Select.options[index]; //
+                console.log(select.options[index].value); // returns the selected option value
+
+checkbox elements also have a value property as well as a checked property that returns true or false if its checked or not
+set checked to true if you want it to be true and false to uncheck it
+    <form
+        action="save_user.html"
+        method="get"
+        enctype="application/x-www-form-urlencoded"
+        name="login"
+    >
+        <input type="checkbox" name="sex" value="f" checked /> Female
+        <input type="checkbox" name="sex" value="m" /> Male
+    </form>
+            const checkboxes = document.querySelector("checkbox");
+            const female = checkboxes[0];
+            const male = checkboxes[1];
+            console.log(female.checked); // returns true as the element has the checked attribute
+            female.checked = false; // Set's the checkbox checked property to false
+            console.log(female.value); // returns f as it's the element value
+            male.checked; // returns false as the element is not checked
+            male.checked = true; // Set checked to true
+            console.log(male.value); // returns m as it's the element value
+to get checked elements combine JS and the CSS selector using :checked
+form elements can handle events using onfocus, onblur, onchange, and oninput properties
+can use these events as event handlers using addEventListener
+focus is triggered when we focus on an item like clicking on something to write in it
+blur is triggered when an element loses focus
+change is triggered when the selected value of a select element changes
+input is triggered when we type in an input
+    <form
+        action="save_user.html"
+        method="get"
+        enctype="application/x-www-form-urlencoded"
+        name="login"
+        >
+            <input type="text" id="username" name="username" />
+            <input type="password" id="pass" name="pass" />
+            <input type="submit" name="submit" value="Submit" />
+    </form>
+                const form = document.querySelector("form");
+                const username = form.elements[0];
+                username.onfocus = function() {
+                    // this code will get executed when we set focus on the username input
+                    console.log("Username element focus");
+                };
+                username.onblur = function() {
+                    // this code will get executed when we remove username focus
+                    console.log("Username element lost focus");
+                };
+                username.oninput = function() {
+                    // this code will get executed when we input some value in the input
+                    console.log("The user is typing!");
+                };
+combining the length and value properties we can determine if an input is empty
+    const form = document.querySelector("form");
+    form.onsubmit = function(evento) {
+        evento.preventDefault();
+        const username = form.elements[0];
+        // with the value property we get the input value Then we use the length property to check if the input is empty or not We could add trim before to remove empty spaces too
+        if (username.value.length === 0) {
+            console.log("Wrong username");
+            return false;
+        }
+        return true;
+    };
+
+JSON!
+JSON is JS object notation and it's a light weight data-interchange format
+it's easy to read and write, very similar to literal objects but with minor differences
+the JSON object properties name uses double quotes
+    const JSONexample = {
+    attribute: "valor",
+    attribute1: 1,
+    attribute2: [],
+    attribute3: null,
+    attribute4: false
+    };
+JSON has 2 important methods, stringify() and parse() that will help us interact with the JSON
+stringify() converts a JS value to a JSON string
+parse parses a JSON string
+NOW we can converty from JSON to JavaScript and the other way around
+STRINGIFY EXAMPLE:
+    const user = {
+    username: "pepe",
+    password: "12345",
+    email: "pepe@gmail.com",
+    married: true,
+    childrens: ["maria", "juan"]
+    };
+    const JSONuser = JSON.stringify(user); // returns a JSON object with the user representation
+    console.log(JSONuser);
+    /* RETURNS THE FOLLOWING
+    {
+        "username":"pepe",
+        "password":"12345",
+        "email":"pepe@gmail.com",
+        "married":true,
+        "childrens":["maria","juan"]
+    } 
+    */
+
+PARSE EXAMPLE:
+    const JSONuser = JSON.parse(JSONuser); // Returns a JavaScript objectretorna un objeto de ECMAScript
+    console.log(JSONuser);
+    /* RETURNS THE FOLLOWING
+    {
+        username: "pepe", 
+        password: "12345", 
+        email: "pepe@gmail.com", 
+        married: true, 
+        childrens: ["maria", "juan"]
+    }
+    */
+
+AJAX!
+asynchronous JavaScript and XML
+can send and receive info in various formats including JSON, XML, HTML, and text
+it is asynchronous so it can communicate with a server while exchanging data and updating the page without having to refresh the page
+we can use fetch since we don't use XML anymore and get the same features
+when we get JSON back from an API server we can see the data we may want to retrieve (https://codebeautify.org/jsonviewer this will make viewing a JSON returned by a server easier)
+fetch provides a generic definition of request and response objects
+fetch takes ONE MANDATORY argument - the path to the resource you want to fetch
+    const apiURL = "https://api.tvmaze.com/search/shows?q=batman";
+    fetch(apiURL);
+fetch returns a promise that resolves to the response to that request whether successful or not
+we can use the then method once fetch returns the promise
+    const apiURL = "https://api.tvmaze.com/search/shows?q=batman";
+    fetch(apiURL).then(function(response) {
+        console.log(response); // we get a Response object back with the TV data
+    });
+the response object has a json method which returns a promise that resolves with the result of parsing the body text as JSON
+    const apiURL = "https://api.tvmaze.com/search/shows?q=batman";
+    fetch(apiURL)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+    });
+
+once we have the data and know the JSON structure it can be used:
+    const apiURL = "https://api.tvmaze.com/search/shows?q=batman";
+        fetch(apiURL)
+            .then(function(response) {
+            return response.json();
+        })
+            .then(function(data) {
+            const show = data[0];
+    console.log(show.show.name); // Batman
+    console.log(show.show.premiered); // 1966-01-12
+    console.log(show.show.image.original); // http://static.tvmaze.com/uploads/images/original_untouched/6/16463.jpg
+  });
+
+
+
+
+
+
+
+
+
+
+

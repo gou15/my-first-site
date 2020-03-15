@@ -2,11 +2,19 @@
 <html lang = "en">
     <head>
         <script>
+            let total = 0;
+            let cont = true;
             window.alert("This program adds all the numbers you input");
-            let n1 = window.prompt("Give me a number");
-            let n2 = window.prompt("Give me another number");
-            let n3 = n1 + n2;
-            window.alert(`The result so far is ${n3} ok?`);
+            while (cont == true){
+                let n = parseInt(window.prompt("Feed me a number"));
+                let sum = function(){
+                    total +=n;
+                    window.alert(`The sum so far is ${total} ya?`);
+                    }
+                sum();
+                cont = window.confirm("Do you want to feed me more numbers? OK for yes, Cancel for no");
+            }
+            window.alert(`Your total is ${total}`);
         </script>
         <title>
             Running http-server

@@ -2,13 +2,8 @@
 <html lang = "en">
     <head>
         <script>
-            let number = window.prompt("Favorite number now plz");
-            if (number % 2 != 0){
-                window.alert("Don't give me your odd numbers");
-            }
-            else if (number % 2 == 0){
-                window.alert("I love me some even numbers");
-            }
+            let site = window.prompt("Input a complete URL", "https://www.DOMAINNAMEHERE.com");
+            location.href = site;
         </script>
         <title>
             Running http-server
@@ -22,4 +17,5 @@
             We're using http-server locally
         </p>
     </body>
+
 </html>

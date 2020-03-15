@@ -3,18 +3,23 @@
     <head>
         <script>
             let total = 0;
-            let cont = undefined;
+            let inputs = 0;
+            let cont = true;
             window.alert("This program adds all the numbers you input");
-            while (cont !== null){
-            let n = window.prompt("Feed me a number");
+            while (cont == true){
+                inputs = inputs + 1;
+                let n = parseInt(window.prompt("Feed me a number"));
                 let sum = function(){
                     total +=n;
                     window.alert(`The sum so far is ${total} ya?`);
-                }
-            sum();
-            let cont = window.prompt("Do you want to feed me more numbers?");
+                    }
+                sum();
+                cont = window.confirm("Do you want to feed me more numbers? OK for yes, Cancel for no");
             }
+            let avg = (total/inputs)
             window.alert(`Your total is ${total}`);
+            window.alert(`You entered ${inputs} numbers`);
+            window.alert(`Your average input was ${avg}`)
         </script>
         <title>
             Running http-server
