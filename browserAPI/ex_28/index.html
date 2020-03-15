@@ -1,20 +1,35 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <script>
-
-        </script>
-        <title>
-            Running http-server
-        </title>
-    </head>
-    <body>
-        <h1>
-            Congrats!!
-        </h1>
-        <p>
-            We're using http-server locally
-        </p>
-    </body>
-
+<html lang="en">
+  <head>
+    <title>It's all JavaScript Baby!!</title>
+    <script>
+        window.onload = function(){
+            let counter = 0;
+            let nameArray = [];
+            let cont = true;
+            let body = document.querySelector("body");
+            let ol = document.createElement("ol");
+            window.alert("This program records all the names you input");
+            while (cont == true){
+                let names = (window.prompt("Feed me a name"));
+                nameArray.push(names);
+                counter += 1;
+                cont = window.confirm("Do you want to feed me more names? OK for yes, Cancel for no");
+            }
+            nameArray.forEach(function(name){
+                let li = document.createElement("li");
+                li.innerText = name;
+                if (counter % 2 == 0){
+                    li.style.color = "#ddd";
+                } else {
+                    li.style.color = "#eee";
+                }
+                ol.appendChild(li);
+            });
+            body.appendChild(ol);
+            console.log(nameArray);
+        }
+    </script>
+  </head>
+  <body></body>
 </html>

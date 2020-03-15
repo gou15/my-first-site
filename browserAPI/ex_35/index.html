@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <script>
-
-        </script>
-        <title>
-            Running http-server
-        </title>
-    </head>
-    <body>
-        <h1>
-            Congrats!!
-        </h1>
-        <p>
-            We're using http-server locally
-        </p>
-    </body>
-
+<html>
+  <head>
+    <title>Events</title>
+    <script>
+        window.onload = function(){
+            let button = document.querySelector("#firstButton");
+            let button2 = document.getElementById("secondButton");
+            let a = document.querySelector("a");
+            let click = function(){
+                window.alert("This is an event listened button");
+            }
+            button.addEventListener("click", click);
+            button2.addEventListener("click", function(){
+                button.removeEventListener("click", click);
+            });
+            a.addEventListener("click", function(event){
+                event.preventDefault();
+                window.alert("I broke this link so you can't click it");
+            });
+        };
+      </script>
+  </head>
+  <body>
+    <button id="firstButton">Click Me!!</button>
+    <button id="secondButton">Remove event listener</button>
+    <a href="https://google.com">Link with JavaScript handler</a>
+  </body>
 </html>

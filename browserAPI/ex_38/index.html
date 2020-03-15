@@ -1,20 +1,31 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <script>
-
-        </script>
-        <title>
-            Running http-server
-        </title>
-    </head>
-    <body>
-        <h1>
-            Congrats!!
-        </h1>
-        <p>
-            We're using http-server locally
-        </p>
-    </body>
-
+<html>
+  <head>
+    <title>Events</title>
+    <script>
+        window.onload = function(){
+            let body = document.querySelector("body");
+            let div = document.querySelector("div");
+            let ul = document.createElement("ul");
+            div.style.fontSize = "20px";
+            div.style.color = "red";
+            div.style.fontFamily = "Arial";
+            div.style.paddingBottom = "20px";
+            div.appendChild(ul);
+            body.addEventListener("keypress", function(event){
+                let keyCode = event.charCode;
+                let key = String.fromCharCode(keyCode);
+                let li = document.createElement("li");
+                li.innerText = (`You pressed the ${key} button with a charCode of ${keyCode}.`);
+                ul.appendChild(li);
+            });
+        }
+    </script>
+  </head>
+  <body>
+    <div></div>
+    <button id="firstButton">Click Me!!</button>
+    <button id="secondButton">Remove event listener</button>
+    <a href="https://google.com">Link with JavaScript handler</a>
+  </body>
 </html>

@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <script>
-
-        </script>
-        <title>
-            Running http-server
-        </title>
-    </head>
-    <body>
-        <h1>
-            Congrats!!
-        </h1>
-        <p>
-            We're using http-server locally
-        </p>
-    </body>
-
+<html lang="en">
+  <head>
+    <title>It's all JavaScript Baby!!</title>
+    <script>
+        window.onload = function(){
+            let body = document.querySelector("body");
+            let names = ["mario", "luigi", "toad", "toadette", "daisy", "peach", "bowser", "goomba", "koopa", "smithy"];
+            let ul = document.createElement("ul");
+            names.forEach(function(name){
+                let li = document.createElement("li");
+                li.innerText = name;
+		        ul.appendChild(li);
+            });
+            body.appendChild(ul);
+        }
+    </script>
+  </head>
+  <body></body>
 </html>

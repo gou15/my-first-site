@@ -2,19 +2,34 @@
 <html lang = "en">
     <head>
         <script>
-
+            window.onload = function(){
+                let body = document.querySelector("body");
+                let ul = document.createElement("ul");
+                let weeklyChores = ["dishes", "laundry", "vacuum", "toilet", "dogpoo", "dust", "tidy", "reorganize", "bedding", "mealprep"];
+                let chores = weeklyChores.forEach(function(chore){
+                  let li = document.createElement("li");
+                  li.innerText = chore;
+                  li.addEventListener("click", function(){
+                      li.classList.toggle("striked");
+                  })
+                  ul.appendChild(li);  
+                });
+            body.appendChild(ul);
+            }
         </script>
+        <style type ="text/css">
+            .striked{
+                text-decoration: line-through;
+            }
+            li{
+                cursor: pointer;
+            }
+        </style>
         <title>
             Running http-server
         </title>
     </head>
     <body>
-        <h1>
-            Congrats!!
-        </h1>
-        <p>
-            We're using http-server locally
-        </p>
     </body>
 
 </html>

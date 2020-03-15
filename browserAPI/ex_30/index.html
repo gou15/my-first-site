@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <script>
-
-        </script>
-        <title>
-            Running http-server
-        </title>
-    </head>
-    <body>
-        <h1>
-            Congrats!!
-        </h1>
-        <p>
-            We're using http-server locally
-        </p>
-    </body>
-
+<html>
+  <head>
+    <title>Products</title>
+    <script>
+        window.onload = () => {
+          let ul = document.querySelector("ul");
+          let child = ul.children;
+          for (let i = child.length; i > 0; i--) {
+            ul.removeChild(child[i - 1]);
+          }
+        };
+      </script>
+  </head>
+  <body>
+    <ul>
+      <li>Bannana</li>
+      <li>Apple</li>
+      <li>Peach</li>
+      <li>Eggs</li>
+      <li>Tomatto</li>
+      <li>Lettuce</li>
+      <li>Milk</li>
+    </ul>
+  </body>
 </html>

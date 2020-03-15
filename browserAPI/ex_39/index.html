@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <script>
-
-        </script>
-        <title>
-            Running http-server
-        </title>
-    </head>
-    <body>
-        <h1>
-            Congrats!!
-        </h1>
-        <p>
-            We're using http-server locally
-        </p>
-    </body>
-
+<html>
+  <head>
+    <title>Events</title>
+    <script>
+        window.onload = function(){
+            let button1 = document.querySelector("#firstButton");
+            let div = document.querySelector("div");
+            let p = document.createElement("p");
+            let counter = 0;
+            button1.addEventListener("dblclick", function(){
+                counter++
+                p.innerText = counter;
+            });
+            div.appendChild(p);
+        }
+    </script>
+  </head>
+  <body>
+    <div></div>
+    <button id="firstButton">Click Me!!</button>
+    <button id="secondButton">Remove event listener</button>
+    <a href="https://google.com">Link with JavaScript handler</a>
+  </body>
 </html>

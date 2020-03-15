@@ -1,20 +1,39 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <script>
-
-        </script>
-        <title>
-            Running http-server
-        </title>
-    </head>
-    <body>
-        <h1>
-            Congrats!!
-        </h1>
-        <p>
-            We're using http-server locally
-        </p>
-    </body>
-
+<html>
+  <head>
+    <title>Events</title>
+    <script>
+        window.onload = function(){
+            let a = document.querySelector("a");
+            let counter = 0;
+            a.addEventListener("mouseover", function(){
+                counter++;
+                if (counter == 1){
+                    a.style.background = "red";
+                }
+                else if(counter == 2){
+                    a.style.background = "blue";
+                }
+                else if(counter == 3){
+                    a.style.background = "green";
+                }
+                else if(counter == 4){
+                    a.style.background = "gray";
+                }
+                else if(counter > 4){
+                    a.style.background = "white";
+                }
+            });
+            a.addEventListener("mouseout", function(){
+                window.alert(`The link background color is ${a.style.background}`);
+            })
+        }
+    </script>
+  </head>
+  <body>
+    <div></div>
+    <button id="firstButton">Click Me!!</button>
+    <button id="secondButton">Remove event listener</button>
+    <a href="https://google.com">Link with JavaScript handler</a>
+  </body>
 </html>

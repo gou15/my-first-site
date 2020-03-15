@@ -1,20 +1,18 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <script>
-
-        </script>
-        <title>
-            Running http-server
-        </title>
-    </head>
-    <body>
-        <h1>
-            Congrats!!
-        </h1>
-        <p>
-            We're using http-server locally
-        </p>
-    </body>
-
+<html lang="en">
+  <head>
+    <title>It's all JavaScript Baby!!</title>
+    <script>
+        window.onload = function(){
+            let body = document.querySelector("body");
+            let createh1 = document.createElement("h1");
+            createh1.innerText = "Create Dynamic content!!!";
+            let createp = document.createElement("p");
+            createp.innerText = "These elements created using JS";
+            body.appendChild(createh1);
+            body.appendChild(createp);
+        }
+    </script>
+  </head>
+  <body></body>
 </html>
