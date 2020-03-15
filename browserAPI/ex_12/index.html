@@ -2,7 +2,12 @@
 <html lang = "en">
     <head>
         <script>
-
+            let n = 0;
+            const counter = function() {
+                n++
+                console.log(n);
+            };
+            setInterval(counter, 1000);
         </script>
         <title>
             Running http-server

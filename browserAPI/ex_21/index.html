@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <script>
+<html lang="en">
+  <head>
+    <title>Elements</title>
+    <style>
+      .red {
+        color: red;
+      }
 
-        </script>
-        <title>
-            Running http-server
-        </title>
-    </head>
-    <body>
-        <h1>
-            Congrats!!
-        </h1>
-        <p>
-            We're using http-server locally
-        </p>
-    </body>
+      .green {
+        color: green;
+      }
 
+      .orange {
+        color: orange;
+      }
+    </style>
+    <script>
+        window.onload = function(){
+            let first = document.querySelector("ul li");
+            first.classList.add("orange");
+            let next = first.nextElementSibling;
+            function goNextElementSibling() {
+                next.classList.add("orange");
+                let temp = next.nextElementSibling;
+                if (temp) {
+                    next = temp;
+                    goNextElementSibling();
+                }
+            }
+            goNextElementSibling();
+            let li3 = next.previousElementSibling.previousElementSibling;
+            li3.classList.replace("orange", "red");
+            let li1 = li3.previousElementSibling.previousElementSibling;
+            li1.classList.replace("orange", "green");
+        };
+      </script>
+  </head>
+  <body>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+  </body>
 </html>

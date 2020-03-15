@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <script>
+<html lang="en">
+  <head>
+    <title>Elements</title>
+    <style>
+      .red {
+        color: red;
+      }
 
-        </script>
-        <title>
-            Running http-server
-        </title>
-    </head>
-    <body>
-        <h1>
-            Congrats!!
-        </h1>
-        <p>
-            We're using http-server locally
-        </p>
-    </body>
+      .green {
+        color: green;
+      }
 
+      .orange {
+        color: orange;
+      }
+    </style>
+    <script>
+        window.onload = function(){
+            let ul = document.querySelector("ul");
+            let ulChildren = ul.children;
+            let secondChild = ul.children[1];
+            let fourthChild = ul.children[3];
+            let parent = ul.children[3].parentElement;
+            console.log(ulChildren);
+            secondChild.classList.add("green");
+            fourthChild.classList.add("red");
+            console.log(parent);
+            ul.children[3].parentElement.classList.add("orange");
+        }
+    </script>
+  </head>
+  <body>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+  </body>
 </html>

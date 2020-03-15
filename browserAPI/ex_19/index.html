@@ -1,20 +1,36 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <script>
+<html lang="en">
+  <head>
+    <title>Setting attributes</title>
+    <style>
+      .bold {
+        font-weight: bold;
+      }
 
-        </script>
-        <title>
-            Running http-server
-        </title>
-    </head>
-    <body>
-        <h1>
-            Congrats!!
-        </h1>
-        <p>
-            We're using http-server locally
-        </p>
-    </body>
-
+      .striked {
+        text-decoration: line-through;
+      }
+    </style>
+    <script>
+        window.onload = function(){
+            let h1 = document.querySelector("h1");
+            let div = document.querySelector("div");
+            if (h1.hasAttribute("") == true || div.hasAttribute("") == true){
+                h1.classList.add("striked");
+                div.classList.add("striked");
+            } else{
+                h1.classList.add("bold");
+                div.classList.add("bold");
+            }
+            div.removeAttribute("name");
+        }
+    </script>
+  </head>
+  <body>
+    <h1 id="main">Playing with attributes</h1>
+    <div name="divy">
+      We have more control over our documents as we learn about JavaScript and
+      DOM elements!!!
+    </div>
+  </body>
 </html>

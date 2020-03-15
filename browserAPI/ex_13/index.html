@@ -2,7 +2,15 @@
 <html lang = "en">
     <head>
         <script>
-
+            let seconds = window.prompt("How many seconds do ya wanna be here?");
+            const counter = function() {
+                seconds--
+                console.log(seconds);
+                if (seconds == 0){
+                    window.alert("Your session has expired, bye forever");
+                }
+            };
+            setInterval(counter, 1000);
         </script>
         <title>
             Running http-server

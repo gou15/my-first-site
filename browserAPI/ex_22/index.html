@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <script>
-
-        </script>
-        <title>
-            Running http-server
-        </title>
-    </head>
-    <body>
-        <h1>
-            Congrats!!
-        </h1>
-        <p>
-            We're using http-server locally
-        </p>
-    </body>
-
+<html lang="en">
+  <head>
+    <title>Texts</title>
+    <script>
+        window.onload = function(){
+            let h1 = document.querySelector("h1");
+            let h1Text = h1.innerText;
+            let p = document.querySelector("p");
+            let pText = p.textContent;
+            h1.innerText = pText;
+            p.innerText = h1Text;
+        }
+    </script>
+  </head>
+  <body>
+    <h1>Main Title</h1>
+    <p>This is a paragraph</p>
+  </body>
 </html>
