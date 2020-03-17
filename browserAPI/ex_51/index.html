@@ -1,20 +1,46 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <script>
-
-        </script>
-        <title>
-            Running http-server
-        </title>
-    </head>
-    <body>
-        <h1>
-            Congrats!!
-        </h1>
-        <p>
-            We're using http-server locally
-        </p>
-    </body>
-
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSON</title>
+    <script>
+        window.onload = function(){
+            let response = 
+            `{
+            "title": "A New Hope", 
+            "episode_id": 4, 
+            "species": [
+            "https://swapi.co/api/species/5/", 
+            "https://swapi.co/api/species/3/", 
+            "https://swapi.co/api/species/2/", 
+            "https://swapi.co/api/species/1/", 
+            "https://swapi.co/api/species/4/"
+            ]
+            }`
+            let jsonResponse = JSON.parse(response);
+            let jresponse = document.getElementById("jsonresponse");
+            let title = jsonResponse.title;
+            let episode = jsonResponse.episode_id;
+            let species = jsonResponse.species
+            let h1 = document.createElement("h1");
+            let i = 0;
+            h1.innerText = title + "\n";
+            jresponse.appendChild(h1);
+            let p = document.createElement("p");
+            p.innerText = episode + "\n\n";
+            h1.appendChild(p);
+            console.log(species);
+            let aliens = species.forEach(function(alien){
+                let a = document.createElement("a");
+                a.setAttribute("href", species[i]);
+                a.innerText = "Link " + (i + 1) + "\n";
+                p.appendChild(a);
+                i += 1;
+            });
+        }
+    </script>
+  </head>
+  <body>
+    <div id="jsonresponse"></div>
+  </body>
 </html>

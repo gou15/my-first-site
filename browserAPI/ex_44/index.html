@@ -1,20 +1,39 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <script>
-
-        </script>
-        <title>
-            Running http-server
-        </title>
-    </head>
-    <body>
-        <h1>
-            Congrats!!
-        </h1>
-        <p>
-            We're using http-server locally
-        </p>
-    </body>
-
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form Properties</title>
+    <script>
+        window.onload = function(){
+            let form = document.querySelector("form");
+            let action = form.action;
+            let method = form.method;
+            let encoding = form.encoding;
+            let name = form.name;
+            let username = form.elements[0].value;
+            let pass = form.elements[1].value;            
+            form.elements[0].value = "morty";
+            form.elements[1].value = "12345";
+            let button = document.querySelector("button");
+            button.addEventListener("click", function(){
+                username = form.elements[0].value;
+                pass = form.elements[1].value;   
+                window.alert(username + " " + pass);
+            });
+        }
+    </script>
+  </head>
+  <body>
+    <form
+      action="#"
+      method="post"
+      enctype="application/x-www-form-urlencoded"
+      name="login"
+    >
+      <input type="text" id="username" name="username" />
+      <input type="password" id="pass" name="pass" />
+      <button>Show Username and Password</button>
+    </form>
+    <div></div>
+  </body>
 </html>

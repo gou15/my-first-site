@@ -1,20 +1,46 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <script>
-
-        </script>
-        <title>
-            Running http-server
-        </title>
-    </head>
-    <body>
-        <h1>
-            Congrats!!
-        </h1>
-        <p>
-            We're using http-server locally
-        </p>
-    </body>
-
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form elements event</title>
+    <script>
+        window.onload = function(){
+            let form = document.querySelector("form");
+            let username = form.elements[0];
+            let pass = form.elements[1]
+            let userValue = form.elements[0].value;
+            let passValue = form.elements[1].value
+            username.onfocus = function(){
+                username.style.boxShadow = "10px 10px";
+            }
+            pass.onfocus = function(){
+                pass.style.boxShadow = "10px 10px";
+            }
+            username.onblur = function(){
+                username.style.boxShadow = "none";
+            }
+            pass.onblur = function(){
+                pass.style.boxShadow = "none";
+            }
+            form.addEventListener("submit", function(event){
+                event.preventDefault();
+                userValue = form.elements[0].value;
+                passValue = form.elements[1].value;   
+                window.alert("Username is " + userValue + " and password is " + passValue);
+            })
+        }
+    </script>
+  </head>
+  <body>
+    <form
+      action="save_user.html"
+      method="post"
+      enctype="application/x-www-form-urlencoded"
+      name="login"
+    >
+      <input type="text" id="username" name="username" />
+      <input type="password" id="pass" name="pass" />
+      <input type="submit" name="submit" value="Send" />
+    </form>
+  </body>
 </html>

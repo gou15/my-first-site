@@ -2,7 +2,24 @@
 <html lang = "en">
     <head>
         <script>
-
+            window.onload = function(){
+                let apiURL = "https://swapi.co/api/films/";
+                let h1 = document.querySelector("h1");
+                fetch(apiURL).then(function(response){
+                    return response.json();
+                })
+                .then(function(data){
+                    console.log(data.results);
+                    for(i = 0; i < data.results.length; i++){
+                        let title = data.results[i].title;
+                        let episode = data.results[i].episode_id;
+                        let release = data.results[i].release_date;
+                        let p = document.createElement("p");
+                        p.innerText = "Title: " + title + "\nEpisode number: " + episode + "\nRelese Date: " + release + "\n";
+                        h1.appendChild(p);
+                    }
+                });
+            }
         </script>
         <title>
             Running http-server
