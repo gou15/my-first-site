@@ -1,0 +1,137 @@
+npm = Node Package Manager, lets us install node.js modules and import them into our projects
+wombats
+need to be working directly in the folder in the terminal for all this to work
+
+npm init -y sets up our package.json object which allows us to start importing and using modules
+this package contains scripts that we can set, create and modify
+
+"start": "node index.js" will run the node index.js command when we use npm start in the console
+    this would work only with an index.js file, which you'd have to create, or you can use whatever other filename you want
+
+npm install lets us download and install other modules to be used in our projects
+search for modules at npmjs.com
+to install a module globally add -g at the end of your install command (i.e. npm install express -g)
+to install a module as a developer module add -D to the end of the command (i.e. npm install logplease -D)
+to install a module just to the project you're working on don't add any goofy letters
+create a .gitignore file and list the folders or files you want it to ignore inside of it so you aren't uploading all this nonsense to github
+if you just run npm install it will read the dependencies of the package.json file and download the appropriate modules for you
+
+npm uninstall does the opposite of the above
+it will also remove the module from your list of dependencies
+
+a module is a way to encapsulate our code into a single code unit, order by functionality
+can creat single files and use them as modules in our projects
+require - accepts a string as a parameter with the name of the module we want to use
+    let module = require("MODULENAME");   OR
+    let module = require("./FILEPATHWAY");
+    note that these are string parameters and you shouldn't use the file extension
+we're telling node to get the MODULENAME code
+check out calc.js, index.js, and package.json in the learning-node folder to see how these talk to each other
+    created a module called calc, exported a calc function from the calc module, required it in the index, and then executed that function with parameters to return a result
+    if we called this calculator 50 different times across our project we don't need to update code 50 times, just once in the calc module
+    we can only access and use what is being exported using module.exports
+
+arrow functions are just another way of writing functions
+    let hello = function(parameters){code}  BECOMES
+    let hello = (parameters) => {code}
+    let hello = parameter => {code}   did you know you can drop the brackets if you only want to pass 1 parameter? I didn't. I do now.
+
+node.js has a built in http module which we can use to create a web server
+server listens for requests and sends responses
+npm init does not need to be run as we're using a built in module 
+    let http = require("http");
+    let port = ####;    where #### is the port number we want to use (3000)
+createServer method accepts a function as a parameter which itself accepts 2 parameters representing a request and a response
+the callback function will be executed on each request and we can handle the response
+    let requestHandler = (request, response) => {
+        response.end("Message text");
+    }
+    let server = http.createServer(requestHandler);
+requestHandler is being used as createServer callback, so requestHandler receives a request and response object the represents the http request and response
+when we get a request we need to send a response, which in this case is just the message text
+server.listen will tell the server which port it should be listening to, accepts a port number as parameter as well as a callback function as a 2nd parameter which gets executed when the server starts listening
+callback function also gets an error parameter which we can use to check if something broke
+    server.listen(port, err => {
+        if (err) {
+            return console.log("this is the error that happened" + err);
+        }
+        console.log("all good and working on port " + port);
+    });
+
+bring that all together:
+
+    let http = require("http");
+    let port = 3000;
+    let requestHandler = (request, response) => {
+        console.log(request.url);
+        response.end("Hello Node.js Server!");
+    };
+    let server = http.createServer(requestHandler);
+    server.listen(port, err => {
+        if (err) {
+            return console.log("something bad happened", err);
+        }
+        console.log(`server is listening on ${port}`);
+    });
+
+execute this code in a .js file and you've got a webserver running which you can open in your browser at
+localhost:PORT
+this is all well and good but we're going to be using express to launch webservers
+
+EXPRESS
+can handle any HTTP request, create and handle routes, and more
+can use express to respond with static content or create dynamic content or use a database or no database...
+express is a module, you need in install it (npm install express)
+    const express = require("express");
+    const app = express();
+    const port = 3000;
+    app.get("/", function(request, response) {
+        response.send("Hello Node.js World!");
+    });
+    app.listen(port, function(error) {
+    if (error) {
+        console.error("This is broken, port " + port + " " + error);
+    }
+    console.log("Example app listening on port 3000!");
+    });
+
+bam you got a webserver going, just like that (we create a simple server, require the express module and create an express app, configure a GET for the default route (/), listen on a port, and we have it running at localhost:PORT)
+
+GET
+you use a get method to obtain GET requests
+get accepts a string as first paramater (which is the route we want to handle) and a callback function that accepts 2 objects (request and response) as parameters
+    response object has a send method that we can use to send some data to the client as the response which is why we can see the message back when we send a request to our server
+        app.get("/", function(request, response){
+            response.send("Message");
+        });
+the express object has many methods to handle HTTP requests using different HTTP methods:
+    app.post("/", function(request, response){
+        response.send("Request using POST");
+    });
+    app.put("/", function(request, response){
+        response.send("Request using PUT");
+    });
+    app.delete("/", function(request, response){
+        response.send("Request using DELETE");
+    });
+    app.all("/", function(req, res) {
+        res.send("Request using GET, POST, PUT or DELETE");
+    });
+
+let's make this a little more relevant:
+    app.get("/products", function(req, res) {
+        res.send("On this call we show a list of products");
+    });
+    app.post("/product/:id", function(req, res) {
+        res.send("On this call we create a product");
+    });
+    app.put("/product/:id", function(req, res) {
+        res.send("On this call we update a product");
+    });
+    app.delete("/product/:id", function(req, res) {
+        res.send("On this call we delete a product");
+    });
+
+browser can only use GET requests
+a POST request would come from a form with method POST
+an app called Postman will help us request using different HTTP methods and ensure they work https://www.postman.com/
