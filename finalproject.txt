@@ -1,0 +1,667 @@
+splash page, fully equipped, link to evolution, skip evolution to end
+understand that evolution pages are written only with the knowledge we had at the time of learning - the first few are ugly and then progress
+
+EVOLUTION 1
+here we get some tools and learn a little about what things are and how they work - no coding, so this website is not possible yet...
+https://git-scm.com - download and install git
+https://code.visualstudio.com/ - download and install visual code
+definitions:
+HTML - content
+CSS - layout
+JavaScript - interaction
+backend - server based development, makes websites work
+frontend - website development, user experience
+full stack - front and back end
+network - computers communicating
+router - makes sure messages sent go to right destination
+a router is a computer, so routers talking to routers is a thing - now you have big networks
+modem - turns network info into info manageable by phone infrastructure and vice versa
+internet service providers - allows access to routers which have access to other ISP's routers
+internet - the infrastructure of these networks
+IP address - a unique address identifying a computer
+domain name - a human-friendly way to point so specific addresses (i.e. google.com is domain name pointing to IP address 173.194.121.32)
+packets - chunks of data sent across the web, allows multiple users access to download data at same time
+
+EVOLUTION 2
+still no coding, but setting up the framework by which we can save, modify, share, and execute our code
+learned about visual code studio and it's use
+created a very basic website which utilized HTML, CSS, and JS
+didn't learn what these things are or how to use them, just copied and pasted
+index.html, styles.css, script.js
+my-first-site  --  actually create and link to it!
+https://github.com/join created a github account - just follow the steps
+change terminal shell to bash or git bash which makes talking to github easier
+configured terminal to talk to your github account
+    git config --global user.name <github userID>
+    git config --global user.email <github email>
+got our first website online
+    git init        initializes a github repository or creates an empty one
+    git add .       adds files contents to git index
+    git commit -m "my first commit"     commits records changes to a repository
+added a github origin and sent our files to our github repository
+    git remote add origin bash git remote add origin https://github.com/<user>/nodeyqr.git
+    git push origin master
+told github to use our master branch for github pages
+published our site and we were online for the first time... granted it was with a copy-paste website, but this was cool
+further git commands:
+git status = show working tree status
+git log = shows history of commits
+git rm img.jpg = removes file img.jpg from repository
+git checkout -- img.jpg = restores previous version of removed file
+ls -la = display list of folder files
+git remote add origin xxx = configures remote git server on github
+    origin is default name for main source
+git remote -v = grants fetch/push permissions
+fetch = gets changes from server
+push = uploads local changes to server
+git clone = copies a repository into a new directory
+work on projects locally, commit changes to repository, and upload to server to share with the world
+
+EVOLUTION 3
+HTML - it's time to learn some code
+    hyper text markup language, annotates a document to be displayed on internet
+tags tell browsers what to do with and how to classify the content of our website
+<tagname>Content</tagname>
+code formatting using indentation so it's easy for humans to follow
+different tags can have different type of attributes, defined in the open tag
+<tagname attribute="value">Content modified by attribute</tagname>
+id - specific to that tag
+class - can be applied to many tags that we wish to act the same, more on this later
+<!DOCTYPE html> = tells browser we're using HTML
+<html> = master tag, all other elements descend from this one
+<head> = contains data browsers won't render (metadata, title, scripts, styles, favicon, more...)
+<title> = title of website shown on Google and in browser tabs
+<body> = content of website
+block elements = elements that the browser will render one below the other
+<h1> <h2> <h3> <h4> <h5> <h6> = heading elements
+<p> = paragraph element
+HTML entities = forces browser to render characters that would otherwise be interpreted as HTML or special characters, &nbsp;
+<div> = block element container with no effect on content until styled by CSS
+<span> = inline element container like <div> but not a block
+<!-- comments --> = create comments in code that will not render in browser, describe your own code
+<br /> = line break
+<hr /> = horizontal rule
+<strong> = boldening
+<ul> = unordered list
+<ol> = ordered list
+<li> = list item inside above 2 lists, child element
+<dd> = description definition list
+    <dt> = term
+        <dd> = definition
+<a> = anchor element, creates links
+    href = attribute for <a>, contains URL for link
+    use "#anchorname" to link to a name you set on your own site
+    use "mailto:email@address.com" to link to email
+    name = "anchorname" to set a point your own page for another link to refer to
+    target = attribute for <a>, tells browser how to open link (_self for same tab, _blank for new tab, _parent into tab you came from, _top into very first tab you came from)
+    can link to files relatively or absolutely
+<img> = embeds image into document
+    src = attribute that accepts an image filename/pathway
+    height and width attributes by pixels or % or auto
+    alt = alternative text to describe the image of it doesn't render
+    title = hover over text
+<figure> = self-contained content, typically containing an image and a caption
+<figcaption> = caption for image in a figure, child element to figure
+<table> = tabular data
+<thead> = defines table header data section, child of <table>
+<tr> = table row, child of <thead>, <tbody>, and <tfoot>
+<th> = defines cell as a header, child of <tr>
+<tbody> = defines table body section, child of <table>
+<td> = table data, child of <tr>
+<tfoot> = defines footer of table, child of <table>
+<table>
+    <thead>
+        <tr>
+            <th>
+    <tbody>
+        <tr>
+            <td>
+    <tfoot>
+        <tr>
+            <td>
+    table element has attributes which let us add color and such, not recommended, but it's what we knew at the time
+        border = "#" --> sets border width of table to # pixels
+        bgcolor = "hexcode" --> sets background color of table
+        width = "###" --> sets table width in pixels
+        cellpadding and cellspacing = "##" --> sets space between content of cell and border and sets size of space between two cell respectively
+        colspan and rowspan = "#" --> specifically sets td and th cell sizing to number of columns or number of rows respectively
+        all above attributes are applicable to all table elements except colspan and rowspan which are specific to <th> and <td>
+
+EVOLUTION 4
+HTML continued
+<link> = header element for linking other stuff into your document (scripts, favicon, styling, whatever) 
+    favicon set as follows: <link rel = "shortcut icon" href = "favicon.ico" type = "image/x-icon" />
+    favicon is displayed on the browser tab
+<form> document section that contains controls for submitting information
+    action = URL of a program that processes form info
+    method = HTTP method the browser uses to submit the form
+        get = data appended to action attribute URL with "?" as separator, resulting URL sent to server
+        post = form data included in the body of the form and sent to the server
+    enctype = type of content that is used to submit form to server
+        default: "application/x-www-form-urlencoded"
+        file content: "multipart/form-data"
+        text: "text/plain"
+<input> = child of <form> used to set type of input in a form
+    type = "input-type" --> sets type of input
+        input types include: button, checkbox, color, date, datetime-local, email, file, hidden, image, month, number, password, range, reset, search, submit, tel, text, time, url, week
+        password = obscures character entry, only an effect
+        submit = just a button to submit the form
+        radio = collection of radio buttons grouped by sharing same name attribute
+        checkbox = collection of checkboxes grouped by sharing same name attribute, multiple can be checked
+        hidden = form data that cannot be seen or modified by users when a form is submitted (like the ID of the content that is being ordered, or a security token), cannot be made visible
+        image = use a custom image as a button, need to define a src, can set height and width
+        textarea = multiline plain text input, can set cols and rows to give textarea size
+        select = provides a menu of options, requires an example:
+            <select name = "options">
+                <option value = "1" selected = "selected">Option 1</option>
+                <option value = "2">Option 2</option>
+            multiple --> will allow user to select multiple options
+            size --> configures how many <option> items to show at a time
+        button = clickable button
+        file = lets user select a file, must change form enctype to "multipart/form-data" and use post method
+        date = select a data from a calendar
+        email = a field for entering an email address
+        URL = field for entering a URL
+        search = single line text field for entering search strings
+    name = "variable-name" --> defines the variable name associated with the user input
+    value = "XXX" --> prefills the input element type with XXX value, needs to be deleted or changed from default
+    placeholder = "XXX" --> grayed out prefill in the input element type, not actually data, vanishes when user gets to field
+    size = "XX" --> number of characters the text input can display at a time
+    minlength and maxlength = "XX" --> sets minimum and maximum character length accepted by a text field
+    checked --> by checks this checkbox/radio button by default
+    required --> makes the filling out of this field required before submission
+    pattern --> set parameters of acceptable characters in field using Regex (regular expression)
+    title = "Instructions" --> rendered to user to tell them what to put into the field or how to put it in (i.e. "Use format (123) 456-7890 for phone number)
+<label> = child of <form>, goes before input, content is the title you want for the input field
+    for = "input id" --> attribute for label, points to id for <input>, sets focus for user when clicked
+<fieldset> = groups several inputs and labels within a webform, makes it pretty
+<legend> = child of <fieldset>, basically a form title (like "Incident Report Form")
+These next elements are for the robots and don't change user interaction
+<header> = wrap this around introductory content
+<nav> = wrap this around your navigation
+<aside> = a portion of a document whose content is indirectly related to document's main content
+<section> = a standalone section without more specific semantic elements
+<footer> = wrap this around your footer
+<article> = self-container composition on page, like a forum post or blog entry
+<address> = physical address
+<time> = a precise date or time on a 24 hour clock
+
+<iframe> = nested browsing content, embedding another HTML page into the current page
+    src --> source
+    height and width
+    seamless --> tells browser to render this so that it appears to be part of the containing document
+    frameborder = "X" --> makes an X pixel border
+<video> and <audio> = embeds video or audio in website
+    src
+    width and height (video only)
+    poster --> set picture that will show while video is download (video only)
+    controls --> if present gives user controls
+    autoplay --> if present will start playback as soon as it won't have to buffer
+    loop --> if present will loop
+    preload --> tell the browser what to do with the data if the user hasn't begun playback
+        none = do not preload
+        auto = preload the whole thing
+        metadata = only download metadata
+    <source> allows choosing of multiple types of files for same audio or video since not all browsers/OS support all filetypes
+            <source src="myvideoo.mp4" type="video/mp4" />
+            <source src="myvideo.webm" type="video/webm" />
+            <source src="myvideo.ogv" type="video/ogg" />
+            <source src="myvideo.3gp" type="video/3gp" />
+<meta> = header data, not rendered for user, there's a ton of this set using name attribute:
+    name = author, charset, description, keywords, viewport, many many many many more
+
+EVOLUTION 5
+CSS - color your world!
+Parts of this page are intentionally ugly, please do not contact me about how to fix it, i'll just make it uglier
+Cascading Style Sheet, describe how elements should be rendered
+<link href="styles.css" type="text/css" rel="stylesheet" /> in the header links your independent styles.css document to your HTML
+<style type="text/css"> added in HTML header data lets you write CSS code directly in your HTML file
+can also add style attribute to any element and define CSS styling on a line by line basis... that's hard, but it's a good option to override styles since it is read last
+<p style="color: white;">White text</p>
+element_selector{
+    property_name: property_value;
+}
+element_selector is HTML element we want to target, property_name is the style we want to change, and the property_value is what we want to change to
+element_selectors
+    #idname = selects all elements with id = "idname"
+    .classname = selects all elements with class = "classname"
+    XX.classname or XX#idname = selects all XX elements with "classname" or "idname"
+    firstselector, secondselector = applies styling to both selectors
+    firstselector secondselector = applies styling to all secondselector that are children of firstselectors
+    firstselector > secondselector = applies styling to all secondselector that are DIRECT children of firstselector
+    firstselector + secondselector = applies styling to secondselector that is adjacent sibling of firstselector
+    firstselector ~ secondselector = applies styling to ALL secondselector that are sibling of firstselector
+    * = apply to everything, universal
+    XX[attribute = "value"] = applies styling to XX elements with specified attribute at specified value
+    a:link = applies styling to link
+    a:active = applies styling to an active link
+    a:hover = applies styling to a link on hover
+    a:visited = applies styling to a visited link
+    XX::first-line = applies styling to first-line in all XX elements
+    XX::first-letter
+    XX::selection = applies styling when things are highlighted
+    XX::after = applies styling to all content after content is defined
+        p::after {
+        content: "1";
+        color: "green";
+        }
+    XX::before
+
+property_names
+    color = sets color of element's text and text decoration, accepts named colors, RGB, and hexcode
+    font-family = sets group of fonts that are prioritized for use on the site
+    @font-face = lets you pull custom fonts from the web, requires some specific values
+        @font-face {
+            font-family: SuperMarioBros;
+            src: url(fonts/SuperMarioBros.ttf)
+        } --> can now pull in SuperMarioBros into other font-family values
+    font-size = sets size of font using pixels, points or em values
+        need to set an absolute font size before using em values as relative sizes
+    font-weight = normal, bold, or bolder
+    font-style = normal, italic, oblique
+    text-transform = capitalize, uppercase, lowercase
+    text-align = left, right, center, justify, justify-all, start, end, match-parent
+    text-decoration-line = overline, line-through, underline, blink
+    text-decoration-color = sets color of the text decoration additions
+    text-decoration-style = dashed, wavy, dotted, double, solid
+    text-decoration = style line color
+    text-indent = XXpx sets indentation, can also use %
+    text-shadow = accepts list of shadows to be applied to text (offset x, offset y, blur radius, color) 5px 5px 1px black
+    letter-spacing = Xpx sets spacing between letters
+    word-spacing = Xpx
+    line-height = sets amount of space used for lines (default approx 1.2 (multiple of text size))
+    vertical-align - sets vert alignment of an line or table-cell box, baseline, sub,super,text-top, text-bottom, middle, top, bottom
+    background-color
+        linear-gradient(degrees, color1, color2) creates a bg image which transitions between 2 or more colors, it's a gradient
+
+EVOLUTION 6
+let's not forget what we've already learned, and let's move forward with some website organization
+the box model (pull the pic from the github, it's beautiful)
+property_names
+    border-width = 1 value is all 4 sides, 2 values is topbottom and leftright, 3 values is top and leftright and bottom
+    border-style = none hidden dotted dashed solid double groove ridge inset outset
+    border = width style color;
+    border-XXX = where XXX = top bottom left or right, can set individual styling
+    border-radius = 1 value is all 4 corner, 2 values is topleftbotright and toprightbotleft, 3 values is topleft and toprightbotleft and botright
+    padding = space between text and the inner wall of the container which holds it
+    margin = space between block elements, can center align elements by setting margin to auto
+    width and height = sets those things of elements, can be set as min/max by adding min- or max- in front
+    background-color
+    overflow = auto, hidden, scroll (what to do when there's too much content in a block element)
+    box-shadow = adds box around element's frame. x and y offsets, blur, spread rad, and color (2px 3 px 170px -10px green), can add "inset" after color to have inner shadow
+    display = inline, block, inline-block, none, table, flex, grid = determines how all these rectangular boxes behave
+    visibility = visible, hidden, = shows or hides elememnts
+        (dif between display = none and visibility = hidden is that display removes the element while visibility removes the element BUT leaves space for that element)
+    background-image = (requires "url(path/to/img.jpg)" (no quotes))
+    background-repeat = repeat-x, repeat-y, repeat, no repeat
+    background-position = sets initial BG position using pixels or words = top, center, bottom (is using px first value is x axis, 2nd y)
+    background-attachment = fixed, scroll, local
+    background = color image repeat attachment position
+    cursor = auto, crosshair, default, pointer, move, text, wait, help
+    list-style-type = (ul) none, disc, circle, square (ol) decimal, decimal-leading-zero, lower-alpha, upper-alpha, lower-roman, upper-roman
+    list-style-position = (both) outside, inside (where these define position of marker relative to li)
+    list-style-image = sets image as the list item marker, requires url("path/to/image.jpg")
+    list-style = type position
+    border-spacing = distance between borders of adjacent cells in tables(1 value = all sides, 2 is horiz and vert)
+    border-collapse = defines if cells have shared or separate borders = collapse, separate
+    position = defines how an element is positioned in a document = static, relative, absolute, fixed, sticky
+        static is default value
+        relative is positioned according to normal flow of document then offset relative to it's static position based on top, left, bottom, right values, also z-index
+        absolute is removed entirely from document flow, position set with top, right, bottom, left, and z-index
+        fixed is removed entirely from document flow, positioned relative to screen's viewport and doesn't move, set using top right bottom and left
+        sticky positioned normally but becomes fixed as to not leave the screen's viewport when scrolled paste
+    float = none, left, right = allows elements to float around each other rather than sitting on top of one another
+    clear = none, left, right, both = specifies whether an element can be next to floating elements that precede it or if they must be moved down below them
+    @media print = applies this stile only to print devices
+        @media print{
+            body{
+                background-color: white;
+                color: black;
+            }
+        }
+we did a little more with screen sizes and flexbox, but honestly, we're about to throw it all away, so...
+
+EVOLUTION 7
+BootStrap
+https://getbootstrap.com/docs/4.3/getting-started/introduction/
+i cannot do a better job than the source material, so just use that
+
+EVOLUTION 8
+JavaScript, learning to code
+download and install node.js and npm https://blog.teamtreehouse.com/install-node-js-npm-windows
+started making .js files and running them in the visual code terminal running node filename.js
+console.log
+console.error
+let, var, const = variables must start with a letter, be descriptive, and use camelCase
+string, number, boolean, undefined, null (intentionally absent)
+using + to concatenate "Hello " + username
+use ${variable} to escape a variable value between backticks `Hello ${username}`
+if double quotes are part of a string value use single quotes to wrap your string and vice versa
+typeof var returns what type of data the variable is
++ - * / % && || BEDMAS
+% is the remainder operator, returns what's leftover when one div by another (ie. all even numbers % 2 = 0)
+++ -- += -=  *= /= %= to increment
+var = 1; var = var + 1; SAME AS var = 1; var++; SAME AS var = 1; var = += 1;
+num1 == num2 will return true or false if statement is true or false, be sure to use 2 equal signs
+num1 != num2 will return false or true if statment is true or false
+> < >= <=
+=== is stricly equal, vars must also be of same data type
+10 == "10" returns true while 10 === "10" returns false
+! is the not operator, negates a condition, turns true to false and vice versa
+\n = new line, \t = tab, \r = carriage return (line break) for string values
+can escape other characters in string data using \, like if you want to escape a backslash, \\
+escaping quotes just means to use different quotes to wrap your string data than inside your string data
+var.length() indicates char length of string data
+var.concat(var2) returns var + var2 string data
+var.toLowerCase() and var.toUpperCase()
+var.charAt(indexvalue) returns character at indexvalue of string data
+combine these to get last character in string... lastCharIndex = var.length - 1; lastChar = var.charAt(lastCharIndex); lastChar now equal to last character in variable var
+var.slice(#, #2) returns new string sliced from index # and #2, not including chars passed as parameters
+    using only 1 # will slice from that index to end of string data
+    negative values will slice from end
+var.substr(#, #2) returns new string beginning at index # including #2 char from that index
+var.split("separator") splits a string into an array based on separator i.e. string.split(",") where string = "tute, mati, pepe, raul, juan, marta, agus, loli" returns an array w/ those names
+parseInt(stringVar) converts number stored as string to number stored as number (INTEGER)  "3.14" to 3
+parseFloat(stringVar) converts number stored as string to number stored as number (FLOATING POINT) "3.14" to 3.14
+numberVar.toString() converts number stored as number to number stored as string
+
+EVOLUTION 9
+conditionals, start making your code "think"
+if (executes if true) else if (executes if if false and else if is true) else (executes if all if and if else are false)
+ternary operator lets you define a var based on if/else statment
+    let message = number === 2 ? "The number is 2" : "The number is not 2"
+    message is set to is or is not 2 when number === 2 is evaluated
+switch works like long IF ELSE IF list but is shorter to write, requires break commands to stop evaluating switch statments once returned true
+    const name = "Marta";
+    let message = null;
+    switch (name) {
+        case "Miriam":
+        message = "The name is Miriam";
+        break;
+    case "Felipa":
+        message = "The name is Felipa";
+        break;
+false values are false, null, undefined, 0, NaN, and "" (null typeof returns object and objects are evaluated as true)
+while statements (can be infinite loops if not careful to provide a way for the condition to eventually become false)
+do while statments are nearly identical, except a do statement is going to execute at least once regardless of whether condition is true/false, a while statment won't execute at all if false
+for (initialization, condition, final expression) for (let n = 0; n < 10; n++){code};
+break statments will get you out of for loops as well
+functions let you group your own code and all it whenever you want
+function functionName(parameters){code} OR functionName = function(params){code}
+parameters are passed into functions in the same order they are entered
+    const greeting = function(username, age) {
+        console.log('The user: ' + username + ' has ' + age + ' years!!!';
+    }
+arrays [] list of 0 or more expressions, can be of mixed data type including functions
+1st items in array is index 0
+can over write data in arrays ie. arrayName[1] = "newData" will overwrite whater was in index 1 with string "newData", will create empty index 0 if this was an empty array to start with
+arrayName.length returns how many values are in an array
+arrayName.push(params) adds one or more elements to end of array, stores length of array in var
+arrayName.unshift(params) adds one or more elements to start of array
+arrayName.shift() removes first element and stores it in var
+arrayName.pop() removes last element and stores it in var
+arrayName.sort() sorts elements of array and returns the array
+arrayName.reverse() reverses an array in place
+arrayName.join("joiner") joins elements of array separated by joiner i.e. nameArray.join(" - ") returns "john - jim - jeff - ...etc..."
+arrayName.concat(arrayName2) merges 2 or more arrays, returns entirely new array (arrayName elements followed by arrayName2 elements in this example)
+arrayName.indexOf(param) returns index value of param, returns -1 if param does not exist in array
+arrayName.toString() returns a string representing the array and its elements, kind of like using join(", ")
+arrayName.forEach(var) executes a function once for each array element, iterates over entire array, need to pass function as param:
+    arrayName.forEach(function(arrayValue) {
+        console.log(arrayValue);
+    });
+            can pass index as second param to return the index of each array value
+arrayName.map(function(var){code}); creates a new array with results of calling function on every element in array
+arrayName.filter(function(var){code}); created a new array with all elements that pass test of the provided function, does not alter original array
+arrayName.reduce(function(accumulator, currentValue){code});
+    const numbers = [1, 2, 3, 4, 10, 5];
+    const result = numbers.reduce(function(accumulator, currentValue) {
+        return accumulator + currentValue;
+    });
+    console.log(result); // returns 25 as final result
+objects are lists of zero or more pairs of property name and property values, use {}
+    const person = {
+        name: "Nico",
+        age: 38
+    };
+can change a property value the same way you'd do for a variable ie. person.name = "Mario" overwrites Nico
+can also add property names by magically defining their value ie. person.married = true will write in property name "married" and set value to true
+functions can be assigned to property_names as well, to call ie. person.function();
+using a function stored in an object to call info inside the same object use this ie. function: function(name){console.log('${this.name}'); returns Mario in this example
+can use person.name or person["name"] to call the name value in the object
+Object.keys returns array value with all object property name (no values)
+arguments is a value which contains all params passed into a function, works kind of like an array (has indices, can use .length, etc...)
+
+EVOLUTION 10
+test our code on http server using localhost and port 8080
+call our JS files in header using script tag, stop writing JS directly in head of HTML doc <script src="script.js"></script>
+always use async, defer makes things load in order and stops the website from loading <script src="script.js" async></script>
+window.alert(), just an alert, accepts 1 param which is the message to show the user
+window.prompt(), asks for an input, accepts 2 params which is the message to show the user and the default input value
+window.confirm(), ok (true) or cancel (false), accepts 1 param which is the message to show the user
+can drop the window. from all 3 of these 
+window.location returns URL of object it is linked to
+document.location returns the same as above
+https://leaderpost.com/sports/football/cfl/saskatchewan-roughriders/rider-rumblings-66-a-truly-classic-labour-day-game#go-riders
+console.log(location.href); // https://leaderpost.com/sports/football/cfl/saskatchewan-roughriders/rider-rumblings-66-a-truly-classic-labour-day-game#go-riders
+console.log(location.protocol); // https:
+console.log(location.host); // leaderpost.com
+console.log(location.hostname); // leaderpost.com
+console.log(location.port); // empty string as it doesn't have a port number
+console.log(location.pathname); // /sports/football/cfl/saskatchewan-roughriders/rider-rumblings-66-a-truly-classic-labour-day-game
+console.log(location.search); // empty string as we don't have a query string params (you can try this submiting a form using GET)
+console.log(location.hash); // #go-riders
+setTimeout() sets a timer which executes a function once after the timer expires, accepts 2 params first being function to execute and second be delay in milliseconds until execution
+    if function called by setTimeout also accepts params then setTimeout will accept those params as well to pass into the called function
+clearTimeout(varForSetTimeout); will stop the timer and hence stop function from executing
+setInterval() repeatedly calls a function based on an interval, works similar to setTimeout
+clearInterval() will stop an interval timer and hence stop code from being executed
+document object model DOM represents a page so that programs can change structure, style, and content of HTML
+window.onload = function(){code to be executed after loading document}; will only load code after document is loaded
+document.getElementById(string) accepts a string parameter and returns element containing that string as ID
+document.querySelector(string) accepts a string parameter which represents an HTML element and returns first HTML element of that type
+document.querySelectorAll(string) accepts a string parameter which returns a nodelist of all HTML elements of that type
+    can add .class to those string params to get more specific
+element.attributes returns live collection of all attributes registered to specific node, easier with an example:
+    <p id="main" class="red">Text in red</p>
+        const element = document.querySelector("p");
+        console.log(element.attributes); // NamedNodeMap {0: id, 1: class, id: id, class: class, length: 2}
+        console.log(element.attributes[0].name); // id
+        console.log(element.attributes[0].value); // main
+getAttribute is an easier way to do this, just remember that class is a reserved word so use className or classValue
+classList is ready-only property returning list of classes in an element
+can add, remove, item, toggle, contains, and replace classes using this
+    element.classList.add("classToAdd"), .toggle("classToToggle"), .replace("existing", "new")
+hasAttribute("attribute") checks if attribute exists for an element
+hasAttributes() checks if element has any attributes at all
+setAttribute("attribute", "value") creates an attribute and sets its value for an element
+removeAttribute("attribute")
+parentElement returns element's parent
+children returns element's children
+previousElementSibling and nextElementSibling select the prev and next sibling elements of element
+
+
+EVOLUTION 11
+changing element content
+innerText or textContent returns content of element
+innerHTML gets HTML content of an element, setting this value removes all of element's descendants and replaces them with what you input here
+style allows you to add CSS styling to elements (element.style.color = "red" adds red style to element)
+createElement("element") lets you create an element
+element.appendChild("element2") makes element2 a child of element
+element.removeChild("element2") removes element2 as child of element
+setting innerHTML to "" removes all children of element
+onclick makes something happen when that element is clicked
+addEventListener is an event handler accepts 2 params event type and event handler
+    const button = document.querySelector("button");
+    button.addEventListener("click", function() {
+        console.log("Oh, I been clicked");
+    });
+event include focus, blur, focusin, focusout, click, dblclick, mouseover, mouseout, keypress, keydown, keyup
+removeEventListener accepts same 2 params as addEventListener
+preventDefault() stops default element behaviour
+clientX and clientY are the mouse clicky trackers
+charCode pulls a numeric value representing a pressed key
+fromCharCode will accept a number value and return the key value
+combining these 2 it's possible to know what key the user pressed
+event handlers include onchange, onclick, ondblclick, onmousedown, onmouseover, onmouseout, onkeydown, onkeypress, onkeyup, onload, onresize, onscroll, oninput, onfocus, onblur...
+back to forms...
+    const form = document.querySelector("form");
+    console.log(form.action); // save_user.html
+    console.log(form.method); // get
+    console.log(form.encoding); // application/x-www-form-urlencoded
+    console.log(form.name); // login
+forms emit a submit event which can be handled with event handlers
+select elements of a selectedIndex property which returns number value for selected option index
+also has options property which returns the options elements collection
+can get selected options combining selectedIndex property and options collection
+checkbox also have a value property and a checked property that returns boolean in the case the checkbox is checked or not
+check API exercises 46 and 47
+JSON  = basically objects but with minor differences, JSON object properties use double quotes
+JSON.stringify(JSONvar) returns the JSONvar JSON as a string
+JSON.parse(JSONvar) returns the JSONvar JSON as an object
+AJAX = async JS and XML, can send and receive info in various formats
+https://codebeautify.org/jsonviewer takes a JSON and makes it pretty
+fetch() accepts an API URL as param, provides interface for fetching resources, returns a promise that resolves to the response to a request
+can use a then method after fetch to tell it what to do with the info it received, needs an example:
+    const apiURL = "https://api.tvmaze.com/search/shows?q=batman";
+    fetch(apiURL)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        const show = data[0];
+        console.log(show.show.name); // Batman
+        console.log(show.show.premiered); // 1966-01-12
+        console.log(show.show.image.original); // http://static.tvmaze.com/uploads/images/original_untouched/6/16463.jpg
+    });
+
+EVOLUTION 12
+NPM and node
+creating JSON files using npm init to describe our project and dependencies
+installing npm modules like express, pug, multer, morgan, one-liner-joke, uglify
+gitignore
+pulling these modules into our projects so that our projects are easier, prewritten code
+const module = require("modulename") tells node to go get the modeulename code and we assign all of that code to a single var, module
+module.exports = functionName allows to you to export a function from an independent JS file so it can be used when it is required
+https-server use again, at a port of our choosing, writing our own routers
+won't get much into this, since we get into express servers pretty quick...
+request a module, configure server, handle request, send response
+    const express = require("express");
+    const app = express();
+
+    app.get("/", function(request, response) {
+        response.send("Hello Node.js World!");
+    });
+    app.listen(3000, function() {
+        console.log("Example app listening on port 3000!");
+    });
+    //the above is a basic express server configuration, require express, create express app/server, GET default route, tell express on which port to listen to HTTP requests
+use get to obtain get requests, accepts string as first param representing route that we want to handle and second param is function that accepts a function accepting 2 objects (req and res) as params
+response object has send method that we can use to send data to client as response which is why we can see the message back when we send a request to our server
+can also handle .post (create), .put (update), and .delete requests as well as a .all request
+using .all requests is handy for middleware
+response object lets us send response to client and choose dif formats, can send JSON, HTML, whatever
+response.json sends user data in JSON format
+response.sendFile sends user a file, will need the path module to do this, look it up
+can use express router to handle routing configurations better, here's a long example:
+line 162 to 204 of nodeNPMcheat.text
+response object has status method which allows us to set up HTTP status response codes (like 404)
+middleware is a function that you can apply to req and res objects, can be chained using the next function, gets 3 params req res and next
+    const express = require("express");
+    const app = express();
+    const myMiddleware = function(req, res, next) {
+        req.someValue = "This is a value to test the Middleware";
+        next();
+    };
+    app.use(myMiddleware);
+    app.get("/", (req, res) => {
+        const responseMessage = req.someValue; // We get the request value that we setted from the middleware
+        res.send(responseMessage);
+    });
+    app.listen(3000);
+express serves static assets from a public folders using a statis method, which accepts the statis folder name: app.use(express.static("public"));
+don't need to define our own routes for static assets
+can also create static assets alias using app.use first param, then pass middleware as second param
+    app.use("/assets", express.static("public"));
+this hides our folder architecture
+then we get into templates like PUG
+    app.set("view engine", "pug");
+create a views folder to store your PUG documents so express knows where to look for them
+use response render so we can send response to the user:
+    app.get("/", (req, res) => {
+        res.render("index", { title: "Hey", message: "Hello there!" });
+    });
+render accepts a 2nd param which is a JS object where each property will become a template variable
+PUG has mixin support which allows us to use code blocks
+block scripts, content, foot
+can extend layout for other templates
+use - to define JS variables inside templates, and now we can execute JS anywhere inside our templates
+    app.get("/products/:id", (req, res) => {
+        res.send("Product with the id: ");
+    }); //this is a route handler expecting a URL parameters like /products/10, to get the id from the URL we use req.params.id
+    
+    app.get("/products/:id", (req, res) => {
+        let id = req.params.id;
+        res.send(`Product with the id: ${id}`);
+    });
+can also send values to server using query string where URL might look like products/?id=1
+    app.get("/products", (req, res) => {
+        const id = req.query.id;
+        res.send(`Product with the id: ${id}`);
+    });
+now router is waiting for a query param with an id name
+this is only working since these are all get requests, because if they're post requests we need to add body-parser which can get data from post values
+    const bodyParser = require("body-parser");
+    const urlencodedParser = bodyParser.urlencoded({ extended: false });
+urlencodedParser is your middleware and can be used in your app.post params as middleware
+    app.post("/products", urlencodedParser, (req, res) => {
+        const username = req.body.username;
+        const firstname = req.body.firstname;
+        const lastname = req.body.lastname;
+        console.log(req.body);
+        res.send(
+            `We got the following values from the query string: ${username}, ${firstname} & ${lastname}`
+        );
+    });
+multer will allow us to send files, need to set form enctype to multipart/form-data
+    const multer = require("multer");
+    const upload = multer({ dest: "upload" }); where dest is the folder where uploaded files will end up
+
+    app.post("/products", upload.single("file"), (req, res) => {
+    const filename = req.file.originalname;
+    console.log(req.body);
+    console.log(req.file);
+    res.send(`Congrats we uploaded the following file ${filename}`);
+    }); //multer stores input values into request body (same as body-parser)
+using nodemon will watch our files and see if we save them to reload our server for us
+configure it is the start script and it will look for index.js for us
+    const express = require("express");
+    const app = express();
+    const port = 3000;
+
+    app.set("view engine", "pug");
+
+    app.get("/", (req, res) => {
+        res.render("index", {});
+    });
+
+    app.listen(port, () => {
+        console.log(`Server running on port ${port}`);
+    }); //basic express server looking at pug engine
+
+EVOLUTION 13
+use this https://github.com/prma85/node_comit/blob/master/docs/11-express.md
+
+EVOLUTION 14
+databases https://github.com/prma85/node_comit/blob/master/docs/12-mongodb.md
+
+EVOLUTION 15
+heroku https://github.com/prma85/node_comit/blob/master/docs/13-deploy.md
+
+BRING IT ALL TOGETHER
+throw out what is no longer relevant, use PUG, install modules, make a public folder with assets alias, make it talk to database, boom we done
+
+
+
+
+

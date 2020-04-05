@@ -1,0 +1,6 @@
+open a cmd prompt
+cd C:\Program Files\MongoDB\Server\4.2\bin
+launch mongod.exe
+open another cmd prompt
+cd C:\Program Files\MongoDB\Server\4.2\bin
+launch mongo.exe
