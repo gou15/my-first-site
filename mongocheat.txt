@@ -4,3 +4,169 @@ launch mongod.exe
 open another cmd prompt
 cd C:\Program Files\MongoDB\Server\4.2\bin
 launch mongo.exe
+mongo shell is based on JS
+show dbs will show all databases since we're not working inside any db at this point
+db will show which database we're using (db is a JS variable which stores the selected database)
+databases contain collection which is where we can store documents grouped by some criteria
+database.collection is a namespace (comics.superheroes where comics is db and superheroes is collection)
+to switch the db we're in or create new db's use "use"
+use comics
+db's are not actually created until we write data into it
+db.collection.insertOne({ "JSONproperty": "JSONvalue"}) adds a JSON object into database (insertOne only accepts JSON objects)
+    must be inside the db we want to write the data to first
+show collections will show us collections inside the db we're in
+show dbs will show the database we are in
+use find() to show collection documents, accepts a string parameter to search by (if left blank returns all documents)
+find() also accepts an object parameter to query documents
+find does not actually return documents, it returns a cursor, we can assign the find returned value to a variable
+can use limit() to limit the amount of documents that are queried
+    const cursor = db.superheroes.find().limit(3) //will only query the first 3 items in collection
+can know if we can iterate over the cursor using hasNext(), returns a boolean value if there is a next documents
+cursor.next() returns next document
+using drop() will delete a collection
+    db.superheroes.drop() will remove superheroes collection
+use dropDatabase() will delete a database
+    db.dropDatabase() will remove the database we are working in
+use inertMany() to insert many documents into collection
+    db.superheroes.insertMany([
+        { "name": "SPIDER-MAN", "image": "spiderman.jpg" },
+        { "name": "CAPTAIN MARVEL", "image": "captainmarvel.jpg" },
+        { "name": "HULK", "image": "hulk.jpg" },
+        { "name": "THOR", "image": "thor.jpg" },
+        { "name": "IRON MAN", "image": "ironman.jpg" },
+        { "name": "DAREDEVIL", "image": "daredevil.jpg" },
+        { "name": "BLACK WIDOW", "image": "blackwidow.jpg" },
+        { "name": "CAPTAIN AMERICA", "image": "captanamerica.jpg" },
+        { "name": "WOLVERINE", "image": "wolverine.jpg" }
+    ])
+add .count() to a find method to return number of documents in collection matching find parameter
+    db.superheroes.find().count()
+add .pretty() to a find method to return documents in an easier to read format
+    db.superheroes.find().pretty()
+use updateOne to update a document (data that is not re-entered is deleted unless we use $set, example follows)
+    > db.superheroes.updateOne({ "name": "WOLVERINE"}, { $set: { "name": "LOGAN"}})
+    finds all documents with name wolverine, sets all other data for all documents so it is not overwritten, overwrites name with logan
+    could also use this to add data and not just overwrite it
+
+using the object id is smarter since it is unique (automatically assigned to every document added to db, returned with the _id property name)
+deleteOne() lets you delete documents in collections
+    db.superheroes.deleteOne({ "_id": ObjectId("5b0569b32c95847cf4135e77")})
+use deleteMany() to delete more than one document
+
+now integrate mongoDB into Node
+    npm install mongodb
+
+    const MongoClient = require("mongodb").MongoClient;
+    const url = "mongodb://localhost:27017"; //mongodb uses port 27017 and we have mongo installed in local environment
+
+    MongoClient.connect(url, function(err, client) {
+        console.log("Connected successfully to server");
+    }); //we use the client object to get the database
+
+client object has a db method that accepts a string with the database name and returns database object
+    const db = client.db("comics");
+we have yet to set a collection to use, good thing the db object we got from client has a collection method
+    const collection = db.collection("superheroes");
+and now that we have the collection we can use the find method to query
+    collection.find({});
+this find method returns a cursor object which we can't really use... so we convert it to an array
+    collection.find({}).toArray((error, documents) => {
+        console.log(documents);
+    });
+the client object has a close method that will close the database connection (this is important)
+we add all of this into the route handler:
+    app.get("/", (req, res) => {
+        MongoClient.connect(url, function(err, client) {
+        const db = client.db("comics");
+        const collection = db.collection("superheroes");
+
+        collection.find({}).toArray((error, documents) => {
+            client.close();
+            res.render("index", { documents: documents });
+            });
+        });
+    });
+
+can use insertOne, insertMany, updateOne, updateMany, deleteOne, and deleteMany from here as well
+    collection.insertOne(documentToAdd (err, result) => {
+        callback(result);
+    });
+
+best to do delete documents by object ID:
+    const ObjectID = require("mongodb").ObjectID;
+    const filter = { _id: ObjectID("5b07560bda15952ac0b33e6c") };
+
+    collection.deleteOne(query, function(err, result) {
+        callback(result);
+    });
+
+MONGOOSE
+makes all of this nonsense easier
+    npm install MONGOOSE
+
+    var mongoose = require("mongoose");
+    var mongoDB = "mongodb://127.0.0.1/my_database"; //this line and next set up mongoose connection
+    mongoose.connect(mongoDB, { useNewUrlParser: true });
+    var db = mongoose.connection; //gets default connection
+    db.on("error", console.error.bind(console, "MongoDB connection error:")); //this binds a connection to an error event, gives notification of errors
+
+mongoose uses models which are defined using a schema interface
+schema lets you define fields stored in each document along with their validation reqs and default values
+    const mongoose = require("mongoose");
+
+    const superHeroSchema = new mongoose.Schema({
+        name: String
+    });
+schematype is then a configuration object for an individual property
+schemas are compiled into models using mongoose.model()
+    const SuperHeroModel = mongoose.model("SuperHeroModel", superHeroSchema);
+valid schematypes include string, number, date, buffer, boolean, mixed, objectid, array, decimal128, map
+there are validators which make sure that data further matches expected parameters
+numbers have min and max validators
+strings have enum (set of allowed values), match (regex expression string must match), min and maxlength
+    var superHeroSchema = new Schema({
+        movieCount: {
+            type: Number,
+            min: [0, "Too few movies"],
+            max: 12,
+            required: [true, "Why no movies?"]
+        },
+        brand: {
+            type: String,
+            enum: ["Marvel", "DC"]
+        }
+    });
+smarter to define each model schema in its own file and export the method to create the model:
+    const mongoose = require("mongoose");
+
+    const superHeroSchema = new mongoose.Schema({
+        name: String
+    });
+    module.exports = mongoose.model("SuperHeroModel", superHeroSchema);
+
+an instance of a model is called a documenet, and creating/saving those to the database is easy:
+    var SuperHeroModel = require("../models/superhero.model");
+
+    SuperHeroModel.create({ name: "WOLVERINE" }, function(err, small) {
+        if (err) return handleError(err);
+    });
+
+to query documents...
+    SuperHeroModel.find({ name: "WOLVERINE" })
+        .where("createdDate")
+        .gt(oneYearAgo)
+        .exec(callback);
+
+to update documents...
+    SuperHeroModel.deleteOne({ brand: "DC" }, function(err) {
+        if (err) return handleError(err);
+    });
+    SuperHeroModel.updateOne({ name: "WOLVERINE" }, { name: "LOGAN" }, function(
+        err,
+        res
+    )
+
+to delete documents...
+    SuperHeroModel.deleteOne({ brand: "DC" }, function(err) {
+        if (err) return handleError(err);
+    });
