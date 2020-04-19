@@ -1,13 +1,14 @@
-*{
+* {
   padding: 0;
   margin: 0;
 }
-  
-body{
+
+body {
   color: black;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
 }
+
 .superhero-container {
   display: inline-block;
   width: 200px;
@@ -17,13 +18,20 @@ body{
 }
 
 .superhero-container img {
-  width: auto;
+  width: 200px;
+  height: 120px;
   max-width: 100%;
 }
+
+.superhero-container h3 {
+  font-size: 16px;
+}
+
 .superhero-container a {
   color: black;
   text-decoration: none;
 }
+
 .create-container {
   padding: 10px;
 }

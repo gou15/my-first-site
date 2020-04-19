@@ -1,3 +1,3 @@
 window.onload = function() {
-    console.log("Loaded site");
-  };
+  console.log("Loaded site");
+};

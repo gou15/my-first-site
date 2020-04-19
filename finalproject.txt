@@ -663,5 +663,39 @@ throw out what is no longer relevant, use PUG, install modules, make a public fo
 
 
 
+        <h3>Express and NPM</h3>
+            https://github.com/prma85/node_comit/blob/master/docs/10-nodejs.md
+            Middleware
+            module.exports
+            require
+            npm install MODULE
+            express, nodemon, morgan, multer, path, body-parser (urlencodedParser), logplease, one-liner-joke
+            routers and router mounting
+            error handling if 404 etc..
+            public folder and alias name
 
 
+                const express = require("express");
+                const app = express();
+                const port = 3000;
+        
+                app.set("view engine", "pug");
+        
+                app.get("/", (req, res) => {
+                    res.render("index", {});
+                });
+        
+                app.listen(port, () => {
+                    console.log(`Server running on port ${port}`);
+                }); //basic express server looking at pug engine          
+
+        <h3>PUG</h3>
+            https://github.com/prma85/node_comit/blob/master/docs/11-express.md
+
+        <h3>Mongo and Mongoose</h3>
+            https://github.com/prma85/node_comit/blob/master/docs/12-mongodb.md
+
+            Could maybe build a working prototype of Milayna's incident report form. Forms, PUG, body-parser, upload to server, accept files, crack a joke... yea that'll work well
+            
+            <h3>Heroku</h3>
+                https://github.com/prma85/node_comit/blob/master/docs/13-deploy.md

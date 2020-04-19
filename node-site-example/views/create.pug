@@ -1,4 +1,6 @@
 div.create-container
-  form(action="/superheros",  method="post")
-    input(type="text", placeholder="superhero name", required="required", name="superhero")
-    button Create
+  form.form-inline(action="/superheroes",  method="post")
+    div.form-group.mb-2
+      input.form-control(type="text", placeholder="suerhero name", required="required", name="superhero")
+    div.form-group.mb-2
+      button.btn.btn-primary Create
