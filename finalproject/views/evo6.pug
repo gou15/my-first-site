@@ -1,0 +1,345 @@
+doctype html
+head
+  title Throw it out, get Bootstrap
+  link(rel='shortcut icon' href='img/bootstrapfavico.ico' type='image/x-icon')
+  link(href='css/cssevo8.css' type='text/css' rel='stylesheet')
+  link(href='css/fonts/SuperMario256.ttf' rel='stylesheet')
+  link(href='css/fonts/SuperMarioBros.ttf' rel='stylesheet')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='author' content='Me')
+  meta(name='description' content='Look at the progress of a learning full stack developer as he progresses through the ComIT course learning HTML, CSS, and Node with focus on both front and backend coding.')
+nav.navbar.sticky-top.navbar-expand-lg.navbar-dark.bg-dark
+  a.navbar-brand(href='#')
+    img(src='img/yoshihead.png' alt='Yoshi Head' title='Yoshi' height='40px' width='auto')
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        a.nav-link(href='#')
+          | Link 1 
+          span.sr-only (current)
+      li.nav-item
+        a.nav-link(href='#') Link 2
+      li.nav-item.dropdown
+        a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+          | Dropdown Menu
+        .dropdown-menu(aria-labelledby='navbarDropdown')
+          a.dropdown-item(href='#') Link 3
+          a.dropdown-item(href='#') Link 4
+          .dropdown-divider
+          a.dropdown-item(href='#') Link 5 Under Divider
+      li.nav-item
+        a.nav-link.disabled(href='#' tabindex='-1' aria-disabled='true') Disabled Link
+    p(style='color: white') Zoom in to see NavBar Collapse &nbsp;&nbsp;&nbsp;
+    form.form-inline.my-2.my-lg-0
+      input.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search')
+      button.btn.btn-primary.my-2.my-sm-0(type='submit') Search
+#bodynonav
+  h1(style='margin: 10px') Our First Framework... Bootstrap Makes CSS A Breeze
+  br
+  p(style='margin: 10px')
+    | I am not going to attempt to do a better job of explaining Bootstrap than Bootstrap can. 
+    a(href='https://getbootstrap.com/' target='_blank') Read the documentation.
+    |         All I&apos;m going to do with this page is show you what we learned in class, but there is so much you can do with this framework it&apos;s incredible. You&apos;re essentially importing
+    |         a whole lot of CSS that a whole lot of other people worked on so you don&apos;t have to worry about it. You apply their hardwork by designating the correct classes to the
+    |         correct HTML tags and all sorts of magic will happen for you. The documentation is so thorough that you should be able to copy and paste most of the &quot;coding&quot; and then modify
+    |         what you need to modify to accomplish what you want. You can mix and match Bootstrap classes within the same tag, and there is nothing stopping you from importing
+    |         your own CSS as well.
+  p(style='margin: 10px')
+    | A thorough understanding of the box model is crucial to the application of Bootstrap styling. Check out the last evolution to study the box model further if you need to.
+    | Bootstrap makes laying out your boxes easier. It also has built in functionality to modify your layout for varying viewport sizes (desktop, laptop, table, cellphone).
+    | This paragraph and the heading above it have not been styled except by the global styling imported by Bootstrap. Going forward on this page we&apos;re going to exclusively use
+    | Bootstrap styling and none of our own CSS (except for borders so you can see the boundaries of the containers) Containers have green borders, rows have blue borders, and
+    | columns have red borders. Let&apos;s go.
+  br
+  .container(style='border: 2px solid green')
+    .row(style='border: 2px solid blue')
+      .col(style='border: 2px solid red')
+        p
+          | This paragraph is in the first column of a row contained in a container. This &quot;cell&quot; has no defined with so will default to 100% width (12 column) if there are
+          | no other columns in this row. But there are other columns, also with no defined width. These columns will share space equally and total a width of 12 columns.
+          | Since there are a total of 3 columns in this row, each will automatically occupy 4 columns of space.
+      .col(style='border: 2px solid red')
+        p
+          | This paragraph is in the second column of the first row. It doesn&apos;t matter that this paragraph has less content than the first - because they occupy the same
+          | row the size of this container will default to the biggest cell.
+      .col(style='border: 2px solid red')
+        p This paragraph is in the third and final column of the first row.
+    .row(style='border: 2px solid blue')
+      .col-4(style='border: 2px solid red')
+        p
+          | This paragraph is the first in a new row which contains columns of defined width. No matter how many other columns are in this row, this particular cell will
+          | occupy 4 columns of space because that&apos;s the defined width of the column.
+      .col-4(style='border: 2px solid red')
+        p
+          | This paragraph is also in a column of defined width - also 4. Because the next column (even though it&apos;s in the same row) has a definied width of 8 columns it
+          | exceeds the max allowable columns per row, which is 12. It will automatically move itself to show underneath these first 2 cells. The cell to the right of this
+          | one is &quot;empty&quot; since we are trying to put too many columns on one row. It has no red border so there is no block element there.
+      .col-8(style='border: 2px solid red')
+        p
+          | This is the 8 width column I was talking about. Notice the lack of a blue border around this one since it is technically inside the same row as the the cells
+          | above it. Bootstrap will auto format your block elements based on the max column width. Note that as you zoom in and out or view this site on different sizes
+          | of devices it&apos;s layout will automatically adapt to the viewport of that device. Pretty cool eh? Utilizing this framework gives you a leg up on ensuring
+          | that your website is a pleasant browsing experience regardless of the device it is being viewed on.
+      .col-4(style='border: 2px solid red')
+        p
+          | I put these here as a 4 column width cell just to round off the block and demonstrate where these cells begin and end with the border legend per above.
+  br
+  p(style='margin: 10px')
+    | The next container is set up with &quot;breakpoints&quot; to tell the browser what to do with each cell as the size of the viewport changes. The above container kept the same number
+    | of columns regardless of viewport. You&apos;ll start to see things moving around as you change your viewport size with the next container... oh hey your navbar followed you down
+    | the page! It&apos;s set to sticky, but you can do what you want with it. Consult the documentation!
+  br
+  .container(style='border: 2px solid green')
+    .row(style='border: 2px solid blue')
+      .col.col-sm-12(style='border: 2px solid red')
+        p
+          | Column 1 - if you zoom in far enough you&apos;ll see this column end up beside columns 2 and 3.
+      .col.col-sm-12(style='border: 2px solid red')
+        p
+          | Column 2
+      .col.col-sm-12(style='border: 2px solid red')
+        p
+          | Column 3
+    .row(style='border: 2px solid blue')
+      .col-4.col-md-12(style='border: 2px solid red')
+        p
+          | Column 4 - this will end up beside column 5
+      .col-4.col-md-12(style='border: 2px solid red')
+        p
+          | Column 5
+      .col-8.col-md-12(style='border: 2px solid red')
+        p
+          | Column 6 - and this will end up beside column 7
+      .col-4.col-md-12(style='border: 2px solid red')
+        p
+          | Column 7
+  br
+  .container(style='border: 2px solid green')
+    .row.align-items-start(style='border: 2px solid blue')
+      .col(style='border: 2px solid red')
+        | These columns will align to the top of their row as long as their is enough text here to force a multi-line cell
+      .col(style='border: 2px solid red')
+        | Top
+      .col(style='border: 2px solid red')
+        | Top
+    .row.align-items-center(style='border: 2px solid blue')
+      .col(style='border: 2px solid red')
+        | These columns will align to the middle of their row as long as their is enough text here to force a multi-line cell
+      .col(style='border: 2px solid red')
+        | Middle
+      .col(style='border: 2px solid red')
+        | Middle
+    .row.align-items-end(style='border: 2px solid blue')
+      .col(style='border: 2px solid red')
+        | These columns will align to the bottom of their row as long as their is enough text here to force a multi-line cell
+      .col(style='border: 2px solid red')
+        | Bottom
+      .col(style='border: 2px solid red')
+        | Bottom
+  br
+  .container(style='border: 2px solid green')
+    .row.justify-content-start(style='border: 2px solid blue')
+      .col-4(style='border: 2px solid red')
+        | Default justification
+      .col-4(style='border: 2px solid red')
+        | Default justification
+    .row.justify-content-center(style='border: 2px solid blue')
+      .col-4(style='border: 2px solid red')
+        | Center justified
+      .col-4(style='border: 2px solid red')
+        | Center justified
+    .row.justify-content-end(style='border: 2px solid blue')
+      .col-4(style='border: 2px solid red')
+        | Justified to right
+      .col-4(style='border: 2px solid red')
+        | Justified to right
+    .row.justify-content-around(style='border: 2px solid blue')
+      .col-4(style='border: 2px solid red')
+        | Justified around
+      .col-4(style='border: 2px solid red')
+        | Justified around
+    .row.justify-content-between(style='border: 2px solid blue')
+      .col-4(style='border: 2px solid red')
+        | Justified content between
+      .col-4(style='border: 2px solid red')
+        | Justified content between
+  br
+  p(style='margin: 10px')
+    | There&apos;s some cool styling for tables too:
+  table.table.table-striped.table-dark.table-bordered.table-sm
+    thead
+      tr
+        th(scope='col') #
+        th(scope='col') Hack Name
+        th(scope='col') Difficulty Level
+        th(scope='col') Link
+    tbody
+      tr
+        th(scope='row') 1
+        td Kaizo Kindergarten
+        td Kaizo Light
+        td
+          a(href='https://www.smwcentral.net/?p=section&a=details&id=20091' target='_blank') Link
+      tr
+        th(scope='row') 2
+        td Buzzy&apos;s World Tour
+        td Standard: Hard
+        td
+          a(href='https://www.smwcentral.net/?p=section&a=details&id=20379' target='_blank') Link
+      tr
+        th(scope='row') 3
+        td Mario in Another Land
+        td Standard: Easy
+        td
+          a(href='https://www.smwcentral.net/?p=section&a=details&id=13582' target='_blank') Link
+      tr
+        th(scope='row') 4
+        td Item Abuse 3
+        td Kaizo: Pit
+        td
+          a(href='https://www.smwcentral.net/?p=section&a=details&id=10907' target='_blank') Link
+      tr
+        th(scope='row') 5
+        td Grand Poo World 3 (UNRELEASED)
+        td(colspan='2') Kaizo: Light (Anticipated)
+  br
+  p(style='margin: 10px')
+    | You can apply the same principles to images. The next image is inside a 12 column div but it&apos;ll adapt to your viewport as you go, so the whole image is always visible.
+  br
+  .container
+    .row
+      .col-12
+        figure.figure
+          img.img-fluid(src='img/dog fluid.JPG' alt='Dogs on a chair' title='Fluid dogs')
+          figcaption.figure-caption.text-center Two lazy dogs lounging on a chair
+  br
+  p(style='margin: 10px')
+    | Bootstrap also has some pretty nice styling for forms. Check this out:
+  br
+  .container
+    .row
+      .col-12
+        form(action='#' method='get' entype='application/x-www-form-urlencoded')
+          .form-group
+            label(for='nameid') Name:
+            input#nameid.form-control(type='text' name='name' placeholder='First Name')
+          .form-group
+            label(for='surnameid') Surname:
+            input#surnameid.form-control(type='text' name='surname' placeholder='Last Name')
+          .form-group
+            label(for='email') Email address:
+            input#emailid.form-control(type='email' name='email' placeholder='Enter Email' aria-describedby='emailHelp')
+            small#emailHelp.form-text.text-muted We&apos;ll absolutely sell your email regardless of the price
+          .form-group
+            label(for='password') Password:
+            input#passwordid.form-control(type='password' name='password' placeholder="Enter Password")
+          .btn-group.btn-group-toggle(data-toggle='buttons')
+            label.btn.btn-success.active
+              input#option1(type='radio' name='options' checked='')
+              |  Radio Buttons
+            label.btn.btn-success
+              input#option2(type='radio' name='options')
+              |  Radio Buttons
+            label.btn.btn-success
+              input#option3(type='radio' name='options')
+              |  Radio Buttons
+          br
+          br
+          .form-group
+            label.btn.btn-secondary.active
+              input(type='checkbox' checked='' autocomplete='off')
+              |  Remember Me
+          .form-group
+            button.btn.btn-primary(type='submit') Submit
+  br
+  p(style='margin: 10px')
+    | Have a look at what you can do with images now:
+  br
+  .container
+    .row
+      .col-2
+      #carouselExampleCaptions.col-8.carousel.slide.carousel-fade(data-ride='carousel')
+        ol.carousel-indicators
+          li.active(data-target='#carouselExampleCaptions' data-slide-to='0')
+          li(data-target='#carouselExampleCaptions' data-slide-to='1')
+          li(data-target='#carouselExampleCaptions' data-slide-to='2')
+        .carousel-inner
+          .carousel-item.active
+            img.d-block.w-100(src='img/dog carousel1.jpg' alt='Stitchy at the park')
+            .carousel-caption.d-none.d-md-block
+              h5(style='background-color: black; color: white') Stitchy
+              p(style='background-color: black; color: white') Stitchy having a good time at the park
+          .carousel-item
+            img.d-block.w-100(src='img/dog carousel2.jpg' alt='Leela at the park')
+            .carousel-caption.d-none.d-md-block
+              h5(style='background-color: black; color: white') Leela
+              p(style='background-color: black; color: white') Leela having a good time at the park
+          .carousel-item
+            img.d-block.w-100(src='img/dog carousel3.jpg' alt='Ready for sleeps')
+            .carousel-caption.d-none.d-md-block
+              h5(style='background-color: black; color: white') Both
+              p(style='background-color: black; color: white') So tired after having a good time at the park
+        a.carousel-control-prev(href='#carouselExampleCaptions' role='button' data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#carouselExampleCaptions' role='button' data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
+      .col-2
+br
+p(style='margin: 10px')
+  | You can also noodle around with hiding and revealing content:
+br
+#accordionExample.accordion
+  .card
+    #headingOne.card-header
+      h2.mb-0
+        button.btn.btn-link(type='button' data-toggle='collapse' data-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne')
+          | Click to reveal hidden content
+    #collapseOne.collapse(aria-labelledby='headingOne' data-parent='#accordionExample')
+      .card-body
+        | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS.
+  .card
+    #headingTwo.card-header
+      h2.mb-0
+        button.btn.btn-link.collapsed(type='button' data-toggle='collapse' data-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo')
+          | More hidden content here
+    #collapseTwo.collapse(aria-labelledby='headingTwo' data-parent='#accordionExample')
+      .card-body
+        | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS.
+  .card
+    #headingThree.card-header
+      h2.mb-0
+        button.btn.btn-link.collapsed(type='button' data-toggle='collapse' data-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree')
+          | Even more hidden content here!
+    #collapseThree.collapse(aria-labelledby='headingThree' data-parent='#accordionExample')
+      .card-body
+        | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven&apos;t heard of them accusamus labore sustainable VHS.
+br
+p(style='margin: 10px')
+  | The last thing we learned was about the navbar, but it was the first thing we put on here, so... yea that&apos;s done. There&apos;s so many other things you can do with Bootstrap. 
+  a(href='https://getbootstrap.com/' target='_blank') Read the documentation.
+  |  You&apos;ll learn so much.
+p(style='margin: 10px')
+  | It was right after learning Bootstrap that we presented our first project. 
+  a(href='https://gou15.github.io/my-first-site/ComIT' target='_blank')
+    | Check out the first
+    | project that I built!
+  |  I&apos;m pretty proud of what I put together at the time. It hasn&apos;t been updated since presentation day. List of known issues are in the &quot;About&quot; section.
+br
+br
+.container
+  .row.text-center
+    .col-4
+    .col-4
+      a(href='evo7' style='font-size: 2em;') Next Level
+    .col-4
+br
+br
+script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous')

@@ -1,0 +1,16 @@
+extends ./layout.pug
+
+block styles
+  link(href='css/styles.css' rel='stylesheet')
+
+block content
+  h1 Wellcome to Node.js, Express and Pug
+  p This project is just to practice
+
+  include ./create.pug
+
+  each superhero in superheroes
+    div.superhero-container
+      a(href="/superheroes/" + superhero.id)
+        img(src='/img/superheroes/' + superhero.image)
+        h3= superhero.name

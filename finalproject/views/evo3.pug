@@ -1,0 +1,226 @@
+doctype html
+head
+  title Forms - Let&apos;s Learn About You...
+  link(rel='shortcut icon' href='img/html.ico' type='image/x-icon')
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='author' content='Me')
+  meta(name='description' content='Look at the progress of a learning full stack developer as he progresses through the ComIT course learning HTML, CSS, and Node with focus on both front and backend coding.')
+h1 Forms, Noise, and Other&apos;s Hard Work
+audio(autoplay='' loop='' controls='')
+  source(src='audio/drmario.mp3')
+  source(src='audio/drmario.ogg')
+  p Dr. Mario theme upbeat and awesome
+p
+  | First... never autoplay audio. Remember when that was a thing websites used to do? It&apos;s horrible. So we&apos;ve learned how to put a little structure to our elements
+  | and present them ever so slightly nicer to our user. We&apos;re not done with HTML yet, so you&apos;ve got another page of black and white unstyled data to look at before
+  | we dress it up. Let us continue... We&apos;re going to learn how to ask our users for some information. We don&apos;t know how to do anything with it at this point, but we can ask for
+  | it. DON&apos;T USE ANY REAL INFORMATION IN THESE FORMS. Make it all up. You&apos;ll see why when we&apos;re done. Go ahead and click submit when you&apos;re done with your fake data...
+  | it isn&apos;t going anywhere. We haven&apos;t learned how to do anything with the data yet.
+fieldset
+  legend Who Are You
+  br
+  form(action='evo3' method='get' entype='application/x-www-form-urlencoded')
+    label(for='username') Username:
+    input#username(type='text' name='username' placeholder='Enter your username' minlength='4' maxlength='10' title='Between 4 and 10 characters')
+    br
+    label(for='password') Password:
+    input#password(type='password' name='password' placeholder='Enter your password' minlength='4' maxlength='10' title='Between 4 and 10 characters')
+    br
+    label(for='email') Email addy:
+    input#email(type='email' name='email' placeholder='your@email.com')
+    br
+    label(for='about') Your story:
+    textarea#about(name='about' placeholder='Tell me what brought you here...' cols='80' rows='10')
+    br
+    br
+    label(for='character') Best Mario Characters:
+    br
+    input#character(type='checkbox' name='character' value='marioChar')
+    | Mario
+    br
+    input#character(type='checkbox' name='character' value='marioChar')
+    | Luigi
+    br
+    input#character(type='checkbox' name='character' value='marioChar')
+    | Peach
+    br
+    input#character(type='checkbox' name='character' value='marioChar')
+    | Bowser
+    br
+    input#character(type='checkbox' name='character' value='marioChar' checked='checked')
+    | Kamek
+    br
+    input#character(type='checkbox' name='character' value='marioChar')
+    | Red Paratroopa
+    br
+    input#character(type='checkbox' name='character' value='marioChar' checked='checked')
+    | Geno
+    br
+    br
+    label(for='hack') The Coolest SMW Hack:
+    br
+    input#hack(type='radio' name='hack' value='bestHack')
+    | Grand Poo World 2
+    br
+    input#hack(type='radio' name='hack' value='bestHack')
+    | Invictus
+    br
+    input#hack(type='radio' name='hack' value='bestHack' checked='checked')
+    | Return to Dinosaur Land
+    br
+    input#hack(type='radio' name='hack' value='bestHack')
+    | Item Abuse
+    br
+    input#hack(type='radio' name='hack' value='bestHack')
+    | The Original Kaizo Mario World
+    br
+    input#hack(type='radio' name='hack' value='bestHack')
+    | Super Bun Bun World
+    br
+    input#hack(type='radio' name='hack' value='bestHack')
+    | JUMP 1/2
+    br
+    br
+    label(for='favcolor') Favorite color:
+    input#favcolor(type='color' name='favcolor' value='#3dfa05')
+    br
+    br
+    label(for='bday') Your birthdate:
+    input#bday(type='date' name='bday' value='1900-01-01')
+    br
+    br
+    label(for='favnum') Your lucky number:
+    input#favnum(type='number' name='favnum')
+    br
+    br
+    label(for='volume') NOFX comes on the playlist. Set your volume
+    input#volume(type='range' name='volume' min='0' max='11')
+    br
+    br
+    label(for='website') Where&apos;s your website?
+    input#website(type='url' name='website' value='http://www.YOURSITE.com' size='50')
+    br
+    br
+    input(type='submit')
+    br
+p
+  | Cool. That&apos;s a bunch of different form data that we just did nothing with. But checkout the URL you&apos;re on now (if you didn&apos;t click submit, go ahead and click submit).
+  | We just sent all your data to the URL line. That&apos;s fine, except I asked you for a password and now the world sees your password. You don&apos;t want that. The form above is
+  | set to use the &quot;get method.&quot; If we change this to the post method we change the way data is sent to the server (with the body of the form rather than in the URL). This won&apos;t
+  | put your information in the URL... but... unfortunately we don&apos;t know how to process POSTED form data, so we&apos;re just going to leave your information up there for the world to
+  | see.
+p
+  | We already embedded audio (and I hope it autoplayed for you - turns out Google Chrome has autoplay disabled by default, which,
+  | let&apos;s face it, is probably a good idea). Let&apos;s embed a video, let&apos;s steal some content to display as our own, let&apos;s talk real quick about our favicon and
+  | metadata, then we&apos;re HTML masters and onto CSS! Both the audio and video have been embedded with varying filetype sources to ensure compatibility across multiple browsers
+  | since we know how to do that. We&apos;re getting pretty good at this.
+video(poster='img/dog poster.JPG' height='500' width='auto' controls='' preload='metadata')
+  source(src='video/dogs 1.mp4' type='video/mp4')
+  source(src='video/dogs 1.webm' type='video/webm')
+  source(src='video/dogs 1.3gp' type='video/3g9')
+  source(src='video/dogs 1.ogg' type='video/ogg')
+  p My Dogs
+br
+p
+  | Lastly, let&apos;s pretend someone else had a bunch of stuff I want on my site, or I want to let someone look something up without ever taking their eyes off my site, or I want to
+  | take you back in time to an earlier time in my progress as a developer. I can copy all that content or rewrite it all OR I can just embed it and let you see it again
+  | without doing anything complicated.
+iframe(src='evo2' height='300' width='50%' seamless='')
+br
+br
+br
+br
+br
+br
+p
+  | Last things last, we added a fancy little icon to the tab this page is open in. It&apos;s a little pylon with HTML written on the bottom. Get it? Because we&apos;re under construction
+  | while we learn HTML? Something like that. It&apos;s funny. We added some data in our head HTML tag tag to make this happen. We also added a whole bunch of metadata. That
+  | data isn&apos;t for the user so the user won&apos;t see it unless they check out their console and read our code. That information is for the robot and can do all sorts of things,
+  | more than I could possibly explain here and, even if I could explain it, I wouldn&apos;t do it justice. That&apos;s all. Let&apos;s get you something nicer to look at; cascading
+  | style sheets here we come!
+br
+br
+a(href='evo4') Next Level
+//
+  EVOLUTION 4
+  HTML continued
+  <link> = header element for linking other stuff into your document (scripts, favicon, styling, whatever)
+  favicon set as follows: <link rel = "shortcut icon" href = "favicon.ico" type = "image/x-icon" />
+  favicon is displayed on the browser tab
+  <form> document section that contains controls for submitting information
+  action = URL of a program that processes form info
+  method = HTTP method the browser uses to submit the form
+  get = data appended to action attribute URL with "?" as separator, resulting URL sent to server
+  post = form data included in the body of the form and sent to the server
+  enctype = type of content that is used to submit form to server
+  default: "application/x-www-form-urlencoded"
+  file content: "multipart/form-data"
+  text: "text/plain"
+  <input> = child of <form> used to set type of input in a form
+  type = "input-type" -> sets type of input
+  input types include: button, checkbox, color, date, datetime-local, email, file, hidden, image, month, number, password, range, reset, search, submit, tel, text, time, url, week
+  password = obscures character entry, only an effect
+  submit = just a button to submit the form
+  radio = collection of radio buttons grouped by sharing same name attribute
+  checkbox = collection of checkboxes grouped by sharing same name attribute, multiple can be checked
+  hidden = form data that cannot be seen or modified by users when a form is submitted (like the ID of the content that is being ordered, or a security token), cannot be made visible
+  image = use a custom image as a button, need to define a src, can set height and width
+  textarea = multiline plain text input, can set cols and rows to give textarea size
+  select = provides a menu of options, requires an example:
+  <select name = "options">
+  <option value = "1" selected = "selected">Option 1</option>
+  <option value = "2">Option 2</option>
+  multiple -> will allow user to select multiple options
+  size -> configures how many <option> items to show at a time
+  button = clickable button
+  file = lets user select a file, must change form enctype to "multipart/form-data" and use post method
+  date = select a data from a calendar
+  email = a field for entering an email address
+  URL = field for entering a URL
+  search = single line text field for entering search strings
+  name = "variable-name" -> defines the variable name associated with the user input
+  value = "XXX" -> prefills the input element type with XXX value, needs to be deleted or changed from default
+  placeholder = "XXX" -> grayed out prefill in the input element type, not actually data, vanishes when user gets to field
+  size = "XX" -> number of characters the text input can display at a time
+  minlength and maxlength = "XX" -> sets minimum and maximum character length accepted by a text field
+  checked -> by checks this checkbox/radio button by default
+  required -> makes the filling out of this field required before submission
+  pattern -> set parameters of acceptable characters in field using Regex (regular expression)
+  title = "Instructions" -> rendered to user to tell them what to put into the field or how to put it in (i.e. "Use format (123) 456-7890 for phone number)
+  <label> = child of <form>, goes before input, content is the title you want for the input field
+  for = "input id" -> attribute for label, points to id for <input>, sets focus for user when clicked
+  <fieldset> = groups several inputs and labels within a webform, makes it pretty
+  <legend> = child of <fieldset>, basically a form title (like "Incident Report Form")
+  These next elements are for the robots and don't change user interaction
+  <header> = wrap this around introductory content
+  <nav> = wrap this around your navigation
+  <aside> = a portion of a document whose content is indirectly related to document's main content
+  <section> = a standalone section without more specific semantic elements
+  <footer> = wrap this around your footer
+  <article> = self-container composition on page, like a forum post or blog entry
+  <address> = physical address
+  <time> = a precise date or time on a 24 hour clock
+  <iframe> = nested browsing content, embedding another HTML page into the current page
+  src -> source
+  height and width
+  seamless -> tells browser to render this so that it appears to be part of the containing document
+  frameborder = "X" -> makes an X pixel border
+  <video> and <audio> = embeds video or audio in website
+  src
+  width and height (video only)
+  poster -> set picture that will show while video is download (video only)
+  controls -> if present gives user controls
+  autoplay -> if present will start playback as soon as it won't have to buffer
+  loop -> if present will loop
+  preload -> tell the browser what to do with the data if the user hasn't begun playback
+  none = do not preload
+  auto = preload the whole thing
+  metadata = only download metadata
+  <source> allows choosing of multiple types of files for same audio or video since not all browsers/OS support all filetypes
+  <source src="myvideoo.mp4" type="video/mp4" />
+  <source src="myvideo.webm" type="video/webm" />
+  <source src="myvideo.ogv" type="video/ogg" />
+  <source src="myvideo.3gp" type="video/3gp" />
+  <meta> = header data, not rendered for user, there's a ton of this set using name attribute:
+  name = author, charset, description, keywords, viewport, many many many many more

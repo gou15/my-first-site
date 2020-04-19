@@ -1,0 +1,296 @@
+doctype html
+head
+  title A Quick API/JSON Demo
+  link(rel='shortcut icon' href='img/api.ico' type='image/x-icon')
+  link(href='css/cssevo8.css' type='text/css' rel='stylesheet')
+  link(href='css/fonts/SuperMario256.ttf' rel='stylesheet')
+  link(href='css/fonts/SuperMarioBros.ttf' rel='stylesheet')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='author' content='Me')
+  meta(name='description' content='Look at the progress of a learning full stack developer as he progresses through the ComIT course learning HTML, CSS, and Node with focus on both front and backend coding.')
+nav.navbar.sticky-top.navbar-expand-lg.navbar-dark.bg-dark
+  a.navbar-brand(href='#')
+    img(src='img/yoshihead.png' alt='Yoshi Head' title='Yoshi' height='40px' width='auto')
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        a.nav-link(href='#')
+          | Link 1 
+          span.sr-only (current)
+      li.nav-item
+        a.nav-link(href='#') Link 2
+      li.nav-item.dropdown
+        a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+          | Dropdown Menu
+        .dropdown-menu(aria-labelledby='navbarDropdown')
+          a.dropdown-item(href='#') Link 3
+          a.dropdown-item(href='#') Link 4
+          .dropdown-divider
+          a.dropdown-item(href='#') Link 5 Under Divider
+      li.nav-item
+        a.nav-link.disabled(href='#' tabindex='-1' aria-disabled='true') Disabled Link
+    form.form-inline.my-2.my-lg-0
+      input.form-control.mr-sm-2(type='search' placeholder='Search' aria-label='Search')
+      button.btn.btn-primary.my-2.my-sm-0(type='submit') Search
+#bodynonav
+  h1 Getting Data Quick and Easy
+  br
+  p We&apos;re going to pull some data from another location and show it to you.
+  form#tv.form-inline(action='#' method='get' entype='application/x-www-form-urlencoded')
+    .form-group.mb-2
+      label(for='tvshow') Your Favorite TV Show: &nbsp;&nbsp;&nbsp;
+      input#tvshow.form-control(type='text' placeholder='Still Airing or Not...')
+    button.btn.btn-primary.mb-2(type='submit' style='margin-left: 10px;') Confirm
+  br
+  br
+  .tvdata.container
+    .row.text-center
+      .col-4
+        h2#titlehead
+        p#showtitle
+      .col-4
+        h2#statushead
+        p#showstatus
+      .col-4
+        h2#premierehead
+        p#premiere
+    .row.text-center
+      .col-4
+      .col-4
+        img#image
+        #summary
+      .col-4
+    br
+    br
+    .container
+      .row
+        .col
+          p
+            | What&apos;s going on here? I&apos;m taking your TV show input and turning into a string variable (removing any spaces and replacing them with plus signs). That variable
+            | is being inserted into a URL search string which talks to an API and will return a JSON object containing all sorts of information based on what it finds. I
+            | am taking some information from that JSON object and displaying it to you in a user friendly format. If you want to see the full JSON object check your
+            | console. You can draw API data from anywhere that&apos;s offering it, like Google Maps, and as long as you can interpret the JSON it is easy to present it to your
+            | user!
+  br
+  br
+  .container
+    .row.text-center
+      .col-4
+      .col-4
+        a(href='evo9' style='font-size: 2em;') Next Level
+      .col-4
+  br
+  br
+  script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
+  script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous')
+  script(src='js/evo8.js')
+//
+  EVOLUTION 8
+  JavaScript, learning to code
+  download and install node.js and npm https://blog.teamtreehouse.com/install-node-js-npm-windows
+  started making .js files and running them in the visual code terminal running node filename.js
+  console.log
+  console.error
+  let, var, const = variables must start with a letter, be descriptive, and use camelCase
+  string, number, boolean, undefined, null (intentionally absent)
+  using + to concatenate "Hello " + username
+  use ${variable} to escape a variable value between backticks `Hello ${username}`
+  if double quotes are part of a string value use single quotes to wrap your string and vice versa
+  typeof var returns what type of data the variable is
+  + - * / % && || BEDMAS
+  % is the remainder operator, returns what's leftover when one div by another (ie. all even numbers % 2 = 0)
+  ++ -- += -=  *= /= %= to increment
+  var = 1; var = var + 1; SAME AS var = 1; var++; SAME AS var = 1; var = += 1;
+  num1 == num2 will return true or false if statement is true or false, be sure to use 2 equal signs
+  num1 != num2 will return false or true if statment is true or false
+  > < >= <=
+  === is stricly equal, vars must also be of same data type
+  10 == "10" returns true while 10 === "10" returns false
+  ! is the not operator, negates a condition, turns true to false and vice versa
+  \n = new line, \t = tab, \r = carriage return (line break) for string values
+  can escape other characters in string data using \, like if you want to escape a backslash, \\
+  escaping quotes just means to use different quotes to wrap your string data than inside your string data
+  var.length() indicates char length of string data
+  var.concat(var2) returns var + var2 string data
+  var.toLowerCase() and var.toUpperCase()
+  var.charAt(indexvalue) returns character at indexvalue of string data
+  combine these to get last character in string... lastCharIndex = var.length - 1; lastChar = var.charAt(lastCharIndex); lastChar now equal to last character in variable var
+  var.slice(#, #2) returns new string sliced from index # and #2, not including chars passed as parameters
+  using only 1 # will slice from that index to end of string data
+  negative values will slice from end
+  var.substr(#, #2) returns new string beginning at index # including #2 char from that index
+  var.split("separator") splits a string into an array based on separator i.e. string.split(",") where string = "tute, mati, pepe, raul, juan, marta, agus, loli" returns an array w/ those names
+  parseInt(stringVar) converts number stored as string to number stored as number (INTEGER)  "3.14" to 3
+  parseFloat(stringVar) converts number stored as string to number stored as number (FLOATING POINT) "3.14" to 3.14
+  numberVar.toString() converts number stored as number to number stored as string
+  EVOLUTION 9
+  conditionals, start making your code "think"
+  if (executes if true) else if (executes if if false and else if is true) else (executes if all if and if else are false)
+  ternary operator lets you define a var based on if/else statment
+  let message = number === 2 ? "The number is 2" : "The number is not 2"
+  message is set to is or is not 2 when number === 2 is evaluated
+  switch works like long IF ELSE IF list but is shorter to write, requires break commands to stop evaluating switch statments once returned true
+  const name = "Marta";
+  let message = null;
+  switch (name) {
+  case "Miriam":
+  message = "The name is Miriam";
+  break;
+  case "Felipa":
+  message = "The name is Felipa";
+  break;
+  false values are false, null, undefined, 0, NaN, and "" (null typeof returns object and objects are evaluated as true)
+  while statements (can be infinite loops if not careful to provide a way for the condition to eventually become false)
+  do while statments are nearly identical, except a do statement is going to execute at least once regardless of whether condition is true/false, a while statment won't execute at all if false
+  for (initialization, condition, final expression) for (let n = 0; n < 10; n++){code};
+  break statments will get you out of for loops as well
+  functions let you group your own code and all it whenever you want
+  function functionName(parameters){code} OR functionName = function(params){code}
+  parameters are passed into functions in the same order they are entered
+  const greeting = function(username, age) {
+  console.log('The user: ' + username + ' has ' + age + ' years!!!';
+  }
+  arrays [] list of 0 or more expressions, can be of mixed data type including functions
+  1st items in array is index 0
+  can over write data in arrays ie. arrayName[1] = "newData" will overwrite whater was in index 1 with string "newData", will create empty index 0 if this was an empty array to start with
+  arrayName.length returns how many values are in an array
+  arrayName.push(params) adds one or more elements to end of array, stores length of array in var
+  arrayName.unshift(params) adds one or more elements to start of array
+  arrayName.shift() removes first element and stores it in var
+  arrayName.pop() removes last element and stores it in var
+  arrayName.sort() sorts elements of array and returns the array
+  arrayName.reverse() reverses an array in place
+  arrayName.join("joiner") joins elements of array separated by joiner i.e. nameArray.join(" - ") returns "john - jim - jeff - ...etc..."
+  arrayName.concat(arrayName2) merges 2 or more arrays, returns entirely new array (arrayName elements followed by arrayName2 elements in this example)
+  arrayName.indexOf(param) returns index value of param, returns -1 if param does not exist in array
+  arrayName.toString() returns a string representing the array and its elements, kind of like using join(", ")
+  arrayName.forEach(var) executes a function once for each array element, iterates over entire array, need to pass function as param:
+  arrayName.forEach(function(arrayValue) {
+  console.log(arrayValue);
+  });
+  can pass index as second param to return the index of each array value
+  arrayName.map(function(var){code}); creates a new array with results of calling function on every element in array
+  arrayName.filter(function(var){code}); created a new array with all elements that pass test of the provided function, does not alter original array
+  arrayName.reduce(function(accumulator, currentValue){code});
+  const numbers = [1, 2, 3, 4, 10, 5];
+  const result = numbers.reduce(function(accumulator, currentValue) {
+  return accumulator + currentValue;
+  });
+  console.log(result); // returns 25 as final result
+  objects are lists of zero or more pairs of property name and property values, use {}
+  const person = {
+  name: "Nico",
+  age: 38
+  };
+  can change a property value the same way you'd do for a variable ie. person.name = "Mario" overwrites Nico
+  can also add property names by magically defining their value ie. person.married = true will write in property name "married" and set value to true
+  functions can be assigned to property_names as well, to call ie. person.function();
+  using a function stored in an object to call info inside the same object use this ie. function: function(name){console.log('${this.name}'); returns Mario in this example
+  can use person.name or person["name"] to call the name value in the object
+  Object.keys returns array value with all object property name (no values)
+  arguments is a value which contains all params passed into a function, works kind of like an array (has indices, can use .length, etc...)
+  EVOLUTION 10
+  test our code on http server using localhost and port 8080
+  call our JS files in header using script tag, stop writing JS directly in head of HTML doc <script src="script.js"></script>
+  always use async, defer makes things load in order and stops the website from loading <script src="script.js" async></script>
+  window.alert(), just an alert, accepts 1 param which is the message to show the user
+  window.prompt(), asks for an input, accepts 2 params which is the message to show the user and the default input value
+  window.confirm(), ok (true) or cancel (false), accepts 1 param which is the message to show the user
+  can drop the window. from all 3 of these
+  window.location returns URL of object it is linked to
+  document.location returns the same as above
+  https://leaderpost.com/sports/football/cfl/saskatchewan-roughriders/rider-rumblings-66-a-truly-classic-labour-day-game#go-riders
+  console.log(location.href); // https://leaderpost.com/sports/football/cfl/saskatchewan-roughriders/rider-rumblings-66-a-truly-classic-labour-day-game#go-riders
+  console.log(location.protocol); // https:
+  console.log(location.host); // leaderpost.com
+  console.log(location.hostname); // leaderpost.com
+  console.log(location.port); // empty string as it doesn't have a port number
+  console.log(location.pathname); // /sports/football/cfl/saskatchewan-roughriders/rider-rumblings-66-a-truly-classic-labour-day-game
+  console.log(location.search); // empty string as we don't have a query string params (you can try this submiting a form using GET)
+  console.log(location.hash); // #go-riders
+  setTimeout() sets a timer which executes a function once after the timer expires, accepts 2 params first being function to execute and second be delay in milliseconds until execution
+  if function called by setTimeout also accepts params then setTimeout will accept those params as well to pass into the called function
+  clearTimeout(varForSetTimeout); will stop the timer and hence stop function from executing
+  setInterval() repeatedly calls a function based on an interval, works similar to setTimeout
+  clearInterval() will stop an interval timer and hence stop code from being executed
+  document object model DOM represents a page so that programs can change structure, style, and content of HTML
+  window.onload = function(){code to be executed after loading document}; will only load code after document is loaded
+  document.getElementById(string) accepts a string parameter and returns element containing that string as ID
+  document.querySelector(string) accepts a string parameter which represents an HTML element and returns first HTML element of that type
+  document.querySelectorAll(string) accepts a string parameter which returns a nodelist of all HTML elements of that type
+  can add .class to those string params to get more specific
+  element.attributes returns live collection of all attributes registered to specific node, easier with an example:
+  <p id="main" class="red">Text in red</p>
+  const element = document.querySelector("p");
+  console.log(element.attributes); // NamedNodeMap {0: id, 1: class, id: id, class: class, length: 2}
+  console.log(element.attributes[0].name); // id
+  console.log(element.attributes[0].value); // main
+  getAttribute is an easier way to do this, just remember that class is a reserved word so use className or classValue
+  classList is ready-only property returning list of classes in an element
+  can add, remove, item, toggle, contains, and replace classes using this
+  element.classList.add("classToAdd"), .toggle("classToToggle"), .replace("existing", "new")
+  hasAttribute("attribute") checks if attribute exists for an element
+  hasAttributes() checks if element has any attributes at all
+  setAttribute("attribute", "value") creates an attribute and sets its value for an element
+  removeAttribute("attribute")
+  parentElement returns element's parent
+  children returns element's children
+  previousElementSibling and nextElementSibling select the prev and next sibling elements of element
+  EVOLUTION 11
+  changing element content
+  innerText or textContent returns content of element
+  innerHTML gets HTML content of an element, setting this value removes all of element's descendants and replaces them with what you input here
+  style allows you to add CSS styling to elements (element.style.color = "red" adds red style to element)
+  createElement("element") lets you create an element
+  element.appendChild("element2") makes element2 a child of element
+  element.removeChild("element2") removes element2 as child of element
+  setting innerHTML to "" removes all children of element
+  onclick makes something happen when that element is clicked
+  addEventListener is an event handler accepts 2 params event type and event handler
+  const button = document.querySelector("button");
+  button.addEventListener("click", function() {
+  console.log("Oh, I been clicked");
+  });
+  event include focus, blur, focusin, focusout, click, dblclick, mouseover, mouseout, keypress, keydown, keyup
+  removeEventListener accepts same 2 params as addEventListener
+  preventDefault() stops default element behaviour
+  clientX and clientY are the mouse clicky trackers
+  charCode pulls a numeric value representing a pressed key
+  fromCharCode will accept a number value and return the key value
+  combining these 2 it's possible to know what key the user pressed
+  event handlers include onchange, onclick, ondblclick, onmousedown, onmouseover, onmouseout, onkeydown, onkeypress, onkeyup, onload, onresize, onscroll, oninput, onfocus, onblur...
+  back to forms...
+  const form = document.querySelector("form");
+  console.log(form.action); // save_user.html
+  console.log(form.method); // get
+  console.log(form.encoding); // application/x-www-form-urlencoded
+  console.log(form.name); // login
+  forms emit a submit event which can be handled with event handlers
+  select elements of a selectedIndex property which returns number value for selected option index
+  also has options property which returns the options elements collection
+  can get selected options combining selectedIndex property and options collection
+  checkbox also have a value property and a checked property that returns boolean in the case the checkbox is checked or not
+  check API exercises 46 and 47
+  JSON  = basically objects but with minor differences, JSON object properties use double quotes
+  JSON.stringify(JSONvar) returns the JSONvar JSON as a string
+  JSON.parse(JSONvar) returns the JSONvar JSON as an object
+  AJAX = async JS and XML, can send and receive info in various formats
+  https://codebeautify.org/jsonviewer takes a JSON and makes it pretty
+  fetch() accepts an API URL as param, provides interface for fetching resources, returns a promise that resolves to the response to a request
+  can use a then method after fetch to tell it what to do with the info it received, needs an example:
+  const apiURL = "https://api.tvmaze.com/search/shows?q=batman";
+  fetch(apiURL)
+  .then(function(response) {
+  return response.json();
+  })
+  .then(function(data) {
+  const show = data[0];
+  console.log(show.show.name); // Batman
+  console.log(show.show.premiered); // 1966-01-12
+  console.log(show.show.image.original); // http://static.tvmaze.com/uploads/images/original_untouched/6/16463.jpg
+  });

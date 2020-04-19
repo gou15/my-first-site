@@ -1,0 +1,20 @@
+#bodynonav{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+.clicked{
+    background: lightgreen;
+    border: 1px solid black;
+}
+.next{
+    background: blue;
+    border: 3px solid green;
+    color: yellow;
+    cursor: pointer;
+}
+.after {
+    background: red;
+    border: 1px solid black;
+    cursor: not-allowed;
+}

@@ -1,0 +1,328 @@
+doctype html
+head
+  title More Dabbling in CSS
+  link(rel='shortcut icon' href='img/css.ico' type='image/x-icon')
+  link(href='css/cssevo5.css' type='text/css' rel='stylesheet')
+  link(href='fonts/SuperMario256.ttf' rel='stylesheet')
+  link(href='fonts/SuperMarioBros.ttf' rel='stylesheet')
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='author' content='Me')
+  meta(name='description' content='Look at the progress of a learning full stack developer as he progresses through the ComIT course learning HTML, CSS, and Node with focus on both front and backend coding.')
+h1.textcenter CSS - Color Your World Part 2
+img.imgcenter(src='img/boxmodel.png' alt='Box Model' title='Box Model')
+p.border1
+  | This is paragraph 1. We played a lot with text, color, styles, fonts, background, highlighting, and a little bit with aligning block elements. What&apos;s a block element? The box model graphic
+  | above describes the box model very well. You can think of your elements as boxes. Paragraph? Box. Div? Box. Headings? Also boxes. Now it&apos;s time to play with block elements. This
+  | paragraph block has a border around it.
+p.border2
+  | This is paragraph 2. This paragraph has the same border around it with a radius applied to the corners.
+p.border3
+  | This is paragraph 3. This paragraph has a different border around it with margin and padding applied. The margin offsets the the paragraph block from the other blocks around it
+  | (the above and below paragraphs as well as the body block which it is a child off). The padding separates the text from the inside boundaries of the paragraph 3 block.
+p.sticky
+  | When you scroll past this paragraph it&apos;s going to stick to the top of your browser. Except for you Internet Explorer users. Sorry. This won&apos;t work for you. I cover every
+  | element I pass because my z-index is so high.
+.p456789
+  h3 Colors were added to accentuate the divisions between different block elements.
+  p.border4
+    strong
+      | This is paragraph 4 and it&apos;s a long one. Since we can set a definied height and width to our block elements there&apos;s a chance that there&apos;s too much information to place in that
+      | defined space. There is no &quot;overflow&quot; content control in this paragraph. The next paragraph is the same as this one with a different &quot;overflow&quot; setting.
+    |       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices fringilla justo a maximus. Nunc porttitor ex eget faucibus faucibus. Donec fermentum magna eu arcu
+    |       egestas, ut fringilla sapien fermentum. Pellentesque dignissim mi lacus. Nulla facilisi. Donec feugiat, sapien sit amet egestas accumsan, diam tellus accumsan tortor, ac
+    |       pretium urna nisl a nibh. Morbi ac sagittis nunc. Pellentesque turpis
+  p.border5
+    strong This is paragraph 5. We have a better way to handle our overflow content here.
+    |       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices fringilla justo a maximus. Nunc porttitor ex eget faucibus faucibus. Donec fermentum magna eu arcu
+    |       egestas, ut fringilla sapien fermentum. Pellentesque dignissim mi lacus. Nulla facilisi. Donec feugiat, sapien sit amet egestas accumsan, diam tellus accumsan tortor, ac
+    |       pretium urna nisl a nibh. Morbi ac sagittis nunc. Pellentesque turpis tellus, aliquam at finibus sit amet, tincidunt eget purus. Aliquam vestibulum sollicitudin erat ac tempus.
+    |       Fusce vel lectus justo. Quisque at enim vitae erat vehicula tincidunt. Cras non dui sodales tortor rhoncus tincidunt at ac eros. Nam bibendum odio odio, ac faucibus nibh
+    |       tristique quis. Nulla commodo ultrices sem vel luctus. Nullam in sapien orci. Nunc id semper augue, sit amet aliquam purus. Integer vitae purus vehicula, viverra libero
+    |       tincidunt, mattis neque. Suspendisse non feugiat magna, sit amet elementum leo. Aenean cursus eget eros sit amet lacinia. Integer vel lacus ex. Curabitur interdum eu est
+    |       non maximus. Cras varius tortor massa, eu consectetur purus porta ac. Suspendisse sagittis quam nec pellentesque laoreet. Nam ac leo mattis, fringilla tellus et, interdum
+    |       mi. Nam nec velit elit. Morbi sed quam et eros dapibus finibus. Cras sit amet diam purus. Donec facilisis ultrices mauris, nec aliquet elit consequat sit amet. In pulvinar
+    |       quis metus a efficitur. Sed ultricies, velit non auctor condimentum, ipsum orci ultrices massa, quis fringilla lectus purus eu ligula. Duis eget arcu ut urna iaculis ornare
+    |       et vel dolor. Etiam at efficitur est. Vivamus consequat turpis orci, in imperdiet mauris sodales nec. In lacinia purus in purus egestas imperdiet. Morbi urna dolor, ornare
+    |       et sagittis quis, hendrerit non augue. Ut posuere neque in nisi semper blandit. Nulla a lectus sodales, rhoncus nunc eu, vulputate lacus.
+  p.border6
+    strong
+      | This is paragraph 6. We can also hide our overflow content, making it inaccessible to the user unless they inspect our code.
+    |       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices fringilla justo a maximus. Nunc porttitor ex eget faucibus faucibus. Donec fermentum magna eu arcu
+    |       egestas, ut fringilla sapien fermentum. Pellentesque dignissim mi lacus. Nulla facilisi. Donec feugiat, sapien sit amet egestas accumsan, diam tellus accumsan tortor, ac
+    |       pretium urna nisl a nibh. Morbi ac sagittis nunc. Pellentesque turpis tellus, aliquam at finibus sit amet, tincidunt eget purus. Aliquam vestibulum sollicitudin erat ac tempus.
+    |       Fusce vel lectus justo. Quisque at enim vitae erat vehicula tincidunt. Cras non dui sodales tortor rhoncus tincidunt at ac eros. Nam bibendum odio odio, ac faucibus nibh
+    |       tristique quis. Nulla commodo ultrices sem vel luctus. Nullam in sapien orci. Nunc id semper augue, sit amet aliquam purus. Integer vitae purus vehicula, viverra libero
+    |       tincidunt, mattis neque. Suspendisse non feugiat magna, sit amet elementum leo. Aenean cursus eget eros sit amet lacinia. Integer vel lacus ex. Curabitur interdum eu est
+    |       non maximus. Cras varius tortor massa, eu consectetur purus porta ac. Suspendisse sagittis quam nec pellentesque laoreet. Nam ac leo mattis, fringilla tellus et, interdum
+    |       mi. Nam nec velit elit. Morbi sed quam et eros dapibus finibus. Cras sit amet diam purus. Donec facilisis ultrices mauris, nec aliquet elit consequat sit amet. In pulvinar
+    |       quis metus a efficitur. Sed ultricies, velit non auctor condimentum, ipsum orci ultrices massa, quis fringilla lectus purus eu ligula. Duis eget arcu ut urna iaculis ornare
+    |       et vel dolor. Etiam at efficitur est. Vivamus consequat turpis orci, in imperdiet mauris sodales nec. In lacinia purus in purus egestas imperdiet. Morbi urna dolor, ornare
+    |       et sagittis quis, hendrerit non augue. Ut posuere neque in nisi semper blandit. Nulla a lectus sodales, rhoncus nunc eu, vulputate lacus.
+  p.border7
+    strong This is paragraph 7.
+    |  You&apos;ll notice this paragraph as well as 4, 5, and 6 are displayed on the same line. Bet you didn&apos;t know you can change the default behaviour of your
+    |       block elements by changing their default display settings to display inline rather than stacking on top of each other? Now you know. We also put a hideous green box shadow
+    |       behind it. There&apos;s an 8th paragraph. Can you find it?
+  p.border8
+    strong This is paragraph 8.
+    |  The display setting on this one is set to none. Glad you found me in the code. There&apos;s a spot for me in the div but I&apos;m set to
+    |       display none. Look at my partner paragraph 9.
+  p.border9
+    strong This is paragraph 9.
+    |  The visibility setting on this one is set to hidden. Glad you found me in the code. There&apos;s no spot for me in the document so I&apos;m forever
+    |       removed... sad me.
+p
+  | Alright so we&apos;re playing with our block elements and making them do some weird things. If you didn&apos;t find paragraphs 8 and 9 (yes, there&apos;s a 9th) inspect the HTML code. You&apos;ll 
+  | find them. We finally learned how to add background images to our documents as well. You&apos;ll notice a sweet Super Mario World background persisting throughout this document. 
+  | You can change the background images of individual elements as well. This particular background is set to fixed and no repeat but you can have it scroll, repeat, set offsets, 
+  | etc... there&apos;s a lot of options and you&apos;re not going to see them all here. If you find an image you like as a background but it&apos;s too bright, too saturated, too dark, whatever, 
+  | there&apos;s a great tool called 
+  a(href='https://www8.lunapic.com/editor/' target='_blank') Lunapic
+  |  that you can use. I used it to make the SMW background more transparent
+  |       and almost suitable for use as a background image, although it could be more transparent...
+p
+  | Hey go back and put your cursor over each of paragraphs 4 thru 7. It changes! You can do that too. It&apos;s a display function only and doesnt change the action of the cursor.
+p
+  | We&apos;re going to play with some lists and list styles as well. Here we go:
+ul.ulnone
+  li Unordered list item 1 no bullet
+  li Unordered list item 2 no bullet
+  li Unordered list item 3 no bullet
+ul.uldisc
+  li Unordered list item 1 disc inside
+  li Unordered list item 2 disc inside
+  li Unordered list item 3 disc inside
+ul.ulcircle
+  li Unordered list item 1 circle inside
+  li Unordered list item 2 circle inside
+  li Unordered list item 3 circle inside
+ul.ulsquare
+  li Unordered list item 1 square
+  li Unordered list item 2 square
+  li Unordered list item 3 square
+ol.decleazer
+  li Ordered list item decimal leading zero
+  li Ordered list item decimal leading zero
+  li Ordered list item decimal leading zero
+ol.lowalpha
+  li Ordered list item lower alpha
+  li Ordered list item lower alpha
+  li Ordered list item lower alpha
+ol.upalptha
+  li Ordered list item upper alpha
+  li Ordered list item upper alpha
+  li Ordered list item upper alpha
+ol.lowroman
+  li Ordered list item lower roman inside
+  li Ordered list item lower roman inside
+  li Ordered list item lower roman inside
+ol.uproman
+  li Ordered list item upper roman inside
+  li Ordered list item upper roman inside
+  li Ordered list item upper roman inside
+ol.mariolist
+  li Ordered list item Mario
+  li Ordered list item Mario
+  li Ordered list item Mario
+p
+  | Let&apos;s now revisit an old table we made and play with border spacing and border collapse:
+table.table1
+  thead
+    tr
+      th Hack Name
+      th Difficulty Level
+      th Link
+  tbody
+    tr
+      td Kaizo Kindergarten
+      td Kaizo Light
+      td
+        a(href='https://www.smwcentral.net/?p=section&a=details&id=20091' target='_blank') Link
+    tr
+      td Buzzy&apos;s World Tour
+      td Standard: Hard
+      td
+        a(href='https://www.smwcentral.net/?p=section&a=details&id=20379' target='_blank') Link
+    tr
+      td Mario in Another Land
+      td Standard: Easy
+      td
+        a(href='https://www.smwcentral.net/?p=section&a=details&id=13582' target='_blank') Link
+    tr
+      td Item Abuse 3
+      td Kaizo: Pit
+      td
+        a(href='https://www.smwcentral.net/?p=section&a=details&id=10907' target='_blank') Link
+    tr
+      td Grand Poo World 3 (UNRELEASED)
+      td Kaizo: Light (Anticipated)
+      td
+  tfoot
+    tr
+      td(colspan='3') This row occupies all 3 columns
+hr
+p
+  | The above table and below table have exactly the same styling with the exception of shared borders vs unshared borders (collapsed vs separate). Pretty cool eh?
+hr
+table.table2
+  thead
+    tr
+      th Hack Name
+      th Difficulty Level
+      th Link
+  tbody
+    tr
+      td Kaizo Kindergarten
+      td Kaizo Light
+      td
+        a(href='https://www.smwcentral.net/?p=section&a=details&id=20091' target='_blank') Link
+    tr
+      td Buzzy&apos;s World Tour
+      td Standard: Hard
+      td
+        a(href='https://www.smwcentral.net/?p=section&a=details&id=20379' target='_blank') Link
+    tr
+      td Mario in Another Land
+      td Standard: Easy
+      td
+        a(href='https://www.smwcentral.net/?p=section&a=details&id=13582' target='_blank') Link
+    tr
+      td Item Abuse 3
+      td Kaizo: Pit
+      td
+        a(href='https://www.smwcentral.net/?p=section&a=details&id=10907' target='_blank') Link
+    tr
+      td Grand Poo World 3 (UNRELEASED)
+      td Kaizo: Light (Anticipated)
+      td
+  tfoot
+    tr
+      td(colspan='3') This row occupies all 3 columns
+br
+p.relative
+  | Something is weird with this paragraph. It&apos;s not quite where it&apos;s supposed to be. That&apos;s because it&apos;s position is changed to relative. It is still within normal flow of the
+  | document, but then I changed it&apos;s position from where it normally was. You&apos;ll notice I&apos;ve also created a side-scrolling bar because I&apos;ve forced the text pass the outside of
+  | your browser. THIS IS BAD DESIGN! I can fix this by altering the margin and forcing the right side of this paragraph to remain inside the body, but I&apos;m not going to.  :)
+  | Also, that weird paragraph we saw at the beginning of the document? It&apos;s actually the next paragraph in the code... it&apos;s position is set absolutely and is entirely removed
+  | from the normal flow of the document. And that very weird white and purple paragraph that keeps following you? It&apos;s actually after the weird one that is absolutely set in the
+  | document. The very weird follow you around paragraph has a fixed position. And the one that you picked up as your were scrolling down? The pinkish one stuck to the top of
+  | your browser? That one is sticky. If you don&apos;t have a pink paragraph stuck to the top of your browser then your browser isn&apos;t compatible.
+p.absolute
+  | I&apos;m the weird paragraph you&apos;re going to read about later. Hello!
+p.fixed
+  | I&apos;m the very weird paragraph that follows you up and down the page. 
+  br
+  | You can&apos;t get rid of me. Hello! 
+  br
+  | At least I disappear behind things because my z-index is so low...
+br
+br
+img.imgleft(src='img/dogleft.jpg' alt='One Dog' title='Leela')
+img.imgright(src='img/dogright.jpg' alt='Other Dog' title='Stitchy')
+p
+  strong
+    | Leela (the dog on the left) and Stitchy (the dog on the right) have decided it&apos;s ok to allow text in between them. There&apos;s no special controlling of block elements or
+    | alignment going on here. The images of my dogs here are set to float to the left and right of any text that they come in contact with. If we make this paragraph very long
+    | so that it extends passed the bottom of the images you&apos;ll see the text returns to the full width of the body.
+  |       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices fringilla justo a maximus. Nunc porttitor ex eget faucibus faucibus. Donec fermentum magna eu arcu
+  |       egestas, ut fringilla sapien fermentum. Pellentesque dignissim mi lacus. Nulla facilisi. Donec feugiat, sapien sit amet egestas accumsan, diam tellus accumsan tortor, ac
+  |       pretium urna nisl a nibh. Morbi ac sagittis nunc. Pellentesque turpis tellus, aliquam at finibus sit amet, tincidunt eget purus. Aliquam vestibulum sollicitudin erat ac tempus.
+  |       Fusce vel lectus justo. Quisque at enim vitae erat vehicula tincidunt. Cras non dui sodales tortor rhoncus tincidunt at ac eros. Nam bibendum odio odio, ac faucibus nibh
+  |       tristique quis. Nulla commodo ultrices sem vel luctus. Nullam in sapien orci. Nunc id semper augue, sit amet aliquam purus. Integer vitae purus vehicula, viverra libero
+  |       tincidunt, mattis neque. Suspendisse non feugiat magna, sit amet elementum leo. Aenean cursus eget eros sit amet lacinia. Integer vel lacus ex. Curabitur interdum eu est
+  |       non maximus. Cras varius tortor massa, eu consectetur purus porta ac. Suspendisse sagittis quam nec pellentesque laoreet. Nam ac leo mattis, fringilla tellus et, interdum
+  |       mi. Nam nec velit elit. Morbi sed quam et eros dapibus finibus. Cras sit amet diam purus. Donec facilisis ultrices mauris, nec aliquet elit consequat sit amet. In pulvinar
+  |       quis metus a efficitur. Sed ultricies, velit non auctor condimentum, ipsum orci ultrices massa, quis fringilla lectus purus eu ligula. Duis eget arcu ut urna iaculis ornare
+  |       et vel dolor. Etiam at efficitur est. Vivamus consequat turpis orci, in imperdiet mauris sodales nec. In lacinia purus in purus egestas imperdiet. Morbi urna dolor, ornare
+  |       et sagittis quis, hendrerit non augue. Ut posuere neque in nisi semper blandit. Nulla a lectus sodales, rhoncus nunc eu, vulputate lacus.
+  |       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices fringilla justo a maximus. Nunc porttitor ex eget faucibus faucibus. Donec fermentum magna eu arcu
+  |       egestas, ut fringilla sapien fermentum. Pellentesque dignissim mi lacus. Nulla facilisi. Donec feugiat, sapien sit amet egestas accumsan, diam tellus accumsan tortor, ac
+  |       pretium urna nisl a nibh. Morbi ac sagittis nunc. Pellentesque turpis tellus, aliquam at finibus sit amet, tincidunt eget purus. Aliquam vestibulum sollicitudin erat ac tempus.
+  |       Fusce vel lectus justo. Quisque at enim vitae erat vehicula tincidunt. Cras non dui sodales tortor rhoncus tincidunt at ac eros. Nam bibendum odio odio, ac faucibus nibh
+  |       tristique quis. Nulla commodo ultrices sem vel luctus. Nullam in sapien orci. Nunc id semper augue, sit amet aliquam purus. Integer vitae purus vehicula, viverra libero
+  |       tincidunt, mattis neque. Suspendisse non feugiat magna, sit amet elementum leo. Aenean cursus eget eros sit amet lacinia. Integer vel lacus ex. Curabitur interdum eu est
+  |       non maximus. Cras varius tortor massa, eu consectetur purus porta ac. Suspendisse sagittis quam nec pellentesque laoreet. Nam ac leo mattis, fringilla tellus et, interdum
+  |       mi. Nam nec velit elit. Morbi sed quam et eros dapibus finibus. Cras sit amet diam purus. Donec facilisis ultrices mauris, nec aliquet elit consequat sit amet. In pulvinar
+  |       quis metus a efficitur. Sed ultricies, velit non auctor condimentum, ipsum orci ultrices massa, quis fringilla lectus purus eu ligula. Duis eget arcu ut urna iaculis ornare
+  |       et vel dolor. Etiam at efficitur est. Vivamus consequat turpis orci, in imperdiet mauris sodales nec. In lacinia purus in purus egestas imperdiet. Morbi urna dolor, ornare
+  |       et sagittis quis, hendrerit non augue. Ut posuere neque in nisi semper blandit. Nulla a lectus sodales, rhoncus nunc eu, vulputate lacus.
+  |       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices fringilla justo a maximus. Nunc porttitor ex eget faucibus faucibus. Donec fermentum magna eu arcu
+  |       egestas, ut fringilla sapien fermentum. Pellentesque dignissim mi lacus. Nulla facilisi. Donec feugiat, sapien sit amet egestas accumsan, diam tellus accumsan tortor, ac
+  |       pretium urna nisl a nibh. Morbi ac sagittis nunc. Pellentesque turpis tellus, aliquam at finibus sit amet, tincidunt eget purus. Aliquam vestibulum sollicitudin erat ac tempus.
+  |       Fusce vel lectus justo. Quisque at enim vitae erat vehicula tincidunt. Cras non dui sodales tortor rhoncus tincidunt at ac eros. Nam bibendum odio odio, ac faucibus nibh
+  |       tristique quis. Nulla commodo ultrices sem vel luctus. Nullam in sapien orci. Nunc id semper augue, sit amet aliquam purus. Integer vitae purus vehicula, viverra libero
+  |       tincidunt, mattis neque. Suspendisse non feugiat magna, sit amet elementum leo. Aenean cursus eget eros sit amet lacinia. Integer vel lacus ex. Curabitur interdum eu est
+  |       non maximus. Cras varius tortor massa, eu consectetur purus porta ac. Suspendisse sagittis quam nec pellentesque laoreet. Nam ac leo mattis, fringilla tellus et, interdum
+  |       mi. Nam nec velit elit. Morbi sed quam et eros dapibus finibus. Cras sit amet diam purus. Donec facilisis ultrices mauris, nec aliquet elit consequat sit amet. In pulvinar
+  |       quis metus a efficitur. Sed ultricies, velit non auctor condimentum, ipsum orci ultrices massa, quis fringilla lectus purus eu ligula. Duis eget arcu ut urna iaculis ornare
+  |       et vel dolor. Etiam at efficitur est. Vivamus consequat turpis orci, in imperdiet mauris sodales nec. In lacinia purus in purus egestas imperdiet. Morbi urna dolor, ornare
+  |       et sagittis quis, hendrerit non augue. Ut posuere neque in nisi semper blandit. Nulla a lectus sodales, rhoncus nunc eu, vulputate lacus.
+  |       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultrices fringilla justo a maximus. Nunc porttitor ex eget faucibus faucibus. Donec fermentum magna eu arcu
+  |       egestas, ut fringilla sapien fermentum. Pellentesque dignissim mi lacus. Nulla facilisi. Donec feugiat, sapien sit amet egestas accumsan, diam tellus accumsan tortor, ac
+  |       pretium urna nisl a nibh. Morbi ac sagittis nunc. Pellentesque turpis tellus, aliquam at finibus sit amet, tincidunt eget purus. Aliquam vestibulum sollicitudin erat ac tempus.
+  |       Fusce vel lectus justo. Quisque at enim vitae erat vehicula tincidunt. Cras non dui sodales tortor rhoncus tincidunt at ac eros. Nam bibendum odio odio, ac faucibus nibh
+  |       tristique quis. Nulla commodo ultrices sem vel luctus. Nullam in sapien orci. Nunc id semper augue, sit amet aliquam purus. Integer vitae purus vehicula, viverra libero
+  |       tincidunt, mattis neque. Suspendisse non feugiat magna, sit amet elementum leo. Aenean cursus eget eros sit amet lacinia. Integer vel lacus ex. Curabitur interdum eu est
+  |       non maximus. Cras varius tortor massa, eu consectetur purus porta ac. Suspendisse sagittis quam nec pellentesque laoreet. Nam ac leo mattis, fringilla tellus et, interdum
+  |       mi. Nam nec velit elit. Morbi sed quam et eros dapibus finibus. Cras sit amet diam purus. Donec facilisis ultrices mauris, nec aliquet elit consequat sit amet. In pulvinar
+  |       quis metus a efficitur. Sed ultricies, velit non auctor condimentum, ipsum orci ultrices massa, quis fringilla lectus purus eu ligula. Duis eget arcu ut urna iaculis ornare
+  |       et vel dolor. Etiam at efficitur est. Vivamus consequat turpis orci, in imperdiet mauris sodales nec. In lacinia purus in purus egestas imperdiet. Morbi urna dolor, ornare
+  |       et sagittis quis, hendrerit non augue. Ut posuere neque in nisi semper blandit. Nulla a lectus sodales, rhoncus nunc eu, vulputate lacus.
+br
+p
+  | Ooo! Try printing this page! If you don&apos;t want to print it at least pull it up in the Print Preview... Did you know you can apply custom styling when you go to output a
+  | document to a print device? All text will be black and all backgrounds white when you print this page. Also pretty cool, eh?
+p
+  | We did a little more work with flexbox and with setting specific styling based on the viewport at this point. But, we&apos;re about to throw a lot of this out and learn
+  | to use the Bootstrap framework to make things easier for us.
+br
+br
+a(href='evo6') Next Level
+//
+  EVOLUTION 6
+  let's not forget what we've already learned, and let's move forward with some website organization
+  the box model (pull the pic from the github, it's beautiful)
+  property_names
+  border-width = 1 value is all 4 sides, 2 values is topbottom and leftright, 3 values is top and leftright and bottom
+  border-style = none hidden dotted dashed solid double groove ridge inset outset
+  border = width style color;
+  border-XXX = where XXX = top bottom left or right, can set individual styling
+  border-radius = 1 value is all 4 corner, 2 values is topleftbotright and toprightbotleft, 3 values is topleft and toprightbotleft and botright
+  padding = space between text and the inner wall of the container which holds it
+  margin = space between block elements, can center align elements by setting margin to auto
+  width and height = sets those things of elements, can be set as min/max by adding min- or max- in front
+  background-color
+  overflow = auto, hidden, scroll (what to do when there's too much content in a block element)
+  box-shadow = adds box around element's frame. x and y offsets, blur, spread rad, and color (2px 3 px 170px -10px green), can add "inset" after color to have inner shadow
+  display = inline, block, inline-block, none, table, flex, grid = determines how all these rectangular boxes behave
+  visibility = visible, hidden, = shows or hides elememnts
+  (dif between display = none and visibility = hidden is that display removes the element while visibility removes the element BUT leaves space for that element)
+  background-image = (requires "url(path/to/img.jpg)" (no quotes))
+  background-repeat = repeat-x, repeat-y, repeat, no repeat
+  background-position = sets initial BG position using pixels or words = top, center, bottom (is using px first value is x axis, 2nd y)
+  background-attachment = fixed, scroll, local
+  background = color image repeat attachment position
+  cursor = auto, crosshair, default, pointer, move, text, wait, help
+  list-style-type = (ul) none, disc, circle, square (ol) decimal, decimal-leading-zero, lower-alpha, upper-alpha, lower-roman, upper-roman
+  list-style-position = (both) outside, inside (where these define position of marker relative to li)
+  list-style-image = sets image as the list item marker, requires url("path/to/image.jpg")
+  list-style = type position
+  border-spacing = distance between borders of adjacent cells in tables(1 value = all sides, 2 is horiz and vert)
+  border-collapse = defines if cells have shared or separate borders = collapse, separate
+  position = defines how an element is positioned in a document = static, relative, absolute, fixed, sticky
+  static is default value
+  relative is positioned according to normal flow of document then offset relative to it's static position based on top, left, bottom, right values, also z-index
+  absolute is removed entirely from document flow, position set with top, right, bottom, left, and z-index
+  fixed is removed entirely from document flow, positioned relative to screen's viewport and doesn't move, set using top right bottom and left
+  sticky positioned normally but becomes fixed as to not leave the screen's viewport when scrolled paste
+  float = none, left, right = allows elements to float around each other rather than sitting on top of one another
+  clear = none, left, right, both = specifies whether an element can be next to floating elements that precede it or if they must be moved down below them
+  @media print = applies this stile only to print devices
+  @media print{
+  body{
+  background-color: white;
+  color: black;
+  }
+  }
+  we did a little more with screen sizes and flexbox, but honestly, we're about to throw it all away, so...

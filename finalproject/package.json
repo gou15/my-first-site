@@ -4,12 +4,41 @@
   "description": "",
   "main": "evo7.js",
   "dependencies": {
-    "http-server": "^0.12.1"
+    "@fortawesome/fontawesome-free": "5.10.2",
+    "body-parser": "^1.19.0",
+    "bootstrap": "4.3.1",
+    "express": "^4.17.1",
+    "heroku": "^7.39.3",
+    "http-server": "^0.12.1",
+    "jquery": "3.4.1",
+    "jquery.easing": "^1.4.1",
+    "local": "^0.3.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.3",
+    "one-liner-joke": "^1.2.0",
+    "path": "^0.12.7",
+    "pug": "^2.0.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "browser-sync": "2.26.7",
+    "del": "5.1.0",
+    "gulp": "4.0.2",
+    "gulp-autoprefixer": "7.0.0",
+    "gulp-clean-css": "4.2.0",
+    "gulp-header": "2.0.9",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "1.4.0",
+    "gulp-sass": "4.0.2",
+    "gulp-uglify": "3.0.2",
+    "merge-stream": "2.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server"
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "12.16.1"
   },
   "keywords": [],
   "author": "",

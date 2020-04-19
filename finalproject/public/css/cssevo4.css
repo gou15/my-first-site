@@ -1,0 +1,117 @@
+@font-face {
+    font-family: SuperMario256;
+    src: url(fonts/SuperMario256.ttf)
+    }
+@font-face {
+    font-family: SuperMarioBros;
+    src: url(fonts/SuperMarioBros.ttf)
+}
+p{
+    font-size: 1em;
+}
+p.sibling ~ p.sibling {
+    color: blue;
+}
+div > p.sibling {
+    color: pink;
+} 
+a.linkdemo:link{
+    color: green;
+    text-decoration: none;
+}
+a.linkdemo:hover{
+    color: green;
+    text-decoration: underline;
+}
+a.linkdemo:visited{
+    color: orange;
+}
+.firsts::first-line {
+    text-decoration: dotted line-through blue;
+}
+.firsts::first-letter {
+    font-size: 2.2em;
+    font-weight: bolder;
+}
+.firsts::selection {
+    color: gold;
+    background-color: red;
+}
+span.smw{
+    font-family: SuperMario256;
+    background-color: purple;
+}
+span.smb{
+    font-family: SuperMarioBros;
+}
+span.helv{
+    font-family: helvetica;
+    font-size: 1.5em;
+    font-style: oblique;
+}
+h1.surprise:hover{
+    font-family: "times new roman";
+    background-color: darkblue;
+    color: white;
+    text-shadow: 5px 5px 1px yellow;
+}
+span.upper{
+    text-transform: uppercase;
+}
+span.cap{
+    text-transform: capitalize;
+}
+span.lower{
+    text-transform: lowercase;
+}
+h2.left{
+    text-align: left;
+}
+h2.center{
+    text-align: center;
+}
+h2.right{
+    text-align: right;
+}
+div.indent{
+    text-indent: 15px;
+}
+span.hard{
+    text-shadow: 3px 3px 3px black;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+span.easy{
+    letter-spacing:2px;
+    word-spacing:5px;
+}
+span.height{
+    line-height: 1.6;
+}
+img.a{
+    vertical-align: baseline;
+}
+img.b{
+    vertical-align: sub;
+}
+img.c{
+    vertical-align: super;
+}
+img.d{
+    vertical-align: text-top;
+}
+img.e{
+    vertical-align: text-bottom;
+}
+img.f{
+    vertical-align: middle;
+}
+img.g{
+    vertical-align: top;
+}
+img.h{
+    vertical-align: bottom;
+}
+div.gradient{
+    background-image: linear-gradient(60deg, yellow, green);
+}

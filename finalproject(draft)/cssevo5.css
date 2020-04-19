@@ -1,0 +1,204 @@
+@media print{
+    *{
+        background-color: white;
+        color: black;
+    }
+}
+body{
+    background: url(images/smwbackground.png) fixed center no-repeat;
+    background-size: cover;
+    padding-bottom: 132px;
+}
+h1{
+    z-index: 1;
+}
+.imgcenter{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.imgleft{
+    display: block;
+    margin-left: 0px;
+    margin-right: auto;
+    float: left;
+    width: 300px;
+    height:auto;
+}
+.imgright{
+    display: block;
+    margin-left: auto;
+    margin-right: 0px;
+    float: right;
+    width: 300px;
+    height:auto;
+}
+.textcenter{
+    text-align: center;
+}
+.border1{
+    border: 1px groove green;
+}
+.border2{
+    border: 1px groove green;
+    border-radius: 5px;
+}
+.border3{
+    border: 4px dotted blue;
+    margin: 20px;
+    padding: 20px;
+}
+.border4{
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 300px;
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: auto;
+    margin-right: 10px;
+    background-color: green;
+    cursor: crosshair;
+}
+.border5{
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 300px;
+    width: 300px;
+    overflow: auto;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: greenyellow;
+    cursor: pointer;
+}
+.border6{
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: grey;
+    cursor: wait;
+}
+.border7{
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: indianred;
+    box-shadow: 5px 5px 170px 10px green;
+    cursor: help;
+}
+.border8{
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    display: none;    
+    vertical-align: top;
+    margin-left: 10px;
+    margin-right: auto;
+    background-color: silver;
+}
+.border9{
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    visibility: hidden;
+    vertical-align: top;
+    background-color: palegreen;
+}
+.p456789{
+    text-align: center;
+    margin: auto;
+    background-color: khaki;
+}
+.ulnone{
+    list-style: none;
+}
+.uldisc{
+    list-style: disc inside;
+}
+.ulcircle{
+    list-style: circle inside;
+}
+.decleazer{
+    list-style: decimal-leading-zero;
+}
+.lowalpha{
+    list-style: lower-alpha;
+}
+.upalpha{
+    list-style: upper-alpha;
+}
+.lowroman{
+    list-style: lower-roman inside;
+}
+.uproman{
+    list-style: upper-roman inside;
+}
+.mariolist{
+    list-style-image: url(images/mariobullet2.PNG)
+}
+.table1 {
+    border-collapse: collapse;
+    border-spacing: 15px;
+    text-align: center;
+}
+.table2 {
+    border-collapse: separate;
+    border-spacing: 15px;
+    text-align: center;
+}
+table, th, td {
+    border: 3px solid black;
+}
+.relative{
+    position: relative;
+    border: 1px solid black;
+    padding: 5px;
+    left: 30px;
+    top: 15px;
+    background-color: palevioletred;
+}
+.absolute{
+    position: absolute;
+    padding: 5px;
+    left: 30px;
+    top: 60px;
+    border: 1px solid black;
+    background-color: paleturquoise;
+    z-index: -1;
+}
+.fixed{
+    position: fixed;
+    padding: 5px;
+    right: 30px;
+    top: 15px;
+    border: 1px solid white;
+    background-color: white;
+    color: blueviolet;
+    z-index: -1;
+}
+.sticky{
+    position: sticky;
+    top: 0;
+    padding: 5px;
+    border: 1px solid black;
+    background-color: tomato;
+    z-index: 2;
+}

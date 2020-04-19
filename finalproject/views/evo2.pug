@@ -1,0 +1,218 @@
+doctype html
+head
+  title It&apos;s HTML Time
+h1 It&apos;s HTML Time!
+h2 And while it&apos;s not very pretty
+h3 It&apos;s better than no styling
+h4
+  | Don&apos;t you think? Hey there&apos;s an anchor here... 
+  a(name='anchor')
+h5 How small do these headers get?
+h6 Oh this sixth one is the smallest one.
+p
+  | It&apos;s day 3 and, while it&apos;s not code (it&apos;s markup language), we start learning HTML and its structure. Lucky for all of us we can develop something a little nicer than that
+  | first page. Using element tags and inserting our content between those tags we learned how to change the way things are presented to the world. By assigning attributes
+  | to those tags we can give our document a little bit of spice. It&apos;s kind of cool.
+p
+  | The first 6 lines of this page are headers 1 thru 6. The block of text above this one (and this one) are paragraphs. They&apos;re inside a body tag which are inside the master
+  | HTML tag. The body tag is a sibling to the head tag which contains our information that isn&apos;t rendered to the user. We&apos;ll talk more about the HTML head later.
+p
+  | Sometimes you want to render some information to the user that your browser would otherwise interpret as HTML. If I want to show you a paragraph tag (which is a less than sign,
+  | a lower case &quot;p&quot;, and then a greater than sign), how would I do that? If I type it out like normal:
+p your browser is just going to start a new paragraph.
+|  You use 
+|         something called HTML entities to force browsers to render characters that are normally rendered as HTML. These start with an ampersand and end with a semicolon which is the 
+|         browser&apos;s flag to just render the data and not do anything special with it. Now I can show you the paragraph tag: &lt;p&gt;, and &nbsp;&nbsp;&nbsp;&nbsp;make &nbsp;&nbsp;&nbsp;&nbsp;
+|         unnecessary &nbsp;&nbsp;&nbsp;&nbsp;spaces. These can also be used to render hard-to-type characters like &copy;, or &frac16;, or &male;&female;, or many many others.
+p
+p What else can I show you... how about line breaks?
+br
+br
+br
+br
+p Or its friend, the horizontal rule?
+hr
+hr
+hr
+hr
+p
+  | There&apos;s the old &lt;strong&gt; tag that allows you to 
+  strong bold
+  |  your 
+  strong text,
+  |  but this is generally reserved for CSS styling now.
+p
+  | We also how to make lists. Do you want a list of groceries or anything else that doesn&apos;t require an order? The unordered list is for you:
+ul
+  li bananas
+  li apples
+  li 3 Nintendo Switch&apos;s
+  li pineapples specifically to put on pizza
+p
+  | Maybe you need a list of tasks that require order. The ordered list will make do that for you:
+ol
+  li Wake up
+  li Get out of bed
+  li Brush your teeth
+  li Succumb to the pressures of western society
+  li Return to bed defeated
+p
+  | Maybe you&apos;re explaining a new topic to someone and they need some definitions. The description definition list will cut it for you:
+dd
+  dt
+    strong
+      | Savestate
+  dd
+    | An emulator tool that allows you to save at any time. Want to save after you just made that really hard jump but haven&apos;t made the checkpoint yet? Savestates let you do that.
+  dt
+    strong
+      | Object
+  dd
+    | Things that Mario can interact but do not typically interact with Mario. Ground, blocks, water... these are objects. There are exceptions to this, but this definition is good enough for us beginners.
+  dt
+    strong
+      | Sprite
+  dd
+    | Things that Mario can interact with and they can interact with him. P-switches, enemies, Bowser, Koopa shells, powerups... these are sprites.
+  dt
+    strong
+      | Hitbox
+  dd
+    | The hitbox is the area of the sprite that detects whether or not the player or enemy has been hit. For instance, small Mario&apos;s sprite is almost twice the size of his hitbox.
+br
+p
+  | Cool, we&apos;ve got a bunch of boring lists, some paragraphs, line breaks, goofy lines, six different sizes of headers, we can bold things (but we shouldn&apos;t), and we learned 
+  | about entities. Big whoop. Let&apos;s do something cool - links and images. 
+  br
+  a(href='https://www.google.com' target='_blank') Click Here
+  |  to open Google in a new tab. 
+  br
+  a(href='https://www.google.com' target='_self') Click Here
+  |  to open Google in this tab. (This isn&apos;t a good practice, but now you know we can do that). 
+  br
+  | Remember that anchor we found in the 4th header way back at the beginning of this page? 
+  a(href='#anchor') Click Here
+  |  to go see it again. 
+  br
+  | Annoyed yet? 
+  a(href='mailto:notmail.notmail.com?Subject=I%20Am%20Annoyed' target='_top') Click Here
+  |  to email me. I took the luxury of filling in the subject for you.
+p
+  | What follows is a figure, containing an image, which is itself a link to another image, and a caption to said image. If the image won&apos;t render for you you&apos;ll see the
+  | phrase &quot;A photo of my dogs,&quot; and if you just hover your cursor over the photo you&apos;ll see what I think of them.
+figure
+  a(href='/img/dogs 2.jpg' target='_blank')
+    img(src='img/dogs 1.jpg' height='300' width='auto' alt='A photo of my dogs' title='Goofballs')
+  figcaption
+    | We learned to put images into our documents too. These are my dogs. You can make images into links too. You&apos;ll get another photo if you click on them.
+hr
+p
+  | Lastly we learned how to build a table, which was kind of like a list, but with more options, and with some styling (which is still not recommended, but it&apos;s what
+  | we know right now).
+table(border='4' width='600' cellspacing='15' cellpadding='5')
+  thead
+    tr
+      th(width='200' bgcolor='#62E8F3') Hack Name
+      th(width='200' bgcolor='#5FB43F') Difficulty Level
+      th(width='200' bgcolor='#E0D334') Link
+  tbody
+    tr
+      td Kaizo Kindergarten
+      td Kaizo Light
+      td
+        a(href='https://www.smwcentral.net/?p=section&a=details&id=20091' target='_blank') Link
+    tr
+      td Buzzy&apos;s World Tour
+      td Standard: Hard
+      td
+        a(href='https://www.smwcentral.net/?p=section&a=details&id=20379' target='_blank') Link
+    tr
+      td Mario in Another Land
+      td Standard: Easy
+      td
+        a(href='https://www.smwcentral.net/?p=section&a=details&id=13582' target='_blank') Link
+    tr
+      td Item Abuse 3
+      td Kaizo: Pit
+      td
+        a(href='https://www.smwcentral.net/?p=section&a=details&id=10907' target='_blank') Link
+    tr
+      td Grand Poo World 3 (UNRELEASED)
+      td Kaizo: Light (Anticipated)
+  tfoot
+    tr
+      td(colspan='3' bgcolor='red') This row occupies all 3 columns
+p Alright that was a lot. A lot a lot. But we&apos;re just getting started... 
+br
+br
+a(href='evo3') Next Level
+//
+  EVOLUTION 3
+  HTML - it's time to learn some code
+  hyper text markup language, annotates a document to be displayed on internet
+  tags tell browsers what to do with and how to classify the content of our website
+  <tagname>Content</tagname>
+  code formatting using indentation so it's easy for humans to follow
+  different tags can have different type of attributes, defined in the open tag
+  <tagname attribute="value">Content modified by attribute</tagname>
+  id - specific to that tag
+  class - can be applied to many tags that we wish to act the same, more on this later
+  <!DOCTYPE html> = tells browser we're using HTML
+  <html> = master tag, all other elements descend from this one
+  <head> = contains data browsers won't render (metadata, title, scripts, styles, favicon, more...)
+  <title> = title of website shown on Google and in browser tabs
+  <body> = content of website
+  block elements = elements that the browser will render one below the other
+  <h1> <h2> <h3> <h4> <h5> <h6> = heading elements
+  <p> = paragraph element
+  HTML entities = forces browser to render characters that would otherwise be interpreted as HTML or special characters, &nbsp;
+  <div> = block element container with no effect on content until styled by CSS
+  <span> = inline element container like <div> but not a block
+  <!- comments -> = create comments in code that will not render in browser, describe your own code
+  <br /> = line break
+  <hr /> = horizontal rule
+  <strong> = boldening
+  <ul> = unordered list
+  <ol> = ordered list
+  <li> = list item inside above 2 lists, child element
+  <dd> = description definition list
+  <dt> = term
+  <dd> = definition
+  <a> = anchor element, creates links
+  href = attribute for <a>, contains URL for link
+  use "#anchorname" to link to a name you set on your own site
+  use "mailto:email@address.com" to link to email
+  name = "anchorname" to set a point your own page for another link to refer to
+  target = attribute for <a>, tells browser how to open link (_self for same tab, _blank for new tab, _parent into tab you came from, _top into very first tab you came from)
+  can link to files relatively or absolutely
+  <img> = embeds image into document
+  src = attribute that accepts an image filename/pathway
+  height and width attributes by pixels or % or auto
+  alt = alternative text to describe the image of it doesn't render
+  title = hover over text
+  <figure> = self-contained content, typically containing an image and a caption
+  <figcaption> = caption for image in a figure, child element to figure
+  <table> = tabular data
+  <thead> = defines table header data section, child of <table>
+  <tr> = table row, child of <thead>, <tbody>, and <tfoot>
+  <th> = defines cell as a header, child of <tr>
+  <tbody> = defines table body section, child of <table>
+  <td> = table data, child of <tr>
+  <tfoot> = defines footer of table, child of <table>
+  <table>
+  <thead>
+  <tr>
+  <th>
+  <tbody>
+  <tr>
+  <td>
+  <tfoot>
+  <tr>
+  <td>
+  table element has attributes which let us add color and such, not recommended, but it's what we knew at the time
+  border = "#" -> sets border width of table to # pixels
+  bgcolor = "hexcode" -> sets background color of table
+  width = "###" -> sets table width in pixels
+  cellpadding and cellspacing = "##" -> sets space between content of cell and border and sets size of space between two cell respectively
+  colspan and rowspan = "#" -> specifically sets td and th cell sizing to number of columns or number of rows respectively
+  all above attributes are applicable to all table elements except colspan and rowspan which are specific to <th> and <td>
