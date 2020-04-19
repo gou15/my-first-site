@@ -7,7 +7,7 @@ window.onload = function(){
     faveTVValue = faveTVValue.toString();
     faveTVValue = faveTVValue.split(' ').join('+');
 
-    const apiURL = `http://api.tvmaze.com/search/shows?q=${faveTVValue}`;
+    const apiURL = `https://api.tvmaze.com/search/shows?q=${faveTVValue}`;
     fetch(apiURL).then(function(response){
         return response.json();
     })
